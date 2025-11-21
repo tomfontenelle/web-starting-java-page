@@ -1,0 +1,9 @@
+📁 Déposez vos fichiers HTML ici !
+
+Exemple :
+- page-accueil.html
+- page-contact.html
+- landing-page-1.html
+- etc.
+
+Ensuite, indiquez-moi les noms des fichiers à traiter.

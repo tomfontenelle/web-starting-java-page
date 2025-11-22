@@ -1,0 +1,873 @@
+<!-- SCRIPT EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS CSS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.notaire-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.notaire-wp-scope *, .notaire-wp-scope *::before, .notaire-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.notaire-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.notaire-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.notaire-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.notaire-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.notaire-hero-text {
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.3s !important;
+  opacity: 0 !important;
+}
+.notaire-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.notaire-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.notaire-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.notaire-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.6s !important;
+  opacity: 0 !important;
+}
+.notaire-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.notaire-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.notaire-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.notaire-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.notaire-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.notaire-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.notaire-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.notaire-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.notaire-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.notaire-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.notaire-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.notaire-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.notaire-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.notaire-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.notaire-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.notaire-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.notaire-benefit-card:nth-child(1) { animation-delay: 0.9s !important; }
+.notaire-benefit-card:nth-child(2) { animation-delay: 1.0s !important; }
+.notaire-benefit-card:nth-child(3) { animation-delay: 1.1s !important; }
+.notaire-benefit-card:nth-child(4) { animation-delay: 1.2s !important; }
+.notaire-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.notaire-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.notaire-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.notaire-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.notaire-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.notaire-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.notaire-features-content {
+  animation: fadeInLeft 0.8s ease forwards !important;
+  animation-delay: 1.3s !important;
+  opacity: 0 !important;
+}
+.notaire-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.notaire-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.notaire-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.notaire-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.notaire-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.notaire-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.notaire-features-visual {
+  animation: fadeInRight 0.8s ease forwards !important;
+  animation-delay: 1.5s !important;
+  opacity: 0 !important;
+}
+.notaire-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.notaire-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.notaire-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.notaire-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.notaire-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.notaire-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.notaire-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.notaire-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.notaire-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.notaire-testimonial-card:nth-child(1) { animation-delay: 1.6s !important; }
+.notaire-testimonial-card:nth-child(2) { animation-delay: 1.7s !important; }
+.notaire-testimonial-card:nth-child(3) { animation-delay: 1.8s !important; }
+.notaire-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.notaire-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.notaire-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.notaire-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.notaire-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.notaire-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.notaire-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.notaire-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.notaire-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.notaire-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .notaire-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .notaire-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .notaire-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .notaire-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .notaire-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .notaire-section-title {
+    font-size: 2rem !important;
+  }
+  .notaire-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .notaire-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .notaire-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .notaire-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .notaire-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .notaire-hero-content {
+    gap: 2rem !important;
+  }
+  .notaire-hero-title {
+    font-size: 2rem !important;
+  }
+  .notaire-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .notaire-hero-form {
+    padding: 1.5rem !important;
+  }
+  .notaire-section-title {
+    font-size: 1.75rem !important;
+  }
+  .notaire-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .notaire-why-section, .notaire-features-section, .notaire-testimonials-section, .notaire-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .notaire-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="notaire-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="notaire-hero-section">
+    <div class="notaire-hero-container">
+      <div class="notaire-hero-content">
+        <div class="notaire-hero-text">
+          <h1 class="notaire-hero-title">
+            Création de <span class="notaire-highlight-yellow">site internet</span> pour <span class="notaire-highlight-yellow">notaire</span> professionnel
+          </h1>
+          <p class="notaire-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design élégant, prise de rendez-vous en ligne, rédaction d'actes et conseils en droit immobilier. Votre office notarial mérite une présence digitale qui inspire confiance.
+          </p>
+        </div>
+        <div class="notaire-hero-form">
+          <form id="notaire-contact-form">
+            <div class="notaire-form-group">
+              <label for="notaire-name" class="notaire-form-label">VOTRE NOM</label>
+              <input type="text" id="notaire-name" name="name" class="notaire-form-input" placeholder="Sophie Laurent" required />
+            </div>
+            <div class="notaire-form-group">
+              <label for="notaire-email" class="notaire-form-label">VOTRE EMAIL</label>
+              <input type="email" id="notaire-email" name="email" class="notaire-form-input" placeholder="sophie.laurent@notaire.fr" required />
+            </div>
+            <div class="notaire-form-group">
+              <label for="notaire-project" class="notaire-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="notaire-project" name="project" class="notaire-form-input" placeholder="Ex: Je suis notaire et j'ai besoin d'un site pour présenter mes services et faciliter la prise de rendez-vous..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="notaire-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="notaire-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI NOTAIRE -->
+  <section class="notaire-why-section">
+    <div class="notaire-container">
+      <div class="notaire-section-header">
+        <h2 class="notaire-section-title">
+          Pourquoi un site internet est <span class="notaire-highlight">essentiel</span> pour votre office notarial ?
+        </h2>
+        <p class="notaire-section-subtitle">
+          Dans un monde numérique, vos futurs clients vous cherchent en ligne. Soyez visible et accessible 24h/24 avec un site qui reflète votre expertise notariale.
+        </p>
+      </div>
+      <div class="notaire-benefits-grid">
+        <div class="notaire-benefit-card">
+          <div class="notaire-benefit-icon">🔍</div>
+          <h3 class="notaire-benefit-title">Visibilité professionnelle renforcée</h3>
+          <p class="notaire-benefit-description">
+            Apparaissez en tête des recherches Google pour "notaire près de moi" ou "notaire pour achat immobilier". Attirez plus de clients dans votre zone géographique.
+          </p>
+        </div>
+        <div class="notaire-benefit-card">
+          <div class="notaire-benefit-icon">📅</div>
+          <h3 class="notaire-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="notaire-benefit-description">
+            Permettez à vos clients de réserver des consultations ou signatures d'actes directement sur votre site. Simplifiez votre gestion.
+          </p>
+        </div>
+        <div class="notaire-benefit-card">
+          <div class="notaire-benefit-icon">🖋️</div>
+          <h3 class="notaire-benefit-title">Rédaction d'actes</h3>
+          <p class="notaire-benefit-description">
+            Mettez en avant votre expertise en rédaction d'actes notariés, contrats de mariage ou gestion de successions pour attirer des clients.
+          </p>
+        </div>
+        <div class="notaire-benefit-card">
+          <div class="notaire-benefit-icon">🏅</div>
+          <h3 class="notaire-benefit-title">Confiance et expertise</h3>
+          <p class="notaire-benefit-description">
+            Présentez votre rigueur et votre expertise en droit immobilier ou patrimonial. Inspirez confiance avec un site professionnel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="notaire-features-section">
+    <div class="notaire-container">
+      <div class="notaire-features-grid">
+        <div class="notaire-features-content">
+          <h2 class="notaire-section-title">
+            Fonctionnalités <span class="notaire-highlight">spécialisées</span> pour notaires
+          </h2>
+          <p class="notaire-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre profession.
+          </p>
+          <ul class="notaire-features-list">
+            <li class="notaire-feature-item">
+              <div class="notaire-feature-icon">🖋️</div>
+              <div class="notaire-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Décrivez vos spécialités : rédaction d'actes, droit immobilier, gestion de successions ou contrats de mariage.</p>
+              </div>
+            </li>
+            <li class="notaire-feature-item">
+              <div class="notaire-feature-icon">🗺️</div>
+              <div class="notaire-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre office notarial et les options de consultations à distance ou en présentiel.</p>
+              </div>
+            </li>
+            <li class="notaire-feature-item">
+              <div class="notaire-feature-icon">📅</div>
+              <div class="notaire-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour consultations ou signatures d'actes notariés.</p>
+              </div>
+            </li>
+            <li class="notaire-feature-item">
+              <div class="notaire-feature-icon">🏛️</div>
+              <div class="notaire-feature-content">
+                <h4>Contenu notarial</h4>
+                <p>Section pour partager des guides sur les démarches notariales ou des FAQ sur le droit immobilier.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="notaire-features-visual">
+          <div class="notaire-mockup">
+            <div class="notaire-mockup-header"></div>
+            <div class="notaire-mockup-content">
+              <h3 class="notaire-mockup-title">Office Sophie Laurent</h3>
+              <p class="notaire-mockup-text">Notaire et conseil patrimonial<br />Expertise • Prise de rendez-vous en ligne</p>
+              <button class="notaire-mockup-button">Prendre rendez-vous</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="notaire-testimonials-section">
+    <div class="notaire-container">
+      <div class="notaire-section-header">
+        <h2 class="notaire-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="notaire-highlight">clients notaires</span>
+        </h2>
+        <p class="notaire-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="notaire-testimonials-grid">
+        <div class="notaire-testimonial-card">
+          <p class="notaire-testimonial-quote">
+            "Depuis mon site, les demandes de rendez-vous ont doublé. Les clients apprécient la simplicité et le design élégant."
+          </p>
+          <div class="notaire-testimonial-author">
+            <div class="notaire-testimonial-avatar">SL</div>
+            <div class="notaire-testimonial-info">
+              <h4>Sophie Laurent</h4>
+              <p>Notaire en droit immobilier, Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="notaire-testimonial-card">
+          <p class="notaire-testimonial-quote">
+            "Le site m'a permis de partager des guides sur les successions. Mes clients me perçoivent comme une experte rigoureuse."
+          </p>
+          <div class="notaire-testimonial-author">
+            <div class="notaire-testimonial-avatar">AL</div>
+            <div class="notaire-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Notaire en droit de la famille, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="notaire-testimonial-card">
+          <p class="notaire-testimonial-quote">
+            "Grâce à mon site, je suis devenu une référence locale. La présentation de mes services rassure mes clients."
+          </p>
+          <div class="notaire-testimonial-author">
+            <div class="notaire-testimonial-avatar">MD</div>
+            <div class="notaire-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Notaire en gestion patrimoniale, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="notaire-final-cta">
+    <div class="notaire-container">
+      <h2>Prêt à développer votre office notarial ?</h2>
+      <p>
+        Rejoignez les centaines de notaires qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="notaire-final-button" onclick="notaireScrollToForm()">
+        Obtenir mon site de notaire
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.querySelector('.notaire-wp-scope');
+  if (!root) return;
+
+  // Gestion du formulaire EmailJS
+  const form = root.querySelector('#notaire-contact-form');
+  const button = root.querySelector('.notaire-cta-button');
+
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = form.querySelector('#notaire-name').value;
+      const email = form.querySelector('#notaire-email').value;
+      const project = form.querySelector('#notaire-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Feedback visuel : envoi en cours
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Préparation des données EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Notaire - web-starting.fr',
+        message: `Nouvelle demande pour un site de notaire depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Notaire - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          // Feedback visuel : succès
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          // Feedback visuel : erreur
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction scroll vers le formulaire
+  window.notaireScrollToForm = function() {
+    const heroForm = root.querySelector('.notaire-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#notaire-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+})();
+</script>

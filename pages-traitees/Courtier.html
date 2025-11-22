@@ -1,0 +1,885 @@
+<!-- SCRIPT EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.courtier-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.courtier-wp-scope *, .courtier-wp-scope *::before, .courtier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* ANIMATIONS CSS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HERO SECTION */
+.courtier-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.courtier-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.courtier-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.courtier-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.courtier-hero-text {
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.5s !important;
+  opacity: 0 !important;
+}
+.courtier-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.courtier-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.courtier-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.courtier-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.8s !important;
+  opacity: 0 !important;
+}
+.courtier-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.courtier-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.courtier-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.courtier-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.courtier-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.courtier-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.courtier-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.courtier-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.courtier-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.courtier-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.courtier-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.courtier-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.courtier-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.courtier-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.courtier-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.courtier-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.courtier-benefit-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+.courtier-benefit-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+.courtier-benefit-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+.courtier-benefit-card:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+.courtier-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.courtier-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.courtier-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.courtier-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.courtier-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.courtier-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.courtier-features-content {
+  animation: fadeInLeft 0.8s ease forwards !important;
+  animation-delay: 0.2s !important;
+  opacity: 0 !important;
+}
+.courtier-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.courtier-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.courtier-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.courtier-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.courtier-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.courtier-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.courtier-features-visual {
+  animation: fadeInRight 0.8s ease forwards !important;
+  animation-delay: 0.4s !important;
+  opacity: 0 !important;
+}
+.courtier-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.courtier-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.courtier-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.courtier-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.courtier-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.courtier-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.courtier-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.courtier-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.courtier-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.courtier-testimonial-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+.courtier-testimonial-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+.courtier-testimonial-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+.courtier-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.courtier-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.courtier-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.courtier-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.courtier-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.courtier-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.courtier-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.courtier-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.courtier-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.courtier-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .courtier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .courtier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .courtier-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .courtier-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .courtier-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .courtier-section-title {
+    font-size: 2rem !important;
+  }
+  .courtier-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .courtier-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .courtier-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .courtier-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .courtier-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .courtier-hero-content {
+    gap: 2rem !important;
+  }
+  .courtier-hero-title {
+    font-size: 2rem !important;
+  }
+  .courtier-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .courtier-hero-form {
+    padding: 1.5rem !important;
+  }
+  .courtier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .courtier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .courtier-why-section, .courtier-features-section, .courtier-testimonials-section, .courtier-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .courtier-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="courtier-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="courtier-hero-section">
+    <div class="courtier-hero-container">
+      <div class="courtier-hero-content">
+        <div class="courtier-hero-text">
+          <h1 class="courtier-hero-title">
+            Création de <span class="courtier-highlight-yellow">site internet</span> pour <span class="courtier-highlight-yellow">courtier</span> professionnel
+          </h1>
+          <p class="courtier-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, simulateur de prêt, prise de rendez-vous et conseils financiers personnalisés. Votre cabinet mérite une présence digitale qui inspire confiance.
+          </p>
+        </div>
+        <div class="courtier-hero-form">
+          <form id="courtier-contact-form">
+            <div class="courtier-form-group">
+              <label for="courtier-name" class="courtier-form-label">VOTRE NOM</label>
+              <input type="text" id="courtier-name" name="name" class="courtier-form-input" placeholder="Thomas Lefèvre" required />
+            </div>
+            <div class="courtier-form-group">
+              <label for="courtier-email" class="courtier-form-label">VOTRE EMAIL</label>
+              <input type="email" id="courtier-email" name="email" class="courtier-form-input" placeholder="thomas.lefevre@courtier.fr" required />
+            </div>
+            <div class="courtier-form-group">
+              <label for="courtier-project" class="courtier-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="courtier-project" name="project" class="courtier-form-input" placeholder="Ex: Je suis courtier et j'ai besoin d'un site pour présenter mes services de courtage en prêts et faciliter les prises de contact..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="courtier-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="courtier-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI COURTIER -->
+  <section class="courtier-why-section">
+    <div class="courtier-container">
+      <div class="courtier-section-header">
+        <h2 class="courtier-section-title">
+          Pourquoi un site internet est <span class="courtier-highlight">essentiel</span> pour votre activité de courtier ?
+        </h2>
+        <p class="courtier-section-subtitle">
+          Dans un marché compétitif, vos clients recherchent des solutions financières en ligne. Soyez visible et accessible avec un site qui met en avant votre expertise.
+        </p>
+      </div>
+      <div class="courtier-benefits-grid">
+        <div class="courtier-benefit-card">
+          <div class="courtier-benefit-icon">🔍</div>
+          <h3 class="courtier-benefit-title">Visibilité renforcée</h3>
+          <p class="courtier-benefit-description">
+            Apparaissez en tête des recherches Google pour "courtier prêt immobilier" ou "courtier assurance [ville]". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="courtier-benefit-card">
+          <div class="courtier-benefit-icon">📅</div>
+          <h3 class="courtier-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="courtier-benefit-description">
+            Permettez à vos clients de réserver des consultations pour des prêts ou assurances directement sur votre site. Simplifiez vos processus.
+          </p>
+        </div>
+        <div class="courtier-benefit-card">
+          <div class="courtier-benefit-icon">💸</div>
+          <h3 class="courtier-benefit-title">Négociation de prêts</h3>
+          <p class="courtier-benefit-description">
+            Mettez en avant votre expertise en négociation de taux d'intérêt pour attirer des clients à la recherche de solutions financières.
+          </p>
+        </div>
+        <div class="courtier-benefit-card">
+          <div class="courtier-benefit-icon">🏅</div>
+          <h3 class="courtier-benefit-title">Confiance et expertise</h3>
+          <p class="courtier-benefit-description">
+            Présentez vos compétences en courtage immobilier ou assurance. Inspirez confiance avec un site professionnel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="courtier-features-section">
+    <div class="courtier-container">
+      <div class="courtier-features-grid">
+        <div class="courtier-features-content">
+          <h2 class="courtier-section-title">
+            Fonctionnalités <span class="courtier-highlight">spécialisées</span> pour courtiers
+          </h2>
+          <p class="courtier-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de courtage.
+          </p>
+          <ul class="courtier-features-list">
+            <li class="courtier-feature-item">
+              <div class="courtier-feature-icon">💸</div>
+              <div class="courtier-feature-content">
+                <h4>Simulateur de prêt</h4>
+                <p>Proposez un outil interactif pour simuler des prêts immobiliers ou des assurances, attirant ainsi plus de clients.</p>
+              </div>
+            </li>
+            <li class="courtier-feature-item">
+              <div class="courtier-feature-icon">🗺️</div>
+              <div class="courtier-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre cabinet et les zones couvertes pour vos services de courtage.</p>
+              </div>
+            </li>
+            <li class="courtier-feature-item">
+              <div class="courtier-feature-icon">📅</div>
+              <div class="courtier-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des consultations sur des prêts ou assurances.</p>
+              </div>
+            </li>
+            <li class="courtier-feature-item">
+              <div class="courtier-feature-icon">📊</div>
+              <div class="courtier-feature-content">
+                <h4>Conseils financiers</h4>
+                <p>Section pour partager des guides sur les prêts, assurances ou investissements financiers.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="courtier-features-visual">
+          <div class="courtier-mockup">
+            <div class="courtier-mockup-header"></div>
+            <div class="courtier-mockup-content">
+              <h3 class="courtier-mockup-title">Cabinet Thomas Lefèvre</h3>
+              <p class="courtier-mockup-text">Courtage en prêts et assurances<br />Simulateur • Prise de rendez-vous</p>
+              <button class="courtier-mockup-button">Obtenir un devis</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="courtier-testimonials-section">
+    <div class="courtier-container">
+      <div class="courtier-section-header">
+        <h2 class="courtier-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="courtier-highlight">clients courtiers</span>
+        </h2>
+        <p class="courtier-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="courtier-testimonials-grid">
+        <div class="courtier-testimonial-card">
+          <p class="courtier-testimonial-quote">
+            "Depuis notre site, les demandes de simulation de prêt ont explosé. Les clients adorent la simplicité et le design."
+          </p>
+          <div class="courtier-testimonial-author">
+            <div class="courtier-testimonial-avatar">TL</div>
+            <div class="courtier-testimonial-info">
+              <h4>Thomas Lefèvre</h4>
+              <p>Courtier en prêt immobilier, Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="courtier-testimonial-card">
+          <p class="courtier-testimonial-quote">
+            "Le site nous a permis de présenter nos services de courtage en assurance. Nos clients nous perçoivent comme des experts fiables."
+          </p>
+          <div class="courtier-testimonial-author">
+            <div class="courtier-testimonial-avatar">AL</div>
+            <div class="courtier-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Courtier en assurance, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="courtier-testimonial-card">
+          <p class="courtier-testimonial-quote">
+            "Grâce à notre site, nous sommes devenus une référence locale. Le simulateur de prêt attire beaucoup de clients."
+          </p>
+          <div class="courtier-testimonial-author">
+            <div class="courtier-testimonial-avatar">MD</div>
+            <div class="courtier-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Courtier en gestion de patrimoine, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="courtier-final-cta">
+    <div class="courtier-container">
+      <h2>Prêt à développer votre activité de courtier ?</h2>
+      <p>
+        Rejoignez les centaines de courtiers qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="courtier-final-button" onclick="courtierScrollToForm()">
+        Obtenir mon site de courtier
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.querySelector('.courtier-wp-scope');
+  if (!root) return;
+
+  // Gestion du formulaire EmailJS
+  const form = root.querySelector('#courtier-contact-form');
+  const button = root.querySelector('.courtier-cta-button');
+
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#courtier-name').value;
+      const email = form.querySelector('#courtier-email').value;
+      const project = form.querySelector('#courtier-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Feedback visuel : Envoi en cours
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Courtier - web-starting.fr',
+        message: `Nouvelle demande pour un site de courtier depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Courtier - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          // Feedback visuel : Succès
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          // Feedback visuel : Erreur
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction scroll to form
+  window.courtierScrollToForm = function() {
+    const heroForm = root.querySelector('.courtier-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#courtier-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+})();
+</script>

@@ -1,0 +1,887 @@
+<!-- SCRIPT EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS CSS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.assurance-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.assurance-wp-scope *, .assurance-wp-scope *::before, .assurance-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.assurance-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.assurance-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.assurance-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.assurance-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.assurance-hero-text {
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.3s !important;
+  opacity: 0 !important;
+}
+.assurance-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.assurance-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.assurance-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.assurance-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  animation-delay: 0.6s !important;
+  opacity: 0 !important;
+}
+.assurance-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.assurance-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.assurance-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.assurance-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.assurance-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.assurance-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.assurance-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.assurance-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.assurance-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.assurance-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.assurance-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.assurance-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.assurance-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.assurance-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.assurance-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.assurance-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.assurance-benefit-card:nth-child(1) {
+  animation-delay: 0.9s !important;
+}
+.assurance-benefit-card:nth-child(2) {
+  animation-delay: 1s !important;
+}
+.assurance-benefit-card:nth-child(3) {
+  animation-delay: 1.1s !important;
+}
+.assurance-benefit-card:nth-child(4) {
+  animation-delay: 1.2s !important;
+}
+.assurance-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.assurance-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.assurance-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.assurance-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.assurance-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.assurance-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.assurance-features-content {
+  animation: fadeInLeft 0.8s ease forwards !important;
+  animation-delay: 1.3s !important;
+  opacity: 0 !important;
+}
+.assurance-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.assurance-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.assurance-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.assurance-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.assurance-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.assurance-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.assurance-features-visual {
+  animation: fadeInRight 0.8s ease forwards !important;
+  animation-delay: 1.5s !important;
+  opacity: 0 !important;
+}
+.assurance-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.assurance-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.assurance-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.assurance-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.assurance-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.assurance-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.assurance-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.assurance-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.assurance-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+  opacity: 0 !important;
+}
+.assurance-testimonial-card:nth-child(1) {
+  animation-delay: 1.6s !important;
+}
+.assurance-testimonial-card:nth-child(2) {
+  animation-delay: 1.7s !important;
+}
+.assurance-testimonial-card:nth-child(3) {
+  animation-delay: 1.8s !important;
+}
+.assurance-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.assurance-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.assurance-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.assurance-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.assurance-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.assurance-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.assurance-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.assurance-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.assurance-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.assurance-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .assurance-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .assurance-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .assurance-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .assurance-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .assurance-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .assurance-section-title {
+    font-size: 2rem !important;
+  }
+  .assurance-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .assurance-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .assurance-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .assurance-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .assurance-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .assurance-hero-content {
+    gap: 2rem !important;
+  }
+  .assurance-hero-title {
+    font-size: 2rem !important;
+  }
+  .assurance-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .assurance-hero-form {
+    padding: 1.5rem !important;
+  }
+  .assurance-section-title {
+    font-size: 1.75rem !important;
+  }
+  .assurance-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .assurance-why-section, .assurance-features-section, .assurance-testimonials-section, .assurance-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .assurance-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="assurance-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="assurance-hero-section">
+    <div class="assurance-hero-container">
+      <div class="assurance-hero-content">
+        <div class="assurance-hero-text">
+          <h1 class="assurance-hero-title">
+            Création de <span class="assurance-highlight-yellow">site internet</span> pour <span class="assurance-highlight-yellow">agence d'assurance</span> professionnelle
+          </h1>
+          <p class="assurance-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, devis en ligne, prise de rendez-vous et conseils sur les assurances. Votre agence mérite une présence digitale qui inspire confiance.
+          </p>
+        </div>
+        <div class="assurance-hero-form">
+          <form id="assurance-contact-form">
+            <div class="assurance-form-group">
+              <label for="assurance-name" class="assurance-form-label">VOTRE NOM</label>
+              <input type="text" id="assurance-name" name="name" class="assurance-form-input" placeholder="Sophie Dubois" required />
+            </div>
+            <div class="assurance-form-group">
+              <label for="assurance-email" class="assurance-form-label">VOTRE EMAIL</label>
+              <input type="email" id="assurance-email" name="email" class="assurance-form-input" placeholder="sophie.dubois@assurance.fr" required />
+            </div>
+            <div class="assurance-form-group">
+              <label for="assurance-project" class="assurance-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="assurance-project" name="project" class="assurance-form-input" placeholder="Ex: Je dirige une agence d'assurance et j'ai besoin d'un site pour proposer des devis en ligne et faciliter les prises de contact..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="assurance-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="assurance-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI ASSURANCE -->
+  <section class="assurance-why-section">
+    <div class="assurance-container">
+      <div class="assurance-section-header">
+        <h2 class="assurance-section-title">
+          Pourquoi un site internet est <span class="assurance-highlight">essentiel</span> pour votre agence d'assurance ?
+        </h2>
+        <p class="assurance-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des solutions d'assurance en ligne. Soyez visible et accessible avec un site qui met en avant vos garanties.
+        </p>
+      </div>
+      <div class="assurance-benefits-grid">
+        <div class="assurance-benefit-card">
+          <div class="assurance-benefit-icon">🔍</div>
+          <h3 class="assurance-benefit-title">Visibilité renforcée</h3>
+          <p class="assurance-benefit-description">
+            Apparaissez en tête des recherches Google pour "assurance auto [ville]" ou "devis assurance habitation". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="assurance-benefit-card">
+          <div class="assurance-benefit-icon">📅</div>
+          <h3 class="assurance-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="assurance-benefit-description">
+            Permettez à vos clients de réserver des consultations pour des contrats d'assurance directement sur votre site. Simplifiez vos processus.
+          </p>
+        </div>
+        <div class="assurance-benefit-card">
+          <div class="assurance-benefit-icon">🛡️</div>
+          <h3 class="assurance-benefit-title">Devis en ligne</h3>
+          <p class="assurance-benefit-description">
+            Proposez des devis personnalisés pour l'assurance auto, habitation ou santé directement sur votre site.
+          </p>
+        </div>
+        <div class="assurance-benefit-card">
+          <div class="assurance-benefit-icon">🏅</div>
+          <h3 class="assurance-benefit-title">Confiance et proximité</h3>
+          <p class="assurance-benefit-description">
+            Mettez en avant votre expertise et votre accompagnement personnalisé. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="assurance-features-section">
+    <div class="assurance-container">
+      <div class="assurance-features-grid">
+        <div class="assurance-features-content">
+          <h2 class="assurance-section-title">
+            Fonctionnalités <span class="assurance-highlight">spécialisées</span> pour agences d'assurance
+          </h2>
+          <p class="assurance-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité d'assurance.
+          </p>
+          <ul class="assurance-features-list">
+            <li class="assurance-feature-item">
+              <div class="assurance-feature-icon">📝</div>
+              <div class="assurance-feature-content">
+                <h4>Devis en ligne</h4>
+                <p>Proposez un outil interactif pour générer des devis d'assurance auto, habitation ou santé en quelques clics.</p>
+              </div>
+            </li>
+            <li class="assurance-feature-item">
+              <div class="assurance-feature-icon">🗺️</div>
+              <div class="assurance-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre agence et les zones couvertes pour vos services d'assurance.</p>
+              </div>
+            </li>
+            <li class="assurance-feature-item">
+              <div class="assurance-feature-icon">📅</div>
+              <div class="assurance-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des consultations sur les contrats d'assurance.</p>
+              </div>
+            </li>
+            <li class="assurance-feature-item">
+              <div class="assurance-feature-icon">⚙️</div>
+              <div class="assurance-feature-content">
+                <h4>Gestion des sinistres</h4>
+                <p>Section dédiée pour guider vos clients dans la déclaration et le suivi des sinistres.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="assurance-features-visual">
+          <div class="assurance-mockup">
+            <div class="assurance-mockup-header"></div>
+            <div class="assurance-mockup-content">
+              <h3 class="assurance-mockup-title">Agence Sophie Dubois</h3>
+              <p class="assurance-mockup-text">Assurance auto, habitation, santé<br />Devis en ligne • Prise de rendez-vous</p>
+              <button class="assurance-mockup-button">Obtenir un devis</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="assurance-testimonials-section">
+    <div class="assurance-container">
+      <div class="assurance-section-header">
+        <h2 class="assurance-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="assurance-highlight">clients agences d'assurance</span>
+        </h2>
+        <p class="assurance-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="assurance-testimonials-grid">
+        <div class="assurance-testimonial-card">
+          <p class="assurance-testimonial-quote">
+            "Depuis notre site, les demandes de devis en ligne ont doublé. Les clients apprécient la simplicité et la clarté."
+          </p>
+          <div class="assurance-testimonial-author">
+            <div class="assurance-testimonial-avatar">SD</div>
+            <div class="assurance-testimonial-info">
+              <h4>Sophie Dubois</h4>
+              <p>Directrice d'agence d'assurance, Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="assurance-testimonial-card">
+          <p class="assurance-testimonial-quote">
+            "Le site nous a permis de présenter nos contrats d'assurance avec clarté. Nos clients nous perçoivent comme des experts fiables."
+          </p>
+          <div class="assurance-testimonial-author">
+            <div class="assurance-testimonial-avatar">AL</div>
+            <div class="assurance-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Agent d'assurance, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="assurance-testimonial-card">
+          <p class="assurance-testimonial-quote">
+            "Grâce à notre site, nous sommes devenus une référence locale. Le module de gestion des sinistres est un vrai plus."
+          </p>
+          <div class="assurance-testimonial-author">
+            <div class="assurance-testimonial-avatar">MD</div>
+            <div class="assurance-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Responsable d'agence, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="assurance-final-cta">
+    <div class="assurance-container">
+      <h2>Prêt à développer votre agence d'assurance ?</h2>
+      <p>
+        Rejoignez les centaines d'agences d'assurance qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="assurance-final-button" onclick="assuranceScrollToForm()">
+        Obtenir mon site d'agence d'assurance
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.querySelector('.assurance-wp-scope');
+  if (!root) return;
+
+  // Gestion du formulaire EmailJS
+  const form = root.querySelector('#assurance-contact-form');
+  const button = root.querySelector('.assurance-cta-button');
+
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = form.querySelector('#assurance-name').value;
+      const email = form.querySelector('#assurance-email').value;
+      const project = form.querySelector('#assurance-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Feedback visuel : ⏳ Envoi
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Préparation des données EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Assurance - web-starting.fr',
+        message: `Nouvelle demande pour un site d'agence d'assurance depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Assurance - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          // ✅ Succès
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          // ❌ Erreur
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction scroll to form (CTA finale)
+  window.assuranceScrollToForm = function() {
+    const heroForm = root.querySelector('.assurance-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#assurance-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+})();
+</script>

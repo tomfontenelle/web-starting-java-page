@@ -61,15 +61,23 @@
   gap: 6rem !important;
   align-items: center !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-.assurance-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-hero-text.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .assurance-hero-title {
   font-size: 4rem !important;
   font-weight: 800 !important;
@@ -90,22 +98,23 @@
   line-height: 1.6 !important;
   max-width: 500px !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-hero-form {
-  background: rgba(8, 36, 22, 0.9) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.3) !important;
-  border-radius: 12px !important;
-  padding: 2.5rem !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-  position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-.assurance-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-hero-form {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-hero-form.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .assurance-form-group {
   margin: 0 0 1.5rem 0 !important;
 }
@@ -221,21 +230,23 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-benefit-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  position: relative !important;
   transition: all 0.3s ease !important;
+}
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-benefit-card {
   opacity: 0 !important;
-  transform: translateY(30px) !important;
+  transform: translateY(30px) !important !important;
 }
-.assurance-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-benefit-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
 }
+
 .assurance-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
@@ -280,15 +291,23 @@
   gap: 4rem !important;
   align-items: center !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-features-content {
-  opacity: 0 !important;
-  transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-.assurance-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-features-content.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .assurance-features-list {
   list-style: none !important;
   padding: 0 !important;
@@ -332,15 +351,23 @@
   margin: 0 !important;
   line-height: 1.5 !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-features-visual {
-  opacity: 0 !important;
-  transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-.assurance-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-features-visual.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .assurance-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
   border-radius: 16px !important;
@@ -404,21 +431,23 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .assurance-testimonial-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-.assurance-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .assurance-testimonial-card {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .assurance-testimonial-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .assurance-testimonial-quote {
   font-size: 1rem !important;
   line-height: 1.6 !important;
@@ -899,4 +928,9 @@ Système automatique web-starting.fr`
     }
   });
 })();
+</script>
+
+<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
+<script>
+document.querySelector('.assurance-wp-scope').classList.add('js-enabled');
 </script>

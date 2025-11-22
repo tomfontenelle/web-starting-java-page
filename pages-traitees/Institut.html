@@ -101,8 +101,13 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour hero-text */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-hero-text {
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-hero-text {
   animation: fadeInUp 0.8s ease 0.5s both !important;
 }
 
@@ -129,15 +134,13 @@
   max-width: 500px !important;
 }
 
-/* Animation CSS automatique pour hero-form */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-hero-form {
-  background: rgba(8, 36, 22, 0.9) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.3) !important;
-  border-radius: 12px !important;
-  padding: 2.5rem !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-  position: relative !important;
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-hero-form {
   animation: fadeInUp 0.8s ease 0.8s both !important;
 }
 
@@ -269,31 +272,29 @@
   padding: 0 !important;
 }
 
-/* Animation CSS automatique pour benefit-card */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-benefit-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  position: relative !important;
-  transition: all 0.3s ease !important;
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-benefit-card {
   animation: fadeInUp 0.8s ease both !important;
 }
 
-.institut-beaute-benefit-card:nth-child(1) {
+.js-enabled .institut-beaute-benefit-card:nth-child(1) {
   animation-delay: 0.1s !important;
 }
 
-.institut-beaute-benefit-card:nth-child(2) {
+.js-enabled .institut-beaute-benefit-card:nth-child(2) {
   animation-delay: 0.2s !important;
 }
 
-.institut-beaute-benefit-card:nth-child(3) {
+.js-enabled .institut-beaute-benefit-card:nth-child(3) {
   animation-delay: 0.3s !important;
 }
 
-.institut-beaute-benefit-card:nth-child(4) {
+.js-enabled .institut-beaute-benefit-card:nth-child(4) {
   animation-delay: 0.4s !important;
 }
 
@@ -346,8 +347,13 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour features-content */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-features-content {
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-features-content {
   animation: fadeInLeft 0.8s ease both !important;
 }
 
@@ -400,8 +406,13 @@
   line-height: 1.5 !important;
 }
 
-/* Animation CSS automatique pour features-visual */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-features-visual {
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-features-visual {
   animation: fadeInRight 0.8s ease 0.2s both !important;
 }
 
@@ -475,26 +486,25 @@
   padding: 0 !important;
 }
 
-/* Animation CSS automatique pour testimonial-card */
+/* Visible par défaut (sans JavaScript) */
 .institut-beaute-testimonial-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  position: relative !important;
+  /* Prêt pour l'animation */
+}
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .institut-beaute-testimonial-card {
   animation: fadeInUp 0.8s ease both !important;
 }
 
-.institut-beaute-testimonial-card:nth-child(1) {
+.js-enabled .institut-beaute-testimonial-card:nth-child(1) {
   animation-delay: 0.1s !important;
 }
 
-.institut-beaute-testimonial-card:nth-child(2) {
+.js-enabled .institut-beaute-testimonial-card:nth-child(2) {
   animation-delay: 0.2s !important;
 }
 
-.institut-beaute-testimonial-card:nth-child(3) {
+.js-enabled .institut-beaute-testimonial-card:nth-child(3) {
   animation-delay: 0.3s !important;
 }
 
@@ -927,4 +937,9 @@
       });
   });
 })();
+</script>
+
+<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
+<script>
+document.querySelector('.institut-beaute-wp-scope').classList.add('js-enabled');
 </script>

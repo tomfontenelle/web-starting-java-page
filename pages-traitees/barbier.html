@@ -102,7 +102,12 @@
 }
 
 /* Animation CSS automatique pour hero-text */
+/* Visible par défaut (sans JavaScript) */
 .barbier-hero-text {
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-hero-text {
   animation: fadeInUp 0.8s ease 0.5s both !important;
 }
 
@@ -130,6 +135,7 @@
 }
 
 /* Animation CSS automatique pour hero-form */
+/* Visible par défaut (sans JavaScript) */
 .barbier-hero-form {
   background: rgba(8, 36, 22, 0.9) !important;
   backdrop-filter: blur(10px) !important;
@@ -138,6 +144,10 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-hero-form {
   animation: fadeInUp 0.8s ease 0.8s both !important;
 }
 
@@ -270,6 +280,7 @@
 }
 
 /* Animation CSS automatique pour benefit-card */
+/* Visible par défaut (sans JavaScript) */
 .barbier-benefit-card {
   background: rgba(8, 36, 22, 0.4) !important;
   border-radius: 12px !important;
@@ -278,6 +289,10 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-benefit-card {
   animation: fadeInUp 0.8s ease both !important;
 }
 
@@ -347,7 +362,12 @@
 }
 
 /* Animation CSS automatique pour features-content */
+/* Visible par défaut (sans JavaScript) */
 .barbier-features-content {
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-features-content {
   animation: fadeInLeft 0.8s ease both !important;
 }
 
@@ -401,7 +421,12 @@
 }
 
 /* Animation CSS automatique pour features-visual */
+/* Visible par défaut (sans JavaScript) */
 .barbier-features-visual {
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-features-visual {
   animation: fadeInRight 0.8s ease 0.2s both !important;
 }
 
@@ -476,6 +501,7 @@
 }
 
 /* Animation CSS automatique pour testimonial-card */
+/* Visible par défaut (sans JavaScript) */
 .barbier-testimonial-card {
   background: rgba(8, 36, 22, 0.4) !important;
   backdrop-filter: blur(10px) !important;
@@ -483,6 +509,10 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
+  }
+
+/* Animation uniquement si JavaScript actif */
+.js-enabled .barbier-testimonial-card {
   animation: fadeInUp 0.8s ease both !important;
 }
 
@@ -928,3 +958,9 @@
   });
 })();
 </script>
+
+<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
+<script>
+document.querySelector('.barbier-wp-scope').classList.add('js-enabled');
+</script>
+

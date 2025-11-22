@@ -56,15 +56,23 @@
   gap: 4rem !important;
   align-items: center !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-.serrurier-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-hero-text.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .serrurier-hero-title {
   font-size: 3.5rem !important;
   font-weight: 800 !important;
@@ -84,22 +92,23 @@
   line-height: 1.6 !important;
   max-width: 500px !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-hero-form {
-  background: rgba(8, 36, 22, 0.9) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.3) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
-  position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-.serrurier-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-hero-form {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-hero-form.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .serrurier-form-group {
   margin: 0 0 1.25rem 0 !important;
 }
@@ -194,20 +203,23 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
   gap: 1.5rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-benefit-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  border-radius: 10px !important;
-  padding: 1.5rem !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
   transition: all 0.3s ease !important;
+}
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-benefit-card {
   opacity: 0 !important;
-  transform: translateY(20px) !important;
+  transform: translateY(20px) !important !important;
 }
-.serrurier-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-benefit-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
 }
+
 .serrurier-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
@@ -243,15 +255,23 @@
   grid-template-columns: 1fr 1fr !important;
   gap: 3rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-features-content {
-  opacity: 0 !important;
-  transform: translateX(-20px) !important;
   transition: all 0.8s ease !important;
 }
-.serrurier-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-features-content.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .serrurier-features-list {
   list-style: none !important;
   padding: 0 !important;
@@ -290,15 +310,23 @@
   font-size: 0.85rem !important;
   color: #a0a0a0 !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-features-visual {
-  opacity: 0 !important;
-  transform: translateX(20px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-.serrurier-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-features-visual.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .serrurier-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
   border-radius: 12px !important;
@@ -350,20 +378,23 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   gap: 1.5rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .serrurier-testimonial-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  border-radius: 10px !important;
-  padding: 1.5rem !important;
-  opacity: 0 !important;
-  transform: translateY(20px) !important;
   transition: all 0.8s ease !important;
 }
-.serrurier-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .serrurier-testimonial-card {
+  opacity: 0 !important;
+  transform: translateY(20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .serrurier-testimonial-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .serrurier-testimonial-quote {
   font-size: 0.95rem !important;
   line-height: 1.6 !important;
@@ -798,4 +829,8 @@ Système automatique web-starting.fr`
     }
   });
 })();
+</script>
+<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
+<script>
+document.querySelector('.serrurier-wp-scope').classList.add('js-enabled');
 </script>

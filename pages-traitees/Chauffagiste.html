@@ -56,15 +56,23 @@
   gap: 4rem !important;
   align-items: center !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-.chauffagiste-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-hero-text.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .chauffagiste-hero-title {
   font-size: 3.5rem !important;
   font-weight: 800 !important;
@@ -84,22 +92,23 @@
   line-height: 1.6 !important;
   max-width: 500px !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-hero-form {
-  background: rgba(8, 36, 22, 0.9) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.3) !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
-  position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-.chauffagiste-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-hero-form {
+  opacity: 0 !important;
+  transform: translateY(30px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-hero-form.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .chauffagiste-form-group {
   margin: 0 0 1.25rem 0 !important;
 }
@@ -194,20 +203,23 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
   gap: 1.5rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-benefit-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  border-radius: 10px !important;
-  padding: 1.5rem !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
   transition: all 0.3s ease !important;
+}
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-benefit-card {
   opacity: 0 !important;
-  transform: translateY(20px) !important;
+  transform: translateY(20px) !important !important;
 }
-.chauffagiste-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-benefit-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
 }
+
 .chauffagiste-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
@@ -243,15 +255,23 @@
   grid-template-columns: 1fr 1fr !important;
   gap: 3rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-features-content {
-  opacity: 0 !important;
-  transform: translateX(-20px) !important;
   transition: all 0.8s ease !important;
 }
-.chauffagiste-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-features-content.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .chauffagiste-features-list {
   list-style: none !important;
   padding: 0 !important;
@@ -290,15 +310,23 @@
   font-size: 0.85rem !important;
   color: #a0a0a0 !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-features-visual {
-  opacity: 0 !important;
-  transform: translateX(20px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-.chauffagiste-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-features-visual.animate {
+  opacity: 1 !important !important;
+  transform: translateX(0) !important !important;
+}
+
 .chauffagiste-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
   border-radius: 12px !important;
@@ -350,20 +378,23 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   gap: 1.5rem !important;
 }
+/* Visible par défaut (sans JavaScript) */
 .chauffagiste-testimonial-card {
-  background: rgba(8, 36, 22, 0.4) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.1) !important;
-  border-radius: 10px !important;
-  padding: 1.5rem !important;
-  opacity: 0 !important;
-  transform: translateY(20px) !important;
   transition: all 0.8s ease !important;
 }
-.chauffagiste-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+
+/* Invisible uniquement si JavaScript est actif */
+.js-enabled .chauffagiste-testimonial-card {
+  opacity: 0 !important;
+  transform: translateY(20px) !important !important;
 }
+
+/* Animation avec JavaScript */
+.js-enabled .chauffagiste-testimonial-card.animate {
+  opacity: 1 !important !important;
+  transform: translateY(0) !important !important;
+}
+
 .chauffagiste-testimonial-quote {
   font-size: 0.95rem !important;
   line-height: 1.6 !important;
@@ -798,4 +829,9 @@ Système automatique web-starting.fr`
     }
   });
 })();
+</script>
+
+<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
+<script>
+document.querySelector('.chauffagiste-wp-scope').classList.add('js-enabled');
 </script>

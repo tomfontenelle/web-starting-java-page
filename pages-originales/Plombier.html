@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Création de site internet pour Plombier - Web Starting</title>
+  <meta name="description" content="Site internet professionnel pour plombier. Design moderne, portfolio de travaux de plomberie, demande de devis et services d’urgence. Attirez plus de clients avec un site qui met en valeur vos réparations, installations et expertise.">
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.plombier-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.plombier-wp-scope *, .plombier-wp-scope *::before, .plombier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.plombier-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plombier-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.plombier-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.plombier-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.plombier-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plombier-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plombier-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.plombier-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.plombier-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.plombier-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.plombier-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plombier-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.plombier-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.plombier-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.plombier-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.plombier-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.plombier-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.plombier-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.plombier-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.plombier-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.plombier-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.plombier-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.plombier-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.plombier-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.plombier-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plombier-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.plombier-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.plombier-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plombier-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.plombier-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.plombier-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.plombier-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.plombier-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plombier-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.plombier-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plombier-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.plombier-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.plombier-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.plombier-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.plombier-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.plombier-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.plombier-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.plombier-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.plombier-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.plombier-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.plombier-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.plombier-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.plombier-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.plombier-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.plombier-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.plombier-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plombier-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.plombier-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plombier-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plombier-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.plombier-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.plombier-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.plombier-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.plombier-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.plombier-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plombier-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.plombier-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.plombier-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.plombier-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .plombier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .plombier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .plombier-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .plombier-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .plombier-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .plombier-section-title {
+    font-size: 2rem !important;
+  }
+  .plombier-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .plombier-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .plombier-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .plombier-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .plombier-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .plombier-hero-content {
+    gap: 2rem !important;
+  }
+  .plombier-hero-title {
+    font-size: 2rem !important;
+  }
+  .plombier-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .plombier-hero-form {
+    padding: 1.5rem !important;
+  }
+  .plombier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .plombier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .plombier-why-section, .plombier-features-section, .plombier-testimonials-section, .plombier-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .plombier-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="plombier-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="plombier-hero-section">
+    <div class="plombier-hero-container">
+      <div class="plombier-hero-content">
+        <div class="plombier-hero-text">
+          <h1 class="plombier-hero-title">
+            Création de <span class="plombier-highlight-yellow">site internet</span> pour votre <span class="plombier-highlight-yellow">activité de plombier</span>
+          </h1>
+          <p class="plombier-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de travaux de plomberie, demande de devis et services d’urgence. Votre expertise mérite une présence digitale qui met en valeur vos réparations et installations.
+          </p>
+        </div>
+        <div class="plombier-hero-form">
+          <form id="plombier-contact-form">
+            <div class="plombier-form-group">
+              <label for="plombier-name" class="plombier-form-label">VOTRE NOM</label>
+              <input type="text" id="plombier-name" name="name" class="plombier-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="plombier-form-group">
+              <label for="plombier-email" class="plombier-form-label">VOTRE EMAIL</label>
+              <input type="email" id="plombier-email" name="email" class="plombier-form-input" placeholder="contact@plombier.fr" required />
+            </div>
+            <div class="plombier-form-group">
+              <label for="plombier-project" class="plombier-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="plombier-project" name="project" class="plombier-form-input" placeholder="Ex: Je suis plombier et j'ai besoin d'un site pour présenter mes services de dépannage et faciliter les demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="plombier-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="plombier-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI PLOMBIER -->
+  <section class="plombier-why-section">
+    <div class="plombier-container">
+      <div class="plombier-section-header">
+        <h2 class="plombier-section-title">
+          Pourquoi un site internet est <span class="plombier-highlight">essentiel</span> pour votre activité de plombier ?
+        </h2>
+        <p class="plombier-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des plombiers en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
+        </p>
+      </div>
+      <div class="plombier-benefits-grid">
+        <div class="plombier-benefit-card">
+          <div class="plombier-benefit-icon">🔍</div>
+          <h3 class="plombier-benefit-title">Visibilité renforcée</h3>
+          <p class="plombier-benefit-description">
+            Apparaissez en tête des recherches Google pour "plombier [ville]" ou "réparation fuite près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="plombier-benefit-card">
+          <div class="plombier-benefit-icon">📅</div>
+          <h3 class="plombier-benefit-title">Demande de devis en ligne</h3>
+          <p class="plombier-benefit-description">
+            Permettez à vos clients de demander des devis pour des réparations ou installations directement sur votre site.
+          </p>
+        </div>
+        <div class="plombier-benefit-card">
+          <div class="plombier-benefit-icon">🔧</div>
+          <h3 class="plombier-benefit-title">Portfolio de travaux</h3>
+          <p class="plombier-benefit-description">
+            Présentez vos installations de salles de bain, réparations de fuites et débouchages avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="plombier-benefit-card">
+          <div class="plombier-benefit-icon">🏅</div>
+          <h3 class="plombier-benefit-title">Confiance et professionnalisme</h3>
+          <p class="plombier-benefit-description">
+            Mettez en avant votre expertise et vos services d’urgence. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="plombier-features-section">
+    <div class="plombier-container">
+      <div class="plombier-features-grid">
+        <div class="plombier-features-content">
+          <h2 class="plombier-section-title">
+            Fonctionnalités <span class="plombier-highlight">spécialisées</span> pour plombiers
+          </h2>
+          <p class="plombier-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de plomberie.
+          </p>
+          <ul class="plombier-features-list">
+            <li class="plombier-feature-item">
+              <div class="plombier-feature-icon">🔧</div>
+              <div class="plombier-feature-content">
+                <h4>Portfolio de travaux</h4>
+                <p>Présentez vos réparations, installations de sanitaires et débouchages avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="plombier-feature-item">
+              <div class="plombier-feature-icon">🗺️</div>
+              <div class="plombier-feature-content">
+                <h4>Zone d’intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l’accès des clients.</p>
+              </div>
+            </li>
+            <li class="plombier-feature-item">
+              <div class="plombier-feature-icon">📅</div>
+              <div class="plombier-feature-content">
+                <h4>Demande de devis</h4>
+                <p>Système de demande de devis en ligne pour des réparations ou installations.</p>
+              </div>
+            </li>
+            <li class="plombier-feature-item">
+              <div class="plombier-feature-icon">🚿</div>
+              <div class="plombier-feature-content">
+                <h4>Services d’urgence</h4>
+                <p>Section pour promouvoir vos interventions rapides 24/7 pour les fuites et autres urgences.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="plombier-features-visual">
+          <div class="plombier-mockup">
+            <div class="plombier-mockup-header"></div>
+            <div class="plombier-mockup-content">
+              <h3 class="plombier-mockup-title">Plomberie Dupont</h3>
+              <p class="plombier-mockup-text">Réparations, installations, urgences<br />Portfolio • Demande de devis</p>
+              <button class="plombier-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="plombier-testimonials-section">
+    <div class="plombier-container">
+      <div class="plombier-section-header">
+        <h2 class="plombier-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="plombier-highlight">plombiers partenaires</span>
+        </h2>
+        <p class="plombier-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="plombier-testimonials-grid">
+        <div class="plombier-testimonial-card">
+          <p class="plombier-testimonial-quote">
+            "Depuis notre site, les demandes de devis pour des réparations de fuites ont triplé. Le portfolio met vraiment nos travaux en valeur."
+          </p>
+          <div class="plombier-testimonial-author">
+            <div class="plombier-testimonial-avatar">JD</div>
+            <div class="plombier-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Plombier, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="plombier-testimonial-card">
+          <p class="plombier-testimonial-quote">
+            "Le site nous a permis de présenter nos services d’urgence avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
+          </p>
+          <div class="plombier-testimonial-author">
+            <div class="plombier-testimonial-avatar">AL</div>
+            <div class="plombier-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Plombier, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="plombier-testimonial-card">
+          <p class="plombier-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients pour des installations de chauffe-eau et des dépannages. La demande de devis en ligne simplifie tout."
+          </p>
+          <div class="plombier-testimonial-author">
+            <div class="plombier-testimonial-avatar">MD</div>
+            <div class="plombier-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Plombière, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="plombier-final-cta">
+    <div class="plombier-container">
+      <h2>Prêt à sublimer votre activité de plombier ?</h2>
+      <p>
+        Rejoignez les centaines de plombiers qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="plombier-final-button" onclick="plombierScrollToForm()">
+        Obtenir mon site de plombier
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.querySelector('.plombier-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.plombier-hero-text, .plombier-hero-form, .plombier-benefit-card, .plombier-testimonial-card, .plombier-features-content, .plombier-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.plombier-hero-text');
+    const heroForm = root.querySelector('.plombier-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#plombier-contact-form');
+  const button = root.querySelector('.plombier-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#plombier-name').value;
+      const email = form.querySelector('#plombier-email').value;
+      const project = form.querySelector('#plombier-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Plombier - web-starting.fr',
+        message: `Nouvelle demande pour un site de plombier depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Plombier - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Utilisation d'EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.plombierScrollToForm = function() {
+    const heroForm = root.querySelector('.plombier-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#plombier-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.plombier-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.macon-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.macon-wp-scope *, .macon-wp-scope *::before, .macon-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.macon-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.macon-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.macon-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.macon-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.macon-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.macon-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.macon-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.macon-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.macon-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.macon-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.macon-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.macon-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.macon-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.macon-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.macon-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.macon-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.macon-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.macon-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.macon-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.macon-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.macon-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.macon-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.macon-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.macon-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.macon-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.macon-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.macon-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.macon-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.macon-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.macon-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.macon-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.macon-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.macon-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.macon-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.macon-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.macon-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.macon-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.macon-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.macon-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.macon-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.macon-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.macon-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.macon-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.macon-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.macon-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.macon-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.macon-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.macon-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.macon-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.macon-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.macon-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.macon-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.macon-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.macon-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.macon-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.macon-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.macon-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.macon-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.macon-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.macon-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.macon-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.macon-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.macon-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.macon-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .macon-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .macon-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .macon-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .macon-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .macon-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .macon-section-title {
+    font-size: 2rem !important;
+  }
+  .macon-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .macon-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .macon-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .macon-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .macon-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .macon-hero-content {
+    gap: 2rem !important;
+  }
+  .macon-hero-title {
+    font-size: 2rem !important;
+  }
+  .macon-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .macon-hero-form {
+    padding: 1.5rem !important;
+  }
+  .macon-section-title {
+    font-size: 1.75rem !important;
+  }
+  .macon-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .macon-why-section, .macon-features-section, .macon-testimonials-section, .macon-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .macon-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="macon-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="macon-hero-section">
+    <div class="macon-hero-container">
+      <div class="macon-hero-content">
+        <div class="macon-hero-text">
+          <h1 class="macon-hero-title">
+            Création de <span class="macon-highlight-yellow">site internet</span> pour votre <span class="macon-highlight-yellow">activité de maçon</span>
+          </h1>
+          <p class="macon-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de travaux de maçonnerie, demande de devis et services de qualité. Votre expertise mérite une présence digitale qui met en valeur vos constructions et rénovations.
+          </p>
+        </div>
+        <div class="macon-hero-form">
+          <form id="macon-contact-form">
+            <div class="macon-form-group">
+              <label for="macon-name" class="macon-form-label">VOTRE NOM</label>
+              <input type="text" id="macon-name" name="name" class="macon-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="macon-form-group">
+              <label for="macon-email" class="macon-form-label">VOTRE EMAIL</label>
+              <input type="email" id="macon-email" name="email" class="macon-form-input" placeholder="contact@macon.fr" required />
+            </div>
+            <div class="macon-form-group">
+              <label for="macon-project" class="macon-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="macon-project" name="project" class="macon-form-input" placeholder="Ex: Je suis maçon et j'ai besoin d'un site pour présenter mes services de construction et faciliter les demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="macon-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="macon-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI MAÇON -->
+  <section class="macon-why-section">
+    <div class="macon-container">
+      <div class="macon-section-header">
+        <h2 class="macon-section-title">
+          Pourquoi un site internet est <span class="macon-highlight">essentiel</span> pour votre activité de maçon ?
+        </h2>
+        <p class="macon-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des maçons en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
+        </p>
+      </div>
+      <div class="macon-benefits-grid">
+        <div class="macon-benefit-card">
+          <div class="macon-benefit-icon">🔍</div>
+          <h3 class="macon-benefit-title">Visibilité renforcée</h3>
+          <p class="macon-benefit-description">
+            Apparaissez en tête des recherches Google pour "maçon [ville]" ou "travaux de maçonnerie près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="macon-benefit-card">
+          <div class="macon-benefit-icon">📅</div>
+          <h3 class="macon-benefit-title">Demande de devis en ligne</h3>
+          <p class="macon-benefit-description">
+            Permettez à vos clients de demander des devis pour des constructions ou rénovations directement sur votre site.
+          </p>
+        </div>
+        <div class="macon-benefit-card">
+          <div class="macon-benefit-icon">🏗️</div>
+          <h3 class="macon-benefit-title">Portfolio de travaux</h3>
+          <p class="macon-benefit-description">
+            Présentez vos constructions de murs, poses de dalles et rénovations de façades avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="macon-benefit-card">
+          <div class="macon-benefit-icon">🏅</div>
+          <h3 class="macon-benefit-title">Confiance et professionnalisme</h3>
+          <p class="macon-benefit-description">
+            Mettez en avant votre expertise et la qualité de vos matériaux. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="macon-features-section">
+    <div class="macon-container">
+      <div class="macon-features-grid">
+        <div class="macon-features-content">
+          <h2 class="macon-section-title">
+            Fonctionnalités <span class="macon-highlight">spécialisées</span> pour maçons
+          </h2>
+          <p class="macon-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de maçonnerie.
+          </p>
+          <ul class="macon-features-list">
+            <li class="macon-feature-item">
+              <div class="macon-feature-icon">🏗️</div>
+              <div class="macon-feature-content">
+                <h4>Portfolio de travaux</h4>
+                <p>Présentez vos constructions de murs, poses de dalles et rénovations de façades avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="macon-feature-item">
+              <div class="macon-feature-icon">🗺️</div>
+              <div class="macon-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="macon-feature-item">
+              <div class="macon-feature-icon">📅</div>
+              <div class="macon-feature-content">
+                <h4>Demande de devis</h4>
+                <p>Système de demande de devis en ligne pour des constructions ou rénovations.</p>
+              </div>
+            </li>
+            <li class="macon-feature-item">
+              <div class="macon-feature-icon">🧱</div>
+              <div class="macon-feature-content">
+                <h4>Expertise en maçonnerie</h4>
+                <p>Section pour promouvoir vos services de fondations, extensions et travaux de restauration.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="macon-features-visual">
+          <div class="macon-mockup">
+            <div class="macon-mockup-header"></div>
+            <div class="macon-mockup-content">
+              <h3 class="macon-mockup-title">Maçonnerie Dupont</h3>
+              <p class="macon-mockup-text">Constructions, rénovations, fondations<br />Portfolio • Demande de devis</p>
+              <button class="macon-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="macon-testimonials-section">
+    <div class="macon-container">
+      <div class="macon-section-header">
+        <h2 class="macon-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="macon-highlight">maçons partenaires</span>
+        </h2>
+        <p class="macon-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="macon-testimonials-grid">
+        <div class="macon-testimonial-card">
+          <p class="macon-testimonial-quote">
+            "Depuis notre site, les demandes de devis pour des constructions de murs ont triplé. Le portfolio met vraiment nos travaux en valeur."
+          </p>
+          <div class="macon-testimonial-author">
+            <div class="macon-testimonial-avatar">JD</div>
+            <div class="macon-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Maçon, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="macon-testimonial-card">
+          <p class="macon-testimonial-quote">
+            "Le site nous a permis de présenter nos services de rénovation avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
+          </p>
+          <div class="macon-testimonial-author">
+            <div class="macon-testimonial-avatar">AL</div>
+            <div class="macon-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Maçon, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="macon-testimonial-card">
+          <p class="macon-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients pour des poses de dalles et des extensions. La demande de devis en ligne simplifie tout."
+          </p>
+          <div class="macon-testimonial-author">
+            <div class="macon-testimonial-avatar">MD</div>
+            <div class="macon-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Maçonne, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="macon-final-cta">
+    <div class="macon-container">
+      <h2>Prêt à sublimer votre activité de maçon ?</h2>
+      <p>
+        Rejoignez les centaines de maçons qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="macon-final-button" onclick="maconScrollToForm()">
+        Obtenir mon site de maçon
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+/* EmailJS initialization - must be loaded before sending */
+emailjs.init('EbZUccJ9uKukb5WRE');
+
+(() => {
+  const root = document.querySelector('.macon-wp-scope');
+  if (!root) return;
+
+  /* Animation d'entrée progressive avec IntersectionObserver */
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  /* Initialisation des animations */
+  const animatedElements = root.querySelectorAll('.macon-hero-text, .macon-hero-form, .macon-benefit-card, .macon-testimonial-card, .macon-features-content, .macon-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  /* Animation immédiate pour le hero */
+  setTimeout(() => {
+    const heroText = root.querySelector('.macon-hero-text');
+    const heroForm = root.querySelector('.macon-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  /* Gestion du formulaire avec EmailJS */
+  const form = root.querySelector('#macon-contact-form');
+  const button = root.querySelector('.macon-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#macon-name').value;
+      const email = form.querySelector('#macon-email').value;
+      const project = form.querySelector('#macon-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      /* Animation du bouton */
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      /* Envoi via EmailJS */
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Maçon - web-starting.fr',
+        message: `Nouvelle demande pour un site de maçon depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Maçon - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      /* Envoi EmailJS */
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          /* Réinitialiser après 3 secondes */
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          /* Réinitialiser après 3 secondes */
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  /* Fonction pour scroller vers le formulaire */
+  window.maconScrollToForm = function() {
+    const heroForm = root.querySelector('.macon-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      /* Focus sur le champ nom après le scroll */
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#macon-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  /* Effet de parallaxe subtil */
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.macon-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

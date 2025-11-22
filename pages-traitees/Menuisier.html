@@ -1,0 +1,893 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.menuisier-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.menuisier-wp-scope *, .menuisier-wp-scope *::before, .menuisier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.menuisier-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menuisier-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.menuisier-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.menuisier-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.menuisier-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.menuisier-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.menuisier-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.menuisier-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.menuisier-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.menuisier-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.menuisier-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.menuisier-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.menuisier-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.menuisier-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.menuisier-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.menuisier-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.menuisier-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.menuisier-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.menuisier-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.menuisier-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.menuisier-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.menuisier-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.menuisier-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.menuisier-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.menuisier-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menuisier-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.menuisier-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.menuisier-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.menuisier-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.menuisier-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.menuisier-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.menuisier-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.menuisier-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menuisier-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.menuisier-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.menuisier-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.menuisier-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.menuisier-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.menuisier-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.menuisier-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.menuisier-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.menuisier-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.menuisier-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.menuisier-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.menuisier-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.menuisier-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.menuisier-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.menuisier-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.menuisier-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.menuisier-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.menuisier-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menuisier-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.menuisier-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.menuisier-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.menuisier-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.menuisier-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.menuisier-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.menuisier-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.menuisier-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.menuisier-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menuisier-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.menuisier-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.menuisier-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.menuisier-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .menuisier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .menuisier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .menuisier-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .menuisier-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .menuisier-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .menuisier-section-title {
+    font-size: 2rem !important;
+  }
+  .menuisier-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .menuisier-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .menuisier-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .menuisier-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .menuisier-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .menuisier-hero-content {
+    gap: 2rem !important;
+  }
+  .menuisier-hero-title {
+    font-size: 2rem !important;
+  }
+  .menuisier-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .menuisier-hero-form {
+    padding: 1.5rem !important;
+  }
+  .menuisier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .menuisier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .menuisier-why-section, .menuisier-features-section, .menuisier-testimonials-section, .menuisier-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="menuisier-wp-scope">
+
+  <!-- HERO SECTION -->
+  <section class="menuisier-hero-section">
+    <div class="menuisier-hero-container">
+      <div class="menuisier-hero-content">
+        <div class="menuisier-hero-text">
+          <h1 class="menuisier-hero-title">
+            Création de <span class="menuisier-highlight-yellow">site internet</span> pour votre <span class="menuisier-highlight-yellow">activité de menuisier</span>
+          </h1>
+          <p class="menuisier-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de travaux de menuiserie, demande de devis et services de qualité. Votre savoir-faire mérite une présence digitale qui met en valeur vos meubles, parquets et aménagements.
+          </p>
+        </div>
+        <div class="menuisier-hero-form">
+          <form id="menuisier-contact-form">
+            <div class="menuisier-form-group">
+              <label for="menuisier-name" class="menuisier-form-label">VOTRE NOM</label>
+              <input type="text" id="menuisier-name" name="name" class="menuisier-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="menuisier-form-group">
+              <label for="menuisier-email" class="menuisier-form-label">VOTRE EMAIL</label>
+              <input type="email" id="menuisier-email" name="email" class="menuisier-form-input" placeholder="contact@menuisier.fr" required />
+            </div>
+            <div class="menuisier-form-group">
+              <label for="menuisier-project" class="menuisier-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="menuisier-project" name="project" class="menuisier-form-input" placeholder="Ex: Je suis menuisier et j'ai besoin d'un site pour présenter mes meubles sur mesure et faciliter les demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="menuisier-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="menuisier-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI MENUISIER -->
+  <section class="menuisier-why-section">
+    <div class="menuisier-container">
+      <div class="menuisier-section-header">
+        <h2 class="menuisier-section-title">
+          Pourquoi un site internet est <span class="menuisier-highlight">essentiel</span> pour votre activité de menuisier ?
+        </h2>
+        <p class="menuisier-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des menuisiers en ligne. Soyez visible et mettez en avant votre savoir-faire artisanal avec un site professionnel.
+        </p>
+      </div>
+      <div class="menuisier-benefits-grid">
+        <div class="menuisier-benefit-card">
+          <div class="menuisier-benefit-icon">🔍</div>
+          <h3 class="menuisier-benefit-title">Visibilité renforcée</h3>
+          <p class="menuisier-benefit-description">
+            Apparaissez en tête des recherches Google pour "menuisier [ville]" ou "meubles sur mesure près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="menuisier-benefit-card">
+          <div class="menuisier-benefit-icon">📅</div>
+          <h3 class="menuisier-benefit-title">Demande de devis en ligne</h3>
+          <p class="menuisier-benefit-description">
+            Permettez à vos clients de demander des devis pour des meubles sur mesure ou des parquets directement sur votre site.
+          </p>
+        </div>
+        <div class="menuisier-benefit-card">
+          <div class="menuisier-benefit-icon">🪚</div>
+          <h3 class="menuisier-benefit-title">Portfolio de travaux</h3>
+          <p class="menuisier-benefit-description">
+            Présentez vos meubles, parquets et aménagements intérieurs avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="menuisier-benefit-card">
+          <div class="menuisier-benefit-icon">🏅</div>
+          <h3 class="menuisier-benefit-title">Confiance et artisanat</h3>
+          <p class="menuisier-benefit-description">
+            Mettez en avant votre expertise en menuiserie artisanale. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="menuisier-features-section">
+    <div class="menuisier-container">
+      <div class="menuisier-features-grid">
+        <div class="menuisier-features-content">
+          <h2 class="menuisier-section-title">
+            Fonctionnalités <span class="menuisier-highlight">spécialisées</span> pour menuisiers
+          </h2>
+          <p class="menuisier-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de menuiserie.
+          </p>
+          <ul class="menuisier-features-list">
+            <li class="menuisier-feature-item">
+              <div class="menuisier-feature-icon">🪚</div>
+              <div class="menuisier-feature-content">
+                <h4>Portfolio de travaux</h4>
+                <p>Présentez vos meubles sur mesure, parquets et escaliers avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="menuisier-feature-item">
+              <div class="menuisier-feature-icon">🗺️</div>
+              <div class="menuisier-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="menuisier-feature-item">
+              <div class="menuisier-feature-icon">📅</div>
+              <div class="menuisier-feature-content">
+                <h4>Demande de devis</h4>
+                <p>Système de demande de devis en ligne pour des travaux de menuiserie.</p>
+              </div>
+            </li>
+            <li class="menuisier-feature-item">
+              <div class="menuisier-feature-icon">🪵</div>
+              <div class="menuisier-feature-content">
+                <h4>Expertise artisanale</h4>
+                <p>Section pour promouvoir vos services de menuiserie intérieure et extérieure.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="menuisier-features-visual">
+          <div class="menuisier-mockup">
+            <div class="menuisier-mockup-header"></div>
+            <div class="menuisier-mockup-content">
+              <h3 class="menuisier-mockup-title">Menuiserie Dupont</h3>
+              <p class="menuisier-mockup-text">Meubles sur mesure, parquets, escaliers<br />Portfolio • Demande de devis</p>
+              <button class="menuisier-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="menuisier-testimonials-section">
+    <div class="menuisier-container">
+      <div class="menuisier-section-header">
+        <h2 class="menuisier-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="menuisier-highlight">menuisiers partenaires</span>
+        </h2>
+        <p class="menuisier-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="menuisier-testimonials-grid">
+        <div class="menuisier-testimonial-card">
+          <p class="menuisier-testimonial-quote">
+            "Depuis notre site, les demandes pour des meubles sur mesure ont doublé. Le portfolio met vraiment nos travaux en valeur."
+          </p>
+          <div class="menuisier-testimonial-author">
+            <div class="menuisier-testimonial-avatar">JD</div>
+            <div class="menuisier-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Menuisier, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="menuisier-testimonial-card">
+          <p class="menuisier-testimonial-quote">
+            "Le site nous a permis de présenter nos parquets et escaliers avec professionnalisme. Les clients adorent consulter nos réalisations."
+          </p>
+          <div class="menuisier-testimonial-author">
+            <div class="menuisier-testimonial-avatar">AL</div>
+            <div class="menuisier-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Menuisier, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="menuisier-testimonial-card">
+          <p class="menuisier-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients pour des aménagements intérieurs. La demande de devis en ligne simplifie tout."
+          </p>
+          <div class="menuisier-testimonial-author">
+            <div class="menuisier-testimonial-avatar">MD</div>
+            <div class="menuisier-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Menuisier, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="menuisier-final-cta">
+    <div class="menuisier-container">
+      <h2>Prêt à sublimer votre activité de menuisier ?</h2>
+      <p>
+        Rejoignez les centaines de menuisiers qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="menuisier-final-button" onclick="menuisierScrollToForm()">
+        Obtenir mon site de menuisier
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.menuisier-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.menuisier-hero-text, .menuisier-hero-form, .menuisier-benefit-card, .menuisier-testimonial-card, .menuisier-features-content, .menuisier-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.menuisier-hero-text');
+    const heroForm = root.querySelector('.menuisier-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire avec EmailJS
+  const form = root.querySelector('#menuisier-contact-form');
+  const button = root.querySelector('.menuisier-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#menuisier-name').value;
+      const email = form.querySelector('#menuisier-email').value;
+      const project = form.querySelector('#menuisier-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Paramètres du template EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Menuisier - web-starting.fr',
+        message: `Nouvelle demande pour un site de menuisier depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Menuisier - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS avec identifiants configurés
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.menuisierScrollToForm = function() {
+    const heroForm = root.querySelector('.menuisier-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#menuisier-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.menuisier-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

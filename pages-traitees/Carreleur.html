@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.carreleur-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.carreleur-wp-scope *, .carreleur-wp-scope *::before, .carreleur-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.carreleur-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.carreleur-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.carreleur-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.carreleur-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.carreleur-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.carreleur-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.carreleur-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.carreleur-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.carreleur-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.carreleur-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.carreleur-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.carreleur-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.carreleur-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.carreleur-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.carreleur-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.carreleur-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.carreleur-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.carreleur-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.carreleur-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.carreleur-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.carreleur-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.carreleur-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.carreleur-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.carreleur-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.carreleur-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.carreleur-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.carreleur-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.carreleur-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.carreleur-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.carreleur-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.carreleur-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.carreleur-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.carreleur-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.carreleur-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.carreleur-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.carreleur-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.carreleur-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.carreleur-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.carreleur-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.carreleur-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.carreleur-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.carreleur-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.carreleur-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.carreleur-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.carreleur-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.carreleur-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.carreleur-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.carreleur-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.carreleur-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.carreleur-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.carreleur-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.carreleur-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.carreleur-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.carreleur-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.carreleur-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.carreleur-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.carreleur-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.carreleur-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.carreleur-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.carreleur-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.carreleur-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.carreleur-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.carreleur-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.carreleur-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .carreleur-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .carreleur-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .carreleur-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .carreleur-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .carreleur-hero-title {
+    font-size: 2rem !important;
+  }
+  .carreleur-section-title {
+    font-size: 1.75rem !important;
+  }
+  .carreleur-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .carreleur-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .carreleur-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .carreleur-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .carreleur-hero-form {
+    padding: 1.25rem !important;
+  }
+  .carreleur-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="carreleur-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="carreleur-hero-section">
+    <div class="carreleur-hero-container">
+      <div class="carreleur-hero-content">
+        <div class="carreleur-hero-text">
+          <h1 class="carreleur-hero-title">
+            Création de <span class="carreleur-highlight-yellow">site internet</span> pour votre <span class="carreleur-highlight-yellow">métier de carreleur</span>
+          </h1>
+          <p class="carreleur-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de carrelages et mosaïques, demande de devis rapide. Mettez en valeur votre expertise en pose de carrelage pour cuisines, salles de bain et terrasses.
+          </p>
+        </div>
+        <div class="carreleur-hero-form">
+          <form id="carreleur-contact-form">
+            <div class="carreleur-form-group">
+              <label for="carreleur-name" class="carreleur-form-label">VOTRE NOM</label>
+              <input type="text" id="carreleur-name" name="name" class="carreleur-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="carreleur-form-group">
+              <label for="carreleur-email" class="carreleur-form-label">VOTRE EMAIL</label>
+              <input type="email" id="carreleur-email" name="email" class="carreleur-form-input" placeholder="contact@carreleur.fr" required />
+            </div>
+            <div class="carreleur-form-group">
+              <label for="carreleur-project" class="carreleur-form-label">VOTRE PROJET</label>
+              <textarea id="carreleur-project" name="project" class="carreleur-form-input" placeholder="Ex: Je suis carreleur et j'ai besoin d'un site pour présenter mes travaux de carrelage et recevoir des demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="carreleur-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="carreleur-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI CARRELEUR -->
+  <section class="carreleur-why-section">
+    <div class="carreleur-container">
+      <div class="carreleur-section-header">
+        <h2 class="carreleur-section-title">
+          Pourquoi un site internet pour votre <span class="carreleur-highlight">activité de carreleur</span> ?
+        </h2>
+        <p class="carreleur-section-subtitle">
+          Dans un marché compétitif, vos clients recherchent des carreleurs en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
+        </p>
+      </div>
+      <div class="carreleur-benefits-grid">
+        <div class="carreleur-benefit-card">
+          <div class="carreleur-benefit-icon">🔍</div>
+          <h3 class="carreleur-benefit-title">Visibilité locale</h3>
+          <p class="carreleur-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "carreleur [ville]" ou "pose de carrelage près de moi".
+          </p>
+        </div>
+        <div class="carreleur-benefit-card">
+          <div class="carreleur-benefit-icon">📅</div>
+          <h3 class="carreleur-benefit-title">Devis en ligne</h3>
+          <p class="carreleur-benefit-description">
+            Simplifiez les demandes de devis pour vos travaux de carrelage ou mosaïques grâce à un formulaire intuitif.
+          </p>
+        </div>
+        <div class="carreleur-benefit-card">
+          <div class="carreleur-benefit-icon">🧱</div>
+          <h3 class="carreleur-benefit-title">Portfolio de réalisations</h3>
+          <p class="carreleur-benefit-description">
+            Présentez vos travaux de carrelage pour cuisines, salles de bain et terrasses avec une galerie visuelle.
+          </p>
+        </div>
+        <div class="carreleur-benefit-card">
+          <div class="carreleur-benefit-icon">🏅</div>
+          <h3 class="carreleur-benefit-title">Professionnalisme</h3>
+          <p class="carreleur-benefit-description">
+            Renforcez la confiance avec un site moderne qui met en avant votre expertise en carrelage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="carreleur-features-section">
+    <div class="carreleur-container">
+      <div class="carreleur-features-grid">
+        <div class="carreleur-features-content">
+          <h2 class="carreleur-section-title">
+            Fonctionnalités pour <span class="carreleur-highlight">carreleurs</span>
+          </h2>
+          <p class="carreleur-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre métier de carreleur.
+          </p>
+          <ul class="carreleur-features-list">
+            <li class="carreleur-feature-item">
+              <div class="carreleur-feature-icon">🧱</div>
+              <div class="carreleur-feature-content">
+                <h4>Galerie de travaux</h4>
+                <p>Présentez vos réalisations en carrelage et mosaïques avec des images interactives.</p>
+              </div>
+            </li>
+            <li class="carreleur-feature-item">
+              <div class="carreleur-feature-icon">🗺️</div>
+              <div class="carreleur-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive pour montrer où vous proposez vos services de carrelage.</p>
+              </div>
+            </li>
+            <li class="carreleur-feature-item">
+              <div class="carreleur-feature-icon">📅</div>
+              <div class="carreleur-feature-content">
+                <h4>Formulaire de devis</h4>
+                <p>Recevez des demandes de devis directement depuis votre site.</p>
+              </div>
+            </li>
+            <li class="carreleur-feature-item">
+              <div class="carreleur-feature-icon">🛁</div>
+              <div class="carreleur-feature-content">
+                <h4>Services spécialisés</h4>
+                <p>Promouvez vos compétences en pose de carrelage pour cuisines, salles de bain et terrasses.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="carreleur-features-visual">
+          <div class="carreleur-mockup">
+            <div class="carreleur-mockup-header"></div>
+            <div class="carreleur-mockup-content">
+              <h3 class="carreleur-mockup-title">Carrelage Artisan</h3>
+              <p class="carreleur-mockup-text">Sols, mosaïques, aménagements<br />Portfolio • Demande de devis</p>
+              <button class="carreleur-mockup-button">Voir nos réalisations</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="carreleur-testimonials-section">
+    <div class="carreleur-container">
+      <div class="carreleur-section-header">
+        <h2 class="carreleur-section-title">
+          Ce que disent nos <span class="carreleur-highlight">carreleurs partenaires</span>
+        </h2>
+        <p class="carreleur-section-subtitle">
+          Découvrez l'impact d'un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="carreleur-testimonials-grid">
+        <div class="carreleur-testimonial-card">
+          <p class="carreleur-testimonial-quote">
+            "Notre site a boosté nos demandes de devis pour des poses de carrelage. Le portfolio est un vrai atout."
+          </p>
+          <div class="carreleur-testimonial-author">
+            <div class="carreleur-testimonial-avatar">JD</div>
+            <div class="carreleur-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Carreleur, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="carreleur-testimonial-card">
+          <p class="carreleur-testimonial-quote">
+            "Présenter nos mosaïques et salles de bain sur le site a attiré de nouveaux clients. Très professionnel !"
+          </p>
+          <div class="carreleur-testimonial-author">
+            <div class="carreleur-testimonial-avatar">AL</div>
+            <div class="carreleur-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Carreleur, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="carreleur-testimonial-card">
+          <p class="carreleur-testimonial-quote">
+            "Le formulaire de devis en ligne a simplifié notre travail. Les clients adorent consulter nos réalisations."
+          </p>
+          <div class="carreleur-testimonial-author">
+            <div class="carreleur-testimonial-avatar">MD</div>
+            <div class="carreleur-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Carreleuse, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="carreleur-final-cta">
+    <div class="carreleur-container">
+      <h2>Boostez votre activité de carreleur</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos travaux et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="carreleur-final-button" onclick="carreleurScrollToForm()">
+        Créer mon site de carreleur
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.carreleur-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.carreleur-hero-text, .carreleur-hero-form, .carreleur-benefit-card, .carreleur-testimonial-card, .carreleur-features-content, .carreleur-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.carreleur-hero-text');
+    const heroForm = root.querySelector('.carreleur-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire avec EmailJS
+  const form = root.querySelector('#carreleur-contact-form');
+  const button = root.querySelector('.carreleur-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#carreleur-name').value;
+      const email = form.querySelector('#carreleur-email').value;
+      const project = form.querySelector('#carreleur-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Carreleur - web-starting.fr',
+        message: `Nouvelle demande pour un site de carreleur depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Carreleur - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS avec identifiants configurés
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.carreleurScrollToForm = function() {
+    const heroForm = root.querySelector('.carreleur-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#carreleur-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.carreleur-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

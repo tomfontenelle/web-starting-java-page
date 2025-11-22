@@ -1,0 +1,898 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.plaquiste-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.plaquiste-wp-scope *, .plaquiste-wp-scope *::before, .plaquiste-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.plaquiste-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plaquiste-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.plaquiste-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.plaquiste-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.plaquiste-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plaquiste-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plaquiste-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.plaquiste-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.plaquiste-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.plaquiste-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.plaquiste-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plaquiste-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.plaquiste-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.plaquiste-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.plaquiste-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.plaquiste-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.plaquiste-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.plaquiste-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.plaquiste-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.plaquiste-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.plaquiste-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.plaquiste-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.plaquiste-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.plaquiste-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.plaquiste-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plaquiste-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.plaquiste-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.plaquiste-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plaquiste-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.plaquiste-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.plaquiste-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.plaquiste-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.plaquiste-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plaquiste-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.plaquiste-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plaquiste-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.plaquiste-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.plaquiste-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.plaquiste-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.plaquiste-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.plaquiste-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.plaquiste-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.plaquiste-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.plaquiste-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.plaquiste-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.plaquiste-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.plaquiste-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.plaquiste-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.plaquiste-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.plaquiste-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.plaquiste-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plaquiste-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.plaquiste-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.plaquiste-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.plaquiste-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.plaquiste-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.plaquiste-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.plaquiste-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.plaquiste-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.plaquiste-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.plaquiste-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.plaquiste-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.plaquiste-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.plaquiste-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .plaquiste-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .plaquiste-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .plaquiste-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .plaquiste-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .plaquiste-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .plaquiste-section-title {
+    font-size: 2rem !important;
+  }
+  .plaquiste-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .plaquiste-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .plaquiste-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .plaquiste-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .plaquiste-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .plaquiste-hero-content {
+    gap: 2rem !important;
+  }
+  .plaquiste-hero-title {
+    font-size: 2rem !important;
+  }
+  .plaquiste-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .plaquiste-hero-form {
+    padding: 1.5rem !important;
+  }
+  .plaquiste-section-title {
+    font-size: 1.75rem !important;
+  }
+  .plaquiste-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .plaquiste-why-section, .plaquiste-features-section, .plaquiste-testimonials-section, .plaquiste-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .plaquiste-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="plaquiste-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="plaquiste-hero-section">
+    <div class="plaquiste-hero-container">
+      <div class="plaquiste-hero-content">
+        <div class="plaquiste-hero-text">
+          <h1 class="plaquiste-hero-title">
+            Création de <span class="plaquiste-highlight-yellow">site internet</span> pour votre <span class="plaquiste-highlight-yellow">activité de plaquiste</span>
+          </h1>
+          <p class="plaquiste-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de travaux de plaquisterie, demande de devis et services de qualité. Votre expertise mérite une présence digitale qui met en valeur vos cloisons et aménagements intérieurs.
+          </p>
+        </div>
+        <div class="plaquiste-hero-form">
+          <form id="plaquiste-contact-form">
+            <div class="plaquiste-form-group">
+              <label for="plaquiste-name" class="plaquiste-form-label">VOTRE NOM</label>
+              <input type="text" id="plaquiste-name" name="name" class="plaquiste-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="plaquiste-form-group">
+              <label for="plaquiste-email" class="plaquiste-form-label">VOTRE EMAIL</label>
+              <input type="email" id="plaquiste-email" name="email" class="plaquiste-form-input" placeholder="contact@plaquiste.fr" required />
+            </div>
+            <div class="plaquiste-form-group">
+              <label for="plaquiste-project" class="plaquiste-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="plaquiste-project" name="project" class="plaquiste-form-input" placeholder="Ex: Je suis plaquiste et j'ai besoin d'un site pour présenter mes services de pose de cloisons et faciliter les demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="plaquiste-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="plaquiste-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI PLAQUISTE -->
+  <section class="plaquiste-why-section">
+    <div class="plaquiste-container">
+      <div class="plaquiste-section-header">
+        <h2 class="plaquiste-section-title">
+          Pourquoi un site internet est <span class="plaquiste-highlight">essentiel</span> pour votre activité de plaquiste ?
+        </h2>
+        <p class="plaquiste-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des plaquistes en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
+        </p>
+      </div>
+      <div class="plaquiste-benefits-grid">
+        <div class="plaquiste-benefit-card">
+          <div class="plaquiste-benefit-icon">🔍</div>
+          <h3 class="plaquiste-benefit-title">Visibilité renforcée</h3>
+          <p class="plaquiste-benefit-description">
+            Apparaissez en tête des recherches Google pour "plaquiste [ville]" ou "aménagement intérieur près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="plaquiste-benefit-card">
+          <div class="plaquiste-benefit-icon">📅</div>
+          <h3 class="plaquiste-benefit-title">Demande de devis en ligne</h3>
+          <p class="plaquiste-benefit-description">
+            Permettez à vos clients de demander des devis pour des poses de cloisons ou isolations directement sur votre site.
+          </p>
+        </div>
+        <div class="plaquiste-benefit-card">
+          <div class="plaquiste-benefit-icon">🏠</div>
+          <h3 class="plaquiste-benefit-title">Portfolio de travaux</h3>
+          <p class="plaquiste-benefit-description">
+            Présentez vos poses de cloisons, faux plafonds et aménagements de combles avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="plaquiste-benefit-card">
+          <div class="plaquiste-benefit-icon">🏅</div>
+          <h3 class="plaquiste-benefit-title">Confiance et professionnalisme</h3>
+          <p class="plaquiste-benefit-description">
+            Mettez en avant votre expertise en isolation et finitions. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="plaquiste-features-section">
+    <div class="plaquiste-container">
+      <div class="plaquiste-features-grid">
+        <div class="plaquiste-features-content">
+          <h2 class="plaquiste-section-title">
+            Fonctionnalités <span class="plaquiste-highlight">spécialisées</span> pour plaquistes
+          </h2>
+          <p class="plaquiste-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de plaquisterie.
+          </p>
+          <ul class="plaquiste-features-list">
+            <li class="plaquiste-feature-item">
+              <div class="plaquiste-feature-icon">🏠</div>
+              <div class="plaquiste-feature-content">
+                <h4>Portfolio de travaux</h4>
+                <p>Présentez vos poses de cloisons, faux plafonds et aménagements de combles avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="plaquiste-feature-item">
+              <div class="plaquiste-feature-icon">🗺️</div>
+              <div class="plaquiste-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="plaquiste-feature-item">
+              <div class="plaquiste-feature-icon">📅</div>
+              <div class="plaquiste-feature-content">
+                <h4>Demande de devis</h4>
+                <p>Système de demande de devis en ligne pour des travaux d'isolation ou d'aménagement intérieur.</p>
+              </div>
+            </li>
+            <li class="plaquiste-feature-item">
+              <div class="plaquiste-feature-icon">🛠️</div>
+              <div class="plaquiste-feature-content">
+                <h4>Expertise en isolation</h4>
+                <p>Section pour promouvoir vos services d'isolation phonique et thermique, et vos finitions de qualité.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="plaquiste-features-visual">
+          <div class="plaquiste-mockup">
+            <div class="plaquiste-mockup-header"></div>
+            <div class="plaquiste-mockup-content">
+              <h3 class="plaquiste-mockup-title">Plaquisterie Dupont</h3>
+              <p class="plaquiste-mockup-text">Cloisons, isolations, faux plafonds<br />Portfolio • Demande de devis</p>
+              <button class="plaquiste-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="plaquiste-testimonials-section">
+    <div class="plaquiste-container">
+      <div class="plaquiste-section-header">
+        <h2 class="plaquiste-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="plaquiste-highlight">plaquistes partenaires</span>
+        </h2>
+        <p class="plaquiste-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="plaquiste-testimonials-grid">
+        <div class="plaquiste-testimonial-card">
+          <p class="plaquiste-testimonial-quote">
+            "Depuis notre site, les demandes de devis pour des poses de cloisons ont triplé. Le portfolio met vraiment nos travaux en valeur."
+          </p>
+          <div class="plaquiste-testimonial-author">
+            <div class="plaquiste-testimonial-avatar">JD</div>
+            <div class="plaquiste-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Plaquiste, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="plaquiste-testimonial-card">
+          <p class="plaquiste-testimonial-quote">
+            "Le site nous a permis de présenter nos services d'isolation avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
+          </p>
+          <div class="plaquiste-testimonial-author">
+            <div class="plaquiste-testimonial-avatar">AL</div>
+            <div class="plaquiste-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Plaquiste, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="plaquiste-testimonial-card">
+          <p class="plaquiste-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients pour des aménagements de combles et des faux plafonds. La demande de devis en ligne simplifie tout."
+          </p>
+          <div class="plaquiste-testimonial-author">
+            <div class="plaquiste-testimonial-avatar">MD</div>
+            <div class="plaquiste-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Plaquiste, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="plaquiste-final-cta">
+    <div class="plaquiste-container">
+      <h2>Prêt à sublimer votre activité de plaquiste ?</h2>
+      <p>
+        Rejoignez les centaines de plaquistes qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="plaquiste-final-button" onclick="plaquisteScrollToForm()">
+        Obtenir mon site de plaquiste
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+(() => {
+  const root = document.querySelector('.plaquiste-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.plaquiste-hero-text, .plaquiste-hero-form, .plaquiste-benefit-card, .plaquiste-testimonial-card, .plaquiste-features-content, .plaquiste-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.plaquiste-hero-text');
+    const heroForm = root.querySelector('.plaquiste-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Initialisation EmailJS
+  emailjs.init('EbZUccJ9uKukb5WRE');
+
+  // Gestion du formulaire
+  const form = root.querySelector('#plaquiste-contact-form');
+  const button = root.querySelector('.plaquiste-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#plaquiste-name').value;
+      const email = form.querySelector('#plaquiste-email').value;
+      const project = form.querySelector('#plaquiste-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Plaquiste - web-starting.fr',
+        message: `Nouvelle demande pour un site de plaquiste depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Plaquiste - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Utilisation d'EmailJS avec configuration complète
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.plaquisteScrollToForm = function() {
+    const heroForm = root.querySelector('.plaquiste-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#plaquiste-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.plaquiste-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

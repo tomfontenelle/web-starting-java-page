@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.chauffagiste-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.chauffagiste-wp-scope *, .chauffagiste-wp-scope *::before, .chauffagiste-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.chauffagiste-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.chauffagiste-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.chauffagiste-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.chauffagiste-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.chauffagiste-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.chauffagiste-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chauffagiste-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.chauffagiste-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.chauffagiste-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.chauffagiste-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.chauffagiste-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chauffagiste-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.chauffagiste-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.chauffagiste-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.chauffagiste-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.chauffagiste-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.chauffagiste-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.chauffagiste-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.chauffagiste-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.chauffagiste-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.chauffagiste-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.chauffagiste-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.chauffagiste-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.chauffagiste-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.chauffagiste-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.chauffagiste-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.chauffagiste-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.chauffagiste-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chauffagiste-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.chauffagiste-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.chauffagiste-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.chauffagiste-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.chauffagiste-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.chauffagiste-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.chauffagiste-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.chauffagiste-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.chauffagiste-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.chauffagiste-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.chauffagiste-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.chauffagiste-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.chauffagiste-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.chauffagiste-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.chauffagiste-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.chauffagiste-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.chauffagiste-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.chauffagiste-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.chauffagiste-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.chauffagiste-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.chauffagiste-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.chauffagiste-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.chauffagiste-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.chauffagiste-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.chauffagiste-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.chauffagiste-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chauffagiste-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.chauffagiste-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.chauffagiste-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.chauffagiste-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.chauffagiste-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.chauffagiste-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.chauffagiste-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.chauffagiste-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.chauffagiste-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.chauffagiste-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .chauffagiste-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .chauffagiste-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .chauffagiste-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .chauffagiste-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .chauffagiste-hero-title {
+    font-size: 2rem !important;
+  }
+  .chauffagiste-section-title {
+    font-size: 1.75rem !important;
+  }
+  .chauffagiste-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .chauffagiste-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .chauffagiste-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .chauffagiste-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .chauffagiste-hero-form {
+    padding: 1.25rem !important;
+  }
+  .chauffagiste-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="chauffagiste-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="chauffagiste-hero-section">
+    <div class="chauffagiste-hero-container">
+      <div class="chauffagiste-hero-content">
+        <div class="chauffagiste-hero-text">
+          <h1 class="chauffagiste-hero-title">
+            Création de <span class="chauffagiste-highlight-yellow">site internet</span> pour votre <span class="chauffagiste-highlight-yellow">métier de chauffagiste</span>
+          </h1>
+          <p class="chauffagiste-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, présentation de vos services d'installation et d'entretien de chauffage, demande de devis rapide. Mettez en valeur votre expertise en chaudières, pompes à chaleur et dépannage.
+          </p>
+        </div>
+        <div class="chauffagiste-hero-form">
+          <form id="chauffagiste-contact-form">
+            <div class="chauffagiste-form-group">
+              <label for="chauffagiste-name" class="chauffagiste-form-label">VOTRE NOM</label>
+              <input type="text" id="chauffagiste-name" name="name" class="chauffagiste-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="chauffagiste-form-group">
+              <label for="chauffagiste-email" class="chauffagiste-form-label">VOTRE EMAIL</label>
+              <input type="email" id="chauffagiste-email" name="email" class="chauffagiste-form-input" placeholder="contact@chauffagiste.fr" required />
+            </div>
+            <div class="chauffagiste-form-group">
+              <label for="chauffagiste-project" class="chauffagiste-form-label">VOTRE PROJET</label>
+              <textarea id="chauffagiste-project" name="project" class="chauffagiste-form-input" placeholder="Ex: Je suis chauffagiste et j'ai besoin d'un site pour présenter mes services d'installation et de maintenance de chaudières..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="chauffagiste-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="chauffagiste-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI CHAUFFAGISTE -->
+  <section class="chauffagiste-why-section">
+    <div class="chauffagiste-container">
+      <div class="chauffagiste-section-header">
+        <h2 class="chauffagiste-section-title">
+          Pourquoi un site internet pour votre <span class="chauffagiste-highlight">activité de chauffagiste</span> ?
+        </h2>
+        <p class="chauffagiste-section-subtitle">
+          Dans un secteur compétitif, un site professionnel vous rend visible et met en avant votre expertise en chauffage et solutions écologiques.
+        </p>
+      </div>
+      <div class="chauffagiste-benefits-grid">
+        <div class="chauffagiste-benefit-card">
+          <div class="chauffagiste-benefit-icon">🔍</div>
+          <h3 class="chauffagiste-benefit-title">Visibilité locale</h3>
+          <p class="chauffagiste-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "chauffagiste [ville]" ou "entretien chaudière près de moi".
+          </p>
+        </div>
+        <div class="chauffagiste-benefit-card">
+          <div class="chauffagiste-benefit-icon">📅</div>
+          <h3 class="chauffagiste-benefit-title">Devis en ligne</h3>
+          <p class="chauffagiste-benefit-description">
+            Simplifiez les demandes de devis pour vos services d'installation ou de maintenance de chauffage.
+          </p>
+        </div>
+        <div class="chauffagiste-benefit-card">
+          <div class="chauffagiste-benefit-icon">🔥</div>
+          <h3 class="chauffagiste-benefit-title">Portfolio de réalisations</h3>
+          <p class="chauffagiste-benefit-description">
+            Présentez vos installations de chaudières et pompes à chaleur avec une galerie visuelle.
+          </p>
+        </div>
+        <div class="chauffagiste-benefit-card">
+          <div class="chauffagiste-benefit-icon">🏅</div>
+          <h3 class="chauffagiste-benefit-title">Confiance et fiabilité</h3>
+          <p class="chauffagiste-benefit-description">
+            Renforcez la confiance avec un site moderne qui met en avant votre expertise en chauffage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="chauffagiste-features-section">
+    <div class="chauffagiste-container">
+      <div class="chauffagiste-features-grid">
+        <div class="chauffagiste-features-content">
+          <h2 class="chauffagiste-section-title">
+            Fonctionnalités pour <span class="chauffagiste-highlight">chauffagistes</span>
+          </h2>
+          <p class="chauffagiste-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre métier de chauffagiste.
+          </p>
+          <ul class="chauffagiste-features-list">
+            <li class="chauffagiste-feature-item">
+              <div class="chauffagiste-feature-icon">🔥</div>
+              <div class="chauffagiste-feature-content">
+                <h4>Galerie de travaux</h4>
+                <p>Présentez vos installations de chaudières et pompes à chaleur avec des images interactives.</p>
+              </div>
+            </li>
+            <li class="chauffagiste-feature-item">
+              <div class="chauffagiste-feature-icon">🗺️</div>
+              <div class="chauffagiste-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive pour montrer où vous proposez vos services de chauffage.</p>
+              </div>
+            </li>
+            <li class="chauffagiste-feature-item">
+              <div class="chauffagiste-feature-icon">📅</div>
+              <div class="chauffagiste-feature-content">
+                <h4>Formulaire de devis</h4>
+                <p>Recevez des demandes de devis pour installation ou maintenance directement depuis votre site.</p>
+              </div>
+            </li>
+            <li class="chauffagiste-feature-item">
+              <div class="chauffagiste-feature-icon">❄️</div>
+              <div class="chauffagiste-feature-content">
+                <h4>Solutions écologiques</h4>
+                <p>Promouvez vos services d'installation de pompes à chaleur et systèmes économes en énergie.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chauffagiste-features-visual">
+          <div class="chauffagiste-mockup">
+            <div class="chauffagiste-mockup-header"></div>
+            <div class="chauffagiste-mockup-content">
+              <h3 class="chauffagiste-mockup-title">Chauffage Artisan</h3>
+              <p class="chauffagiste-mockup-text">Chaudières, pompes à chaleur<br />Portfolio • Demande de devis</p>
+              <button class="chauffagiste-mockup-button">Voir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="chauffagiste-testimonials-section">
+    <div class="chauffagiste-container">
+      <div class="chauffagiste-section-header">
+        <h2 class="chauffagiste-section-title">
+          Ce que disent nos <span class="chauffagiste-highlight">chauffagistes partenaires</span>
+        </h2>
+        <p class="chauffagiste-section-subtitle">
+          Découvrez l'impact d'un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="chauffagiste-testimonials-grid">
+        <div class="chauffagiste-testimonial-card">
+          <p class="chauffagiste-testimonial-quote">
+            "Notre site a boosté les demandes pour l'entretien de chaudières. Le portfolio met nos installations en valeur."
+          </p>
+          <div class="chauffagiste-testimonial-author">
+            <div class="chauffagiste-testimonial-avatar">JD</div>
+            <div class="chauffagiste-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Chauffagiste, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="chauffagiste-testimonial-card">
+          <p class="chauffagiste-testimonial-quote">
+            "Présenter nos pompes à chaleur sur le site a attiré de nouveaux clients. Très professionnel !"
+          </p>
+          <div class="chauffagiste-testimonial-author">
+            <div class="chauffagiste-testimonial-avatar">AL</div>
+            <div class="chauffagiste-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Chauffagiste, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="chauffagiste-testimonial-card">
+          <p class="chauffagiste-testimonial-quote">
+            "Le formulaire de devis en ligne a simplifié notre travail. Les clients adorent consulter nos services."
+          </p>
+          <div class="chauffagiste-testimonial-author">
+            <div class="chauffagiste-testimonial-avatar">MD</div>
+            <div class="chauffagiste-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Chauffagiste, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="chauffagiste-final-cta">
+    <div class="chauffagiste-container">
+      <h2>Boostez votre activité de chauffagiste</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos services et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="chauffagiste-final-button" onclick="chauffagisteScrollToForm()">
+        Créer mon site de chauffagiste
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.chauffagiste-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.chauffagiste-hero-text, .chauffagiste-hero-form, .chauffagiste-benefit-card, .chauffagiste-testimonial-card, .chauffagiste-features-content, .chauffagiste-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.chauffagiste-hero-text');
+    const heroForm = root.querySelector('.chauffagiste-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#chauffagiste-contact-form');
+  const button = root.querySelector('.chauffagiste-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#chauffagiste-name').value;
+      const email = form.querySelector('#chauffagiste-email').value;
+      const project = form.querySelector('#chauffagiste-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Chauffagiste - web-starting.fr',
+        message: `Nouvelle demande pour un site de chauffagiste depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Chauffagiste - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.chauffagisteScrollToForm = function() {
+    const heroForm = root.querySelector('.chauffagiste-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#chauffagiste-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.chauffagiste-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

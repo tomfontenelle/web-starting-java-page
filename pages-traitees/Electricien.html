@@ -1,0 +1,894 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.electricien-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.electricien-wp-scope *, .electricien-wp-scope *::before, .electricien-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.electricien-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.electricien-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.electricien-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.electricien-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.electricien-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.electricien-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.electricien-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.electricien-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.electricien-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.electricien-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.electricien-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.electricien-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.electricien-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.electricien-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.electricien-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.electricien-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.electricien-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.electricien-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.electricien-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.electricien-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.electricien-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.electricien-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.electricien-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.electricien-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.electricien-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.electricien-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.electricien-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.electricien-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.electricien-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.electricien-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.electricien-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.electricien-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.electricien-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.electricien-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.electricien-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.electricien-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.electricien-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.electricien-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.electricien-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.electricien-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.electricien-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.electricien-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.electricien-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.electricien-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.electricien-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.electricien-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.electricien-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.electricien-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.electricien-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.electricien-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.electricien-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.electricien-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.electricien-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.electricien-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.electricien-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.electricien-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.electricien-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.electricien-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.electricien-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.electricien-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.electricien-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.electricien-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.electricien-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.electricien-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .electricien-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .electricien-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .electricien-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .electricien-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .electricien-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .electricien-section-title {
+    font-size: 2rem !important;
+  }
+  .electricien-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .electricien-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .electricien-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .electricien-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .electricien-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .electricien-hero-content {
+    gap: 2rem !important;
+  }
+  .electricien-hero-title {
+    font-size: 2rem !important;
+  }
+  .electricien-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .electricien-hero-form {
+    padding: 1.5rem !important;
+  }
+  .electricien-section-title {
+    font-size: 1.75rem !important;
+  }
+  .electricien-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .electricien-why-section, .electricien-features-section, .electricien-testimonials-section, .electricien-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .electricien-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="electricien-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="electricien-hero-section">
+    <div class="electricien-hero-container">
+      <div class="electricien-hero-content">
+        <div class="electricien-hero-text">
+          <h1 class="electricien-hero-title">
+            Création de <span class="electricien-highlight-yellow">site internet</span> pour votre <span class="electricien-highlight-yellow">activité d'électricien</span>
+          </h1>
+          <p class="electricien-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de travaux électriques, demande de devis et services d'urgence. Votre expertise mérite une présence digitale qui met en valeur vos installations et réparations.
+          </p>
+        </div>
+        <div class="electricien-hero-form">
+          <form id="electricien-contact-form">
+            <div class="electricien-form-group">
+              <label for="electricien-name" class="electricien-form-label">VOTRE NOM</label>
+              <input type="text" id="electricien-name" name="name" class="electricien-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="electricien-form-group">
+              <label for="electricien-email" class="electricien-form-label">VOTRE EMAIL</label>
+              <input type="email" id="electricien-email" name="email" class="electricien-form-input" placeholder="contact@electricien.fr" required />
+            </div>
+            <div class="electricien-form-group">
+              <label for="electricien-project" class="electricien-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="electricien-project" name="project" class="electricien-form-input" placeholder="Ex: Je suis électricien et j'ai besoin d'un site pour présenter mes services de dépannage et faciliter les demandes de devis..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="electricien-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="electricien-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI ÉLECTRICIEN -->
+  <section class="electricien-why-section">
+    <div class="electricien-container">
+      <div class="electricien-section-header">
+        <h2 class="electricien-section-title">
+          Pourquoi un site internet est <span class="electricien-highlight">essentiel</span> pour votre activité d'électricien ?
+        </h2>
+        <p class="electricien-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des électriciens en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
+        </p>
+      </div>
+      <div class="electricien-benefits-grid">
+        <div class="electricien-benefit-card">
+          <div class="electricien-benefit-icon">🔍</div>
+          <h3 class="electricien-benefit-title">Visibilité renforcée</h3>
+          <p class="electricien-benefit-description">
+            Apparaissez en tête des recherches Google pour "électricien [ville]" ou "dépannage électrique près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="electricien-benefit-card">
+          <div class="electricien-benefit-icon">📅</div>
+          <h3 class="electricien-benefit-title">Demande de devis en ligne</h3>
+          <p class="electricien-benefit-description">
+            Permettez à vos clients de demander des devis pour des installations ou réparations électriques directement sur votre site.
+          </p>
+        </div>
+        <div class="electricien-benefit-card">
+          <div class="electricien-benefit-icon">⚡️</div>
+          <h3 class="electricien-benefit-title">Portfolio de travaux</h3>
+          <p class="electricien-benefit-description">
+            Présentez vos installations de tableaux électriques, éclairages LED et mises aux normes avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="electricien-benefit-card">
+          <div class="electricien-benefit-icon">🏅</div>
+          <h3 class="electricien-benefit-title">Confiance et professionnalisme</h3>
+          <p class="electricien-benefit-description">
+            Mettez en avant votre expertise et vos services d'urgence. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="electricien-features-section">
+    <div class="electricien-container">
+      <div class="electricien-features-grid">
+        <div class="electricien-features-content">
+          <h2 class="electricien-section-title">
+            Fonctionnalités <span class="electricien-highlight">spécialisées</span> pour électriciens
+          </h2>
+          <p class="electricien-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité électrique.
+          </p>
+          <ul class="electricien-features-list">
+            <li class="electricien-feature-item">
+              <div class="electricien-feature-icon">⚡️</div>
+              <div class="electricien-feature-content">
+                <h4>Portfolio de travaux</h4>
+                <p>Présentez vos installations électriques, mises aux normes et dépannages avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="electricien-feature-item">
+              <div class="electricien-feature-icon">🗺️</div>
+              <div class="electricien-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="electricien-feature-item">
+              <div class="electricien-feature-icon">📅</div>
+              <div class="electricien-feature-content">
+                <h4>Demande de devis</h4>
+                <p>Système de demande de devis en ligne pour des installations ou réparations électriques.</p>
+              </div>
+            </li>
+            <li class="electricien-feature-item">
+              <div class="electricien-feature-icon">💡</div>
+              <div class="electricien-feature-content">
+                <h4>Services d'urgence</h4>
+                <p>Section pour promouvoir vos interventions rapides 24/7 pour les pannes électriques.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="electricien-features-visual">
+          <div class="electricien-mockup">
+            <div class="electricien-mockup-header"></div>
+            <div class="electricien-mockup-content">
+              <h3 class="electricien-mockup-title">Électricité Dupont</h3>
+              <p class="electricien-mockup-text">Installations, réparations, urgences<br />Portfolio • Demande de devis</p>
+              <button class="electricien-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="electricien-testimonials-section">
+    <div class="electricien-container">
+      <div class="electricien-section-header">
+        <h2 class="electricien-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="electricien-highlight">électriciens partenaires</span>
+        </h2>
+        <p class="electricien-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="electricien-testimonials-grid">
+        <div class="electricien-testimonial-card">
+          <p class="electricien-testimonial-quote">
+            "Depuis notre site, les demandes de devis pour des installations électriques ont triplé. Le portfolio met vraiment nos travaux en valeur."
+          </p>
+          <div class="electricien-testimonial-author">
+            <div class="electricien-testimonial-avatar">JD</div>
+            <div class="electricien-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Électricien, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="electricien-testimonial-card">
+          <p class="electricien-testimonial-quote">
+            "Le site nous a permis de présenter nos services d'urgence avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
+          </p>
+          <div class="electricien-testimonial-author">
+            <div class="electricien-testimonial-avatar">AL</div>
+            <div class="electricien-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Électricien, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="electricien-testimonial-card">
+          <p class="electricien-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients pour des mises aux normes et des dépannages. La demande de devis en ligne simplifie tout."
+          </p>
+          <div class="electricien-testimonial-author">
+            <div class="electricien-testimonial-avatar">MD</div>
+            <div class="electricien-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Électricienne, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="electricien-final-cta">
+    <div class="electricien-container">
+      <h2>Prêt à sublimer votre activité d'électricien ?</h2>
+      <p>
+        Rejoignez les centaines d'électriciens qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="electricien-final-button" onclick="electricienScrollToForm()">
+        Obtenir mon site d'électricien
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.electricien-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.electricien-hero-text, .electricien-hero-form, .electricien-benefit-card, .electricien-testimonial-card, .electricien-features-content, .electricien-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.electricien-hero-text');
+    const heroForm = root.querySelector('.electricien-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#electricien-contact-form');
+  const button = root.querySelector('.electricien-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#electricien-name').value;
+      const email = form.querySelector('#electricien-email').value;
+      const project = form.querySelector('#electricien-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Électricien - web-starting.fr',
+        message: `Nouvelle demande pour un site d'électricien depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Électricien - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Utilisation d'EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.electricienScrollToForm = function() {
+    const heroForm = root.querySelector('.electricien-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#electricien-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.electricien-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

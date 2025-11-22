@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.serrurier-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.serrurier-wp-scope *, .serrurier-wp-scope *::before, .serrurier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.serrurier-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.serrurier-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.serrurier-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.serrurier-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.serrurier-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.serrurier-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.serrurier-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.serrurier-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.serrurier-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.serrurier-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.serrurier-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.serrurier-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.serrurier-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.serrurier-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.serrurier-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.serrurier-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.serrurier-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.serrurier-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.serrurier-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.serrurier-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.serrurier-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.serrurier-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.serrurier-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.serrurier-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.serrurier-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.serrurier-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.serrurier-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.serrurier-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.serrurier-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.serrurier-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.serrurier-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.serrurier-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.serrurier-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.serrurier-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.serrurier-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.serrurier-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.serrurier-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.serrurier-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.serrurier-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.serrurier-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.serrurier-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.serrurier-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.serrurier-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.serrurier-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.serrurier-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.serrurier-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.serrurier-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.serrurier-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.serrurier-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.serrurier-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.serrurier-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.serrurier-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.serrurier-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.serrurier-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.serrurier-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.serrurier-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.serrurier-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.serrurier-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.serrurier-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.serrurier-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.serrurier-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.serrurier-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.serrurier-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.serrurier-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .serrurier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .serrurier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .serrurier-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .serrurier-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .serrurier-hero-title {
+    font-size: 2rem !important;
+  }
+  .serrurier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .serrurier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .serrurier-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .serrurier-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .serrurier-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .serrurier-hero-form {
+    padding: 1.25rem !important;
+  }
+  .serrurier-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="serrurier-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="serrurier-hero-section">
+    <div class="serrurier-hero-container">
+      <div class="serrurier-hero-content">
+        <div class="serrurier-hero-text">
+          <h1 class="serrurier-hero-title">
+            Création de <span class="serrurier-highlight-yellow">site internet</span> pour votre <span class="serrurier-highlight-yellow">métier de serrurier</span>
+          </h1>
+          <p class="serrurier-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, présentation de vos services de dépannage et d'installation de serrures, demande de devis rapide. Mettez en valeur votre expertise en serrurerie et sécurité.
+          </p>
+        </div>
+        <div class="serrurier-hero-form">
+          <form id="serrurier-contact-form">
+            <div class="serrurier-form-group">
+              <label for="serrurier-name" class="serrurier-form-label">VOTRE NOM</label>
+              <input type="text" id="serrurier-name" name="name" class="serrurier-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="serrurier-form-group">
+              <label for="serrurier-email" class="serrurier-form-label">VOTRE EMAIL</label>
+              <input type="email" id="serrurier-email" name="email" class="serrurier-form-input" placeholder="contact@serrurier.fr" required />
+            </div>
+            <div class="serrurier-form-group">
+              <label for="serrurier-project" class="serrurier-form-label">VOTRE PROJET</label>
+              <textarea id="serrurier-project" name="project" class="serrurier-form-input" placeholder="Ex: Je suis serrurier et j'ai besoin d'un site pour présenter mes services de dépannage et d'installation de serrures..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="serrurier-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="serrurier-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI SERRURIER -->
+  <section class="serrurier-why-section">
+    <div class="serrurier-container">
+      <div class="serrurier-section-header">
+        <h2 class="serrurier-section-title">
+          Pourquoi un site internet pour votre <span class="serrurier-highlight">activité de serrurier</span> ?
+        </h2>
+        <p class="serrurier-section-subtitle">
+          Dans un secteur où la confiance est essentielle, un site professionnel vous rend visible et met en avant votre expertise en dépannage et sécurité.
+        </p>
+      </div>
+      <div class="serrurier-benefits-grid">
+        <div class="serrurier-benefit-card">
+          <div class="serrurier-benefit-icon">🔍</div>
+          <h3 class="serrurier-benefit-title">Visibilité locale</h3>
+          <p class="serrurier-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "serrurier [ville]" ou "dépannage serrurerie près de moi".
+          </p>
+        </div>
+        <div class="serrurier-benefit-card">
+          <div class="serrurier-benefit-icon">📅</div>
+          <h3 class="serrurier-benefit-title">Devis en ligne</h3>
+          <p class="serrurier-benefit-description">
+            Simplifiez les demandes de devis pour vos services de dépannage ou d'installation de serrures.
+          </p>
+        </div>
+        <div class="serrurier-benefit-card">
+          <div class="serrurier-benefit-icon">🔒</div>
+          <h3 class="serrurier-benefit-title">Portfolio de réalisations</h3>
+          <p class="serrurier-benefit-description">
+            Présentez vos installations de serrures haute sécurité et blindages de portes avec une galerie visuelle.
+          </p>
+        </div>
+        <div class="serrurier-benefit-card">
+          <div class="serrurier-benefit-icon">🏅</div>
+          <h3 class="serrurier-benefit-title">Confiance et fiabilité</h3>
+          <p class="serrurier-benefit-description">
+            Renforcez la confiance avec un site moderne qui met en avant votre expertise en serrurerie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="serrurier-features-section">
+    <div class="serrurier-container">
+      <div class="serrurier-features-grid">
+        <div class="serrurier-features-content">
+          <h2 class="serrurier-section-title">
+            Fonctionnalités pour <span class="serrurier-highlight">serruriers</span>
+          </h2>
+          <p class="serrurier-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre métier de serrurier.
+          </p>
+          <ul class="serrurier-features-list">
+            <li class="serrurier-feature-item">
+              <div class="serrurier-feature-icon">🔒</div>
+              <div class="serrurier-feature-content">
+                <h4>Galerie de travaux</h4>
+                <p>Présentez vos installations de serrures et blindages de portes avec des images interactives.</p>
+              </div>
+            </li>
+            <li class="serrurier-feature-item">
+              <div class="serrurier-feature-icon">🗺️</div>
+              <div class="serrurier-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive pour montrer où vous proposez vos services de serrurerie.</p>
+              </div>
+            </li>
+            <li class="serrurier-feature-item">
+              <div class="serrurier-feature-icon">📅</div>
+              <div class="serrurier-feature-content">
+                <h4>Formulaire de devis</h4>
+                <p>Recevez des demandes de devis pour dépannage ou installations directement depuis votre site.</p>
+              </div>
+            </li>
+            <li class="serrurier-feature-item">
+              <div class="serrurier-feature-icon">🚪</div>
+              <div class="serrurier-feature-content">
+                <h4>Services d'urgence</h4>
+                <p>Promouvez vos services de dépannage d'urgence et d'ouverture de portes.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="serrurier-features-visual">
+          <div class="serrurier-mockup">
+            <div class="serrurier-mockup-header"></div>
+            <div class="serrurier-mockup-content">
+              <h3 class="serrurier-mockup-title">Serrurerie Artisan</h3>
+              <p class="serrurier-mockup-text">Dépannage, serrures, blindage<br />Portfolio • Demande de devis</p>
+              <button class="serrurier-mockup-button">Voir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="serrurier-testimonials-section">
+    <div class="serrurier-container">
+      <div class="serrurier-section-header">
+        <h2 class="serrurier-section-title">
+          Ce que disent nos <span class="serrurier-highlight">serruriers partenaires</span>
+        </h2>
+        <p class="serrurier-section-subtitle">
+          Découvrez l'impact d'un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="serrurier-testimonials-grid">
+        <div class="serrurier-testimonial-card">
+          <p class="serrurier-testimonial-quote">
+            "Notre site a multiplié les demandes de dépannage d'urgence. Le portfolio met nos installations en valeur."
+          </p>
+          <div class="serrurier-testimonial-author">
+            <div class="serrurier-testimonial-avatar">JD</div>
+            <div class="serrurier-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Serrurier, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="serrurier-testimonial-card">
+          <p class="serrurier-testimonial-quote">
+            "Présenter nos serrures haute sécurité sur le site a attiré de nouveaux clients. Très professionnel !"
+          </p>
+          <div class="serrurier-testimonial-author">
+            <div class="serrurier-testimonial-avatar">AL</div>
+            <div class="serrurier-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Serrurier, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="serrurier-testimonial-card">
+          <p class="serrurier-testimonial-quote">
+            "Le formulaire de devis en ligne a simplifié notre travail. Les clients adorent consulter nos services."
+          </p>
+          <div class="serrurier-testimonial-author">
+            <div class="serrurier-testimonial-avatar">MD</div>
+            <div class="serrurier-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Serrurière, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="serrurier-final-cta">
+    <div class="serrurier-container">
+      <h2>Boostez votre activité de serrurier</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos services et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="serrurier-final-button" onclick="serrurierScrollToForm()">
+        Créer mon site de serrurier
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.serrurier-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.serrurier-hero-text, .serrurier-hero-form, .serrurier-benefit-card, .serrurier-testimonial-card, .serrurier-features-content, .serrurier-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.serrurier-hero-text');
+    const heroForm = root.querySelector('.serrurier-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire EmailJS
+  const form = root.querySelector('#serrurier-contact-form');
+  const button = root.querySelector('.serrurier-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#serrurier-name').value;
+      const email = form.querySelector('#serrurier-email').value;
+      const project = form.querySelector('#serrurier-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Serrurier - web-starting.fr',
+        message: `Nouvelle demande pour un site de serrurier depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Serrurier - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Envoi via EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.serrurierScrollToForm = function() {
+    const heroForm = root.querySelector('.serrurier-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#serrurier-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.serrurier-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

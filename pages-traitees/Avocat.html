@@ -26,41 +26,6 @@
   box-sizing: border-box !important;
   font-family: inherit !important;
 }
-
-/* ANIMATIONS CSS - Remplace IntersectionObserver */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* HERO SECTION */
 .avocat-hero-section {
   min-height: 100vh !important;
@@ -101,15 +66,18 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour hero-text */
-/* Visible par défaut (sans JavaScript) */
 .avocat-hero-text {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-hero-text {
-  animation: fadeInUp 0.8s ease 0.5s both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
+
+.avocat-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
 
 .avocat-hero-title {
   font-size: 4rem !important;
@@ -144,11 +112,14 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  }
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-hero-form {
-  animation: fadeInUp 0.8s ease 0.8s both !important;
+.avocat-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .avocat-form-group {
@@ -289,27 +260,13 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-benefit-card {
-  animation: fadeInUp 0.8s ease both !important;
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
 }
 
-.avocat-benefit-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.avocat-benefit-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.avocat-benefit-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-
-.avocat-benefit-card:nth-child(4) {
-  animation-delay: 0.4s !important;
+.avocat-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .avocat-benefit-card:hover {
@@ -361,15 +318,18 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour features-content */
-/* Visible par défaut (sans JavaScript) */
 .avocat-features-content {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-features-content {
-  animation: fadeInLeft 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
 }
+
+.avocat-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+
 
 .avocat-features-list {
   list-style: none !important;
@@ -420,15 +380,18 @@
   line-height: 1.5 !important;
 }
 
-/* Animation CSS automatique pour features-visual */
-/* Visible par défaut (sans JavaScript) */
 .avocat-features-visual {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-features-visual {
-  animation: fadeInRight 0.8s ease 0.2s both !important;
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
 }
+
+.avocat-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+
 
 .avocat-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -509,23 +472,14 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .avocat-testimonial-card {
-  animation: fadeInUp 0.8s ease both !important;
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
 
-.avocat-testimonial-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.avocat-testimonial-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.avocat-testimonial-card:nth-child(3) {
-  animation-delay: 0.3s !important;
+.avocat-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .avocat-testimonial-quote {
@@ -892,7 +846,7 @@
       <p>
         Rejoignez les centaines d'avocats qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
-      <button class="avocat-final-button" onclick="document.querySelector('.avocat-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+      <button class="avocat-final-button" onclick="avocatScrollToForm()">
         Obtenir mon site d'avocat
       </button>
     </div>
@@ -957,10 +911,61 @@
       });
   });
 })();
-</script>
 
-<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
 <script>
-document.querySelector('.avocat-wp-scope').classList.add('js-enabled');
-</script>
+(() => {
+  const root = document.querySelector('.avocat-wp-scope');
+  if (!root) return;
 
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.avocat-hero-text, .avocat-hero-form, .avocat-benefit-card, .avocat-testimonial-card, .avocat-features-content, .avocat-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.avocat-hero-text');
+    const heroForm = root.querySelector('.avocat-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Fonction pour scroller vers le formulaire
+  window.avocatScrollToForm = function() {
+    const heroForm = root.querySelector('.avocat-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#avocat-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.avocat-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

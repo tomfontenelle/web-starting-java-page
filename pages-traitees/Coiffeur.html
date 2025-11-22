@@ -26,41 +26,6 @@
   box-sizing: border-box !important;
   font-family: inherit !important;
 }
-
-/* ANIMATIONS CSS - Remplace IntersectionObserver */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* HERO SECTION */
 .coiffeur-hero-section {
   min-height: 100vh !important;
@@ -101,15 +66,18 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour hero-text */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-hero-text {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-hero-text {
-  animation: fadeInUp 0.8s ease 0.5s both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
+
+.coiffeur-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
 
 .coiffeur-hero-title {
   font-size: 4rem !important;
@@ -144,11 +112,14 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  }
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-hero-form {
-  animation: fadeInUp 0.8s ease 0.8s both !important;
+.coiffeur-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .coiffeur-form-group {
@@ -289,27 +260,13 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-benefit-card {
-  animation: fadeInUp 0.8s ease both !important;
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
 }
 
-.coiffeur-benefit-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.coiffeur-benefit-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.coiffeur-benefit-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-
-.coiffeur-benefit-card:nth-child(4) {
-  animation-delay: 0.4s !important;
+.coiffeur-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .coiffeur-benefit-card:hover {
@@ -361,15 +318,18 @@
   align-items: center !important;
 }
 
-/* Animation CSS automatique pour features-content */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-features-content {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-features-content {
-  animation: fadeInLeft 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
 }
+
+.coiffeur-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+
 
 .coiffeur-features-list {
   list-style: none !important;
@@ -420,15 +380,18 @@
   line-height: 1.5 !important;
 }
 
-/* Animation CSS automatique pour features-visual */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-features-visual {
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-features-visual {
-  animation: fadeInRight 0.8s ease 0.2s both !important;
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
 }
+
+.coiffeur-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+
 
 .coiffeur-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -509,23 +472,14 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  }
-
-/* Animation uniquement si JavaScript actif */
-.js-enabled .coiffeur-testimonial-card {
-  animation: fadeInUp 0.8s ease both !important;
+    opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
 
-.coiffeur-testimonial-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.coiffeur-testimonial-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.coiffeur-testimonial-card:nth-child(3) {
-  animation-delay: 0.3s !important;
+.coiffeur-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .coiffeur-testimonial-quote {
@@ -892,7 +846,7 @@
       <p>
         Rejoignez les centaines de coiffeurs qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
-      <button class="coiffeur-final-button" onclick="document.querySelector('.coiffeur-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+      <button class="coiffeur-final-button" onclick="coiffeurScrollToForm()">
         Obtenir mon site de salon de coiffure
       </button>
     </div>
@@ -957,10 +911,61 @@
       });
   });
 })();
-</script>
 
-<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
 <script>
-document.querySelector('.coiffeur-wp-scope').classList.add('js-enabled');
-</script>
+(() => {
+  const root = document.querySelector('.coiffeur-wp-scope');
+  if (!root) return;
 
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.coiffeur-hero-text, .coiffeur-hero-form, .coiffeur-benefit-card, .coiffeur-testimonial-card, .coiffeur-features-content, .coiffeur-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.coiffeur-hero-text');
+    const heroForm = root.querySelector('.coiffeur-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Fonction pour scroller vers le formulaire
+  window.coiffeurScrollToForm = function() {
+    const heroForm = root.querySelector('.coiffeur-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#coiffeur-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.coiffeur-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

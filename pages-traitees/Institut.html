@@ -26,41 +26,6 @@
   box-sizing: border-box !important;
   font-family: inherit !important;
 }
-
-/* ANIMATIONS CSS - Remplace IntersectionObserver */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* HERO SECTION */
 .institut-beaute-hero-section {
   min-height: 100vh !important;
@@ -101,14 +66,15 @@
   align-items: center !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-hero-text {
-  /* Prêt pour l'animation */
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-hero-text {
-  animation: fadeInUp 0.8s ease 0.5s both !important;
+.institut-beaute-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .institut-beaute-hero-title {
@@ -134,14 +100,22 @@
   max-width: 500px !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-hero-form {
-  /* Prêt pour l'animation */
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-hero-form {
-  animation: fadeInUp 0.8s ease 0.8s both !important;
+.institut-beaute-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .institut-beaute-form-group {
@@ -167,7 +141,6 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
-  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -197,14 +170,12 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
-  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 
 .institut-beaute-cta-button:hover {
-  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -272,34 +243,23 @@
   padding: 0 !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-benefit-card {
-  /* Prêt pour l'animation */
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-benefit-card {
-  animation: fadeInUp 0.8s ease both !important;
+.institut-beaute-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
-
-.js-enabled .institut-beaute-benefit-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.js-enabled .institut-beaute-benefit-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.js-enabled .institut-beaute-benefit-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-
-.js-enabled .institut-beaute-benefit-card:nth-child(4) {
-  animation-delay: 0.4s !important;
-}
-
 .institut-beaute-benefit-card:hover {
-  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -347,16 +307,16 @@
   align-items: center !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-features-content {
-  /* Prêt pour l'animation */
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-features-content {
-  animation: fadeInLeft 0.8s ease both !important;
+.institut-beaute-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
-
 .institut-beaute-features-list {
   list-style: none !important;
   padding: 0 !important;
@@ -371,12 +331,10 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
-  transition: all 0.3s ease !important;
 }
 
 .institut-beaute-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
-  transform: translateX(5px) !important;
 }
 
 .institut-beaute-feature-icon {
@@ -406,16 +364,16 @@
   line-height: 1.5 !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-features-visual {
-  /* Prêt pour l'animation */
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-features-visual {
-  animation: fadeInRight 0.8s ease 0.2s both !important;
+.institut-beaute-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
-
 .institut-beaute-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
   border-radius: 16px !important;
@@ -486,28 +444,22 @@
   padding: 0 !important;
 }
 
-/* Visible par défaut (sans JavaScript) */
 .institut-beaute-testimonial-card {
-  /* Prêt pour l'animation */
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
 
-/* Animation uniquement si JavaScript actif */
-.js-enabled .institut-beaute-testimonial-card {
-  animation: fadeInUp 0.8s ease both !important;
+.institut-beaute-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
-
-.js-enabled .institut-beaute-testimonial-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-
-.js-enabled .institut-beaute-testimonial-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-
-.js-enabled .institut-beaute-testimonial-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-
 .institut-beaute-testimonial-quote {
   font-size: 1rem !important;
   line-height: 1.6 !important;
@@ -572,7 +524,6 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  opacity: 0.8 !important;
 }
 
 .institut-beaute-final-button {
@@ -585,14 +536,12 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
-  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 
 .institut-beaute-final-button:hover {
-  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -937,9 +886,61 @@
       });
   });
 })();
-</script>
 
-<!-- PROGRESSIVE ENHANCEMENT - Marquer que JavaScript est actif -->
 <script>
-document.querySelector('.institut-beaute-wp-scope').classList.add('js-enabled');
+(() => {
+  const root = document.querySelector('.institut-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.institut-hero-text, .institut-hero-form, .institut-benefit-card, .institut-testimonial-card, .institut-features-content, .institut-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.institut-hero-text');
+    const heroForm = root.querySelector('.institut-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Fonction pour scroller vers le formulaire
+  window.institutScrollToForm = function() {
+    const heroForm = root.querySelector('.institut-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#institut-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.institut-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
 </script>

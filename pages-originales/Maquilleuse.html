@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Création de site internet pour Maquilleuse - Web Starting</title>
+  <meta name="description" content="Site internet professionnel pour maquilleuse. Design moderne, portfolio de looks maquillage, prise de rendez-vous et conseils personnalisés. Attirez plus de clients avec un site qui met en valeur votre créativité.">
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.maquilleuse-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.maquilleuse-wp-scope *, .maquilleuse-wp-scope *::before, .maquilleuse-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.maquilleuse-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.maquilleuse-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.maquilleuse-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.maquilleuse-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+.maquilleuse-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.maquilleuse-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.maquilleuse-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.maquilleuse-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+.maquilleuse-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.maquilleuse-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.maquilleuse-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.maquilleuse-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+.maquilleuse-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.maquilleuse-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+.maquilleuse-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+.maquilleuse-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+.maquilleuse-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+.maquilleuse-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+.maquilleuse-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.maquilleuse-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.maquilleuse-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+.maquilleuse-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+.maquilleuse-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+.maquilleuse-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.maquilleuse-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.maquilleuse-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.maquilleuse-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+.maquilleuse-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.maquilleuse-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+.maquilleuse-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+.maquilleuse-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+.maquilleuse-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.maquilleuse-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.maquilleuse-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.maquilleuse-features-content {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.maquilleuse-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.maquilleuse-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+.maquilleuse-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+.maquilleuse-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.maquilleuse-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+.maquilleuse-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.maquilleuse-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.maquilleuse-features-visual {
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.maquilleuse-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.maquilleuse-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.maquilleuse-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+.maquilleuse-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.maquilleuse-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.maquilleuse-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+.maquilleuse-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.maquilleuse-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.maquilleuse-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.maquilleuse-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.maquilleuse-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.maquilleuse-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.maquilleuse-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+.maquilleuse-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+.maquilleuse-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+.maquilleuse-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.maquilleuse-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.maquilleuse-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+.maquilleuse-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+.maquilleuse-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+.maquilleuse-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .maquilleuse-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .maquilleuse-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .maquilleuse-hero-title {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .maquilleuse-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .maquilleuse-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .maquilleuse-section-title {
+    font-size: 2rem !important;
+  }
+  .maquilleuse-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .maquilleuse-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .maquilleuse-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .maquilleuse-container {
+    padding: 0 1rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .maquilleuse-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .maquilleuse-hero-content {
+    gap: 2rem !important;
+  }
+  .maquilleuse-hero-title {
+    font-size: 2rem !important;
+  }
+  .maquilleuse-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .maquilleuse-hero-form {
+    padding: 1.5rem !important;
+  }
+  .maquilleuse-section-title {
+    font-size: 1.75rem !important;
+  }
+  .maquilleuse-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .maquilleuse-why-section, .maquilleuse-features-section, .maquilleuse-testimonials-section, .maquilleuse-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .maquilleuse-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="maquilleuse-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="maquilleuse-hero-section">
+    <div class="maquilleuse-hero-container">
+      <div class="maquilleuse-hero-content">
+        <div class="maquilleuse-hero-text">
+          <h1 class="maquilleuse-hero-title">
+            Création de <span class="maquilleuse-highlight-yellow">site internet</span> pour <span class="maquilleuse-highlight-yellow">maquilleuse</span> professionnelle
+          </h1>
+          <p class="maquilleuse-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de looks maquillage, prise de rendez-vous et conseils personnalisés. Votre talent mérite une présence digitale qui met en valeur votre créativité.
+          </p>
+        </div>
+        <div class="maquilleuse-hero-form">
+          <form id="maquilleuse-contact-form">
+            <div class="maquilleuse-form-group">
+              <label for="maquilleuse-name" class="maquilleuse-form-label">VOTRE NOM</label>
+              <input type="text" id="maquilleuse-name" name="name" class="maquilleuse-form-input" placeholder="Clara Dupont" required />
+            </div>
+            <div class="maquilleuse-form-group">
+              <label for="maquilleuse-email" class="maquilleuse-form-label">VOTRE EMAIL</label>
+              <input type="email" id="maquilleuse-email" name="email" class="maquilleuse-form-input" placeholder="clara.dupont@maquilleuse.fr" required />
+            </div>
+            <div class="maquilleuse-form-group">
+              <label for="maquilleuse-project" class="maquilleuse-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="maquilleuse-project" name="project" class="maquilleuse-form-input" placeholder="Ex: Je suis maquilleuse professionnelle et j'ai besoin d'un site pour présenter mes looks et faciliter les prises de rendez-vous..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="maquilleuse-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="maquilleuse-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI MAQUILLEUSE -->
+  <section class="maquilleuse-why-section">
+    <div class="maquilleuse-container">
+      <div class="maquilleuse-section-header">
+        <h2 class="maquilleuse-section-title">
+          Pourquoi un site internet est <span class="maquilleuse-highlight">essentiel</span> pour votre activité de maquilleuse ?
+        </h2>
+        <p class="maquilleuse-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des maquilleuses en ligne. Soyez visible et mettez en avant votre créativité avec un site professionnel.
+        </p>
+      </div>
+      <div class="maquilleuse-benefits-grid">
+        <div class="maquilleuse-benefit-card">
+          <div class="maquilleuse-benefit-icon">🔍</div>
+          <h3 class="maquilleuse-benefit-title">Visibilité renforcée</h3>
+          <p class="maquilleuse-benefit-description">
+            Apparaissez en tête des recherches Google pour "maquilleuse [ville]" ou "maquillage mariage près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="maquilleuse-benefit-card">
+          <div class="maquilleuse-benefit-icon">📅</div>
+          <h3 class="maquilleuse-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="maquilleuse-benefit-description">
+            Permettez à vos clients de réserver des séances de maquillage pour mariages ou événements directement sur votre site.
+          </p>
+        </div>
+        <div class="maquilleuse-benefit-card">
+          <div class="maquilleuse-benefit-icon">💄</div>
+          <h3 class="maquilleuse-benefit-title">Portfolio de looks</h3>
+          <p class="maquilleuse-benefit-description">
+            Présentez vos maquillages pour mariages, soirées ou shootings avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="maquilleuse-benefit-card">
+          <div class="maquilleuse-benefit-icon">🏅</div>
+          <h3 class="maquilleuse-benefit-title">Confiance et professionnalisme</h3>
+          <p class="maquilleuse-benefit-description">
+            Mettez en avant votre expertise et vos produits haut de gamme. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="maquilleuse-features-section">
+    <div class="maquilleuse-container">
+      <div class="maquilleuse-features-grid">
+        <div class="maquilleuse-features-content">
+          <h2 class="maquilleuse-section-title">
+            Fonctionnalités <span class="maquilleuse-highlight">spécialisées</span> pour maquilleuses
+          </h2>
+          <p class="maquilleuse-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité de maquilleuse.
+          </p>
+          <ul class="maquilleuse-features-list">
+            <li class="maquilleuse-feature-item">
+              <div class="maquilleuse-feature-icon">💄</div>
+              <div class="maquilleuse-feature-content">
+                <h4>Portfolio de looks</h4>
+                <p>Présentez vos maquillages pour mariages, événements ou shootings avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="maquilleuse-feature-item">
+              <div class="maquilleuse-feature-icon">🗺️</div>
+              <div class="maquilleuse-feature-content">
+                <h4>Localisation de votre activité</h4>
+                <p>Carte interactive montrant votre zone d’intervention pour faciliter l’accès des clients.</p>
+              </div>
+            </li>
+            <li class="maquilleuse-feature-item">
+              <div class="maquilleuse-feature-icon">📅</div>
+              <div class="maquilleuse-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des séances de maquillage ou cours d’auto-maquillage.</p>
+              </div>
+            </li>
+            <li class="maquilleuse-feature-item">
+              <div class="maquilleuse-feature-icon">🎨</div>
+              <div class="maquilleuse-feature-content">
+                <h4>Conseils maquillage</h4>
+                <p>Section pour guider vos clients sur les techniques de maquillage et les produits recommandés.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="maquilleuse-features-visual">
+          <div class="maquilleuse-mockup">
+            <div class="maquilleuse-mockup-header"></div>
+            <div class="maquilleuse-mockup-content">
+              <h3 class="maquilleuse-mockup-title">Clara Dupont Makeup</h3>
+              <p class="maquilleuse-mockup-text">Maquillage mariage, événementiel, cours<br />Portfolio • Prise de rendez-vous</p>
+              <button class="maquilleuse-mockup-button">Découvrir mes services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="maquilleuse-testimonials-section">
+    <div class="maquilleuse-container">
+      <div class="maquilleuse-section-header">
+        <h2 class="maquilleuse-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="maquilleuse-highlight">clientes maquilleuses</span>
+        </h2>
+        <p class="maquilleuse-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+      <div class="maquilleuse-testimonials-grid">
+        <div class="maquilleuse-testimonial-card">
+          <p class="maquilleuse-testimonial-quote">
+            "Depuis notre site, les réservations pour des maquillages de mariée ont explosé. Le portfolio met vraiment mes créations en valeur."
+          </p>
+          <div class="maquilleuse-testimonial-author">
+            <div class="maquilleuse-testimonial-avatar">CD</div>
+            <div class="maquilleuse-testimonial-info">
+              <h4>Clara Dupont</h4>
+              <p>Maquilleuse, Paris</p>
+            </div>
+          </div>
+        </div>
+        <div class="maquilleuse-testimonial-card">
+          <p class="maquilleuse-testimonial-quote">
+            "Le site nous a permis de présenter nos services avec élégance. Nos clientes nous perçoivent comme des professionnelles créatives."
+          </p>
+          <div class="maquilleuse-testimonial-author">
+            <div class="maquilleuse-testimonial-avatar">AL</div>
+            <div class="maquilleuse-testimonial-info">
+              <h4>Amélie Leclerc</h4>
+              <p>Maquilleuse, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="maquilleuse-testimonial-card">
+          <p class="maquilleuse-testimonial-quote">
+            "Grâce à notre site, nous attirons des clientes pour des shootings et événements. La prise de rendez-vous en ligne est un vrai plus."
+          </p>
+          <div class="maquilleuse-testimonial-author">
+            <div class="maquilleuse-testimonial-avatar">MD</div>
+            <div class="maquilleuse-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Maquilleuse, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="maquilleuse-final-cta">
+    <div class="maquilleuse-container">
+      <h2>Prêt à sublimer votre activité de maquilleuse ?</h2>
+      <p>
+        Rejoignez les centaines de maquilleuses qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="maquilleuse-final-button" onclick="maquilleuseScrollToForm()">
+        Obtenir mon site de maquilleuse
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.querySelector('.maquilleuse-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.maquilleuse-hero-text, .maquilleuse-hero-form, .maquilleuse-benefit-card, .maquilleuse-testimonial-card, .maquilleuse-features-content, .maquilleuse-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.maquilleuse-hero-text');
+    const heroForm = root.querySelector('.maquilleuse-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#maquilleuse-contact-form');
+  const button = root.querySelector('.maquilleuse-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#maquilleuse-name').value;
+      const email = form.querySelector('#maquilleuse-email').value;
+      const project = form.querySelector('#maquilleuse-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Maquilleuse - web-starting.fr',
+        message: `Nouvelle demande pour un site de maquilleuse depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Maquilleuse - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Utilisation d'EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.maquilleuseScrollToForm = function() {
+    const heroForm = root.querySelector('.maquilleuse-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#maquilleuse-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.maquilleuse-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>
+</body>
+</html>

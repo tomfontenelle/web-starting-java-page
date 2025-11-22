@@ -1,0 +1,748 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.autoecole-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.autoecole-wp-scope *, .autoecole-wp-scope *::before, .autoecole-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.autoecole-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.autoecole-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.autoecole-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.autoecole-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.autoecole-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease !important;
+}
+.autoecole-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.autoecole-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.autoecole-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.autoecole-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.autoecole-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.autoecole-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.autoecole-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.autoecole-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.autoecole-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.autoecole-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.autoecole-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.autoecole-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.autoecole-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.autoecole-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.autoecole-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.autoecole-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.autoecole-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.autoecole-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.autoecole-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.autoecole-benefit-card {
+  animation: fadeInUp 0.8s ease both !important;
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+.autoecole-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.autoecole-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.autoecole-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.autoecole-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
+.autoecole-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.autoecole-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.autoecole-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.autoecole-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.autoecole-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.autoecole-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.autoecole-features-content {
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
+  transition: all 0.8s ease !important;
+}
+.autoecole-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.autoecole-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.autoecole-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.autoecole-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.autoecole-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.autoecole-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.autoecole-features-visual {
+  animation: fadeInRight 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.autoecole-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.autoecole-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.autoecole-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.autoecole-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.autoecole-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.autoecole-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.autoecole-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.autoecole-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.autoecole-testimonial-card {
+  animation: fadeInUp 0.8s ease both !important;
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  transition: all 0.8s ease !important;
+}
+.autoecole-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.autoecole-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.autoecole-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.autoecole-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.autoecole-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.autoecole-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.autoecole-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.autoecole-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.autoecole-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.autoecole-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .autoecole-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .autoecole-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .autoecole-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .autoecole-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .autoecole-hero-title {
+    font-size: 2rem !important;
+  }
+  .autoecole-section-title {
+    font-size: 1.75rem !important;
+  }
+  .autoecole-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .autoecole-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .autoecole-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .autoecole-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .autoecole-hero-form {
+    padding: 1.25rem !important;
+  }
+  .autoecole-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="autoecole-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="autoecole-hero-section">
+    <div class="autoecole-hero-container">
+      <div class="autoecole-hero-content">
+        <div class="autoecole-hero-text">
+          <h1 class="autoecole-hero-title">
+            Création de <span class="autoecole-highlight-yellow">site internet</span> pour votre <span class="autoecole-highlight-yellow">auto-école</span>
+          </h1>
+          <p class="autoecole-hero-subtitle">
+            Attirez plus d'élèves avec un site web professionnel. Design moderne, présentation de vos formations au permis, cours de code et stages accélérés. Mettez en valeur votre expertise et votre taux de réussite.
+          </p>
+        </div>
+        <div class="autoecole-hero-form">
+          <form id="autoecole-contact-form">
+            <div class="autoecole-form-group">
+              <label for="autoecole-name" class="autoecole-form-label">VOTRE NOM</label>
+              <input type="text" id="autoecole-name" name="name" class="autoecole-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="autoecole-form-group">
+              <label for="autoecole-email" class="autoecole-form-label">VOTRE EMAIL</label>
+              <input type="email" id="autoecole-email" name="email" class="autoecole-form-input" placeholder="contact@autoecole.fr" required />
+            </div>
+            <div class="autoecole-form-group">
+              <label for="autoecole-project" class="autoecole-form-label">VOTRE PROJET</label>
+              <textarea id="autoecole-project" name="project" class="autoecole-form-input" placeholder="Ex: Je gère une auto-école et j'ai besoin d'un site pour présenter mes formations au permis et cours de code..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="autoecole-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="autoecole-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI AUTO-ÉCOLE -->
+  <section class="autoecole-why-section">
+    <div class="autoecole-container">
+      <div class="autoecole-section-header">
+        <h2 class="autoecole-section-title">
+          Pourquoi un site internet pour votre <span class="autoecole-highlight">auto-école</span> ?
+        </h2>
+        <p class="autoecole-section-subtitle">
+          Dans un secteur compétitif, un site professionnel vous rend visible et met en avant vos formations au permis et cours de code.
+        </p>
+      </div>
+      <div class="autoecole-benefits-grid">
+        <div class="autoecole-benefit-card">
+          <div class="autoecole-benefit-icon">🔍</div>
+          <h3 class="autoecole-benefit-title">Visibilité locale</h3>
+          <p class="autoecole-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "auto-école [ville]" ou "permis de conduire près de moi".
+          </p>
+        </div>
+        <div class="autoecole-benefit-card">
+          <div class="autoecole-benefit-icon">📅</div>
+          <h3 class="autoecole-benefit-title">Inscription en ligne</h3>
+          <p class="autoecole-benefit-description">
+            Simplifiez les inscriptions pour vos formations au permis et cours de code.
+          </p>
+        </div>
+        <div class="autoecole-benefit-card">
+          <div class="autoecole-benefit-icon">🚗</div>
+          <h3 class="autoecole-benefit-title">Présentation des formations</h3>
+          <p class="autoecole-benefit-description">
+            Mettez en avant vos permis B, conduite accompagnée et stages accélérés avec une interface claire.
+          </p>
+        </div>
+        <div class="autoecole-benefit-card">
+          <div class="autoecole-benefit-icon">🏅</div>
+          <h3 class="autoecole-benefit-title">Confiance et fiabilité</h3>
+          <p class="autoecole-benefit-description">
+            Renforcez la confiance avec un site moderne qui met en avant votre taux de réussite et expertise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="autoecole-features-section">
+    <div class="autoecole-container">
+      <div class="autoecole-features-grid">
+        <div class="autoecole-features-content">
+          <h2 class="autoecole-section-title">
+            Fonctionnalités pour <span class="autoecole-highlight">auto-écoles</span>
+          </h2>
+          <p class="autoecole-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre auto-école.
+          </p>
+          <ul class="autoecole-features-list">
+            <li class="autoecole-feature-item">
+              <div class="autoecole-feature-icon">🚗</div>
+              <div class="autoecole-feature-content">
+                <h4>Inscription en ligne</h4>
+                <p>Permettez à vos élèves de s'inscrire pour des cours de conduite ou de code directement via votre site.</p>
+              </div>
+            </li>
+            <li class="autoecole-feature-item">
+              <div class="autoecole-feature-icon">🗺️</div>
+              <div class="autoecole-feature-content">
+                <h4>Zone d'intervention</h4>
+                <p>Carte interactive pour montrer où vous proposez vos formations.</p>
+              </div>
+            </li>
+            <li class="autoecole-feature-item">
+              <div class="autoecole-feature-icon">📚</div>
+              <div class="autoecole-feature-content">
+                <h4>Cours de code en ligne</h4>
+                <p>Présentez vos cours de code interactifs ou en présentiel pour attirer plus d'élèves.</p>
+              </div>
+            </li>
+            <li class="autoecole-feature-item">
+              <div class="autoecole-feature-icon">📅</div>
+              <div class="autoecole-feature-content">
+                <h4>Planning des stages</h4>
+                <p>Promouvez vos stages accélérés et formations spécifiques avec un calendrier clair.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="autoecole-features-visual">
+          <div class="autoecole-mockup">
+            <div class="autoecole-mockup-header"></div>
+            <div class="autoecole-mockup-content">
+              <h3 class="autoecole-mockup-title">Auto-École Artisan</h3>
+              <p class="autoecole-mockup-text">Permis B, Code, Stages accélérés<br />Inscription • Planning</p>
+              <button class="autoecole-mockup-button">S'inscrire maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="autoecole-testimonials-section">
+    <div class="autoecole-container">
+      <div class="autoecole-section-header">
+        <h2 class="autoecole-section-title">
+          Ce que disent nos <span class="autoecole-highlight">auto-écoles partenaires</span>
+        </h2>
+        <p class="autoecole-section-subtitle">
+          Découvrez l'impact d'un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="autoecole-testimonials-grid">
+        <div class="autoecole-testimonial-card">
+          <p class="autoecole-testimonial-quote">
+            "Notre site a boosté les inscriptions pour nos cours de conduite et de code. Les élèves adorent la simplicité."
+          </p>
+          <div class="autoecole-testimonial-author">
+            <div class="autoecole-testimonial-avatar">JD</div>
+            <div class="autoecole-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Auto-école, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="autoecole-testimonial-card">
+          <p class="autoecole-testimonial-quote">
+            "Présenter nos stages accélérés sur le site a attiré de nouveaux élèves. Très professionnel !"
+          </p>
+          <div class="autoecole-testimonial-author">
+            <div class="autoecole-testimonial-avatar">AL</div>
+            <div class="autoecole-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Auto-école, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="autoecole-testimonial-card">
+          <p class="autoecole-testimonial-quote">
+            "Le formulaire d'inscription en ligne a simplifié notre gestion. Les élèves apprécient la clarté."
+          </p>
+          <div class="autoecole-testimonial-author">
+            <div class="autoecole-testimonial-avatar">MD</div>
+            <div class="autoecole-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Auto-école, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="autoecole-final-cta">
+    <div class="autoecole-container">
+      <h2>Boostez votre auto-école</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos formations et attirer des élèves. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="autoecole-final-button" onclick="document.querySelector('.autoecole-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+        Créer mon site d'auto-école
+      </button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
+
+  const form = document.getElementById('autoecole-contact-form');
+  const button = form.querySelector('.autoecole-cta-button');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('autoecole-name').value;
+    const email = document.getElementById('autoecole-email').value;
+    const project = document.getElementById('autoecole-project').value;
+
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
+
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Auto-école - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Auto-école\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
+  });
+})();
+</script>

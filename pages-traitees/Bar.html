@@ -1,0 +1,757 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.bar-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.bar-wp-scope *, .bar-wp-scope *::before, .bar-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.bar-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.bar-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.bar-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.bar-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.bar-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.bar-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.bar-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.bar-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.bar-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+
+.bar-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.bar-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.bar-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.bar-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.bar-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.bar-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.bar-cta-button:hover {
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.bar-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.bar-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.bar-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.bar-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.bar-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.bar-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.bar-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.bar-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.bar-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.3s ease !important;
+}
+
+.bar-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.bar-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.bar-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.bar-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
+
+.bar-benefit-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.bar-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.bar-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.bar-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.bar-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.bar-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.bar-features-content {
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.bar-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.bar-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.bar-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+}
+.bar-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.bar-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.bar-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.bar-features-visual {
+  animation: fadeInRight 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+
+.bar-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.bar-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.bar-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.bar-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.bar-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.bar-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.bar-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.bar-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.bar-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.8s ease !important;
+}
+
+.bar-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.bar-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.bar-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.bar-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.bar-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.bar-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.bar-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.bar-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.bar-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.bar-final-button:hover {
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .bar-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .bar-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .bar-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .bar-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .bar-hero-title {
+    font-size: 2rem !important;
+  }
+  .bar-section-title {
+    font-size: 1.75rem !important;
+  }
+  .bar-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .bar-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .bar-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .bar-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .bar-hero-form {
+    padding: 1.25rem !important;
+  }
+  .bar-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+</style>
+
+
+
+<div class="bar-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="bar-hero-section">
+    <div class="bar-hero-container">
+      <div class="bar-hero-content">
+        <div class="bar-hero-text">
+          <h1 class="bar-hero-title">
+            Création de <span class="bar-highlight-yellow">site internet</span> pour votre <span class="bar-highlight-yellow">bar</span>
+          </h1>
+          <p class="bar-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Carte des boissons, réservation en ligne, et événements (soirées, concerts). Mettez en valeur l’ambiance unique de votre bar.
+          </p>
+        </div>
+        <div class="bar-hero-form">
+          <form id="bar-contact-form">
+            <div class="bar-form-group">
+              <label for="bar-name" class="bar-form-label">VOTRE NOM</label>
+              <input type="text" id="bar-name" name="name" class="bar-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="bar-form-group">
+              <label for="bar-email" class="bar-form-label">VOTRE EMAIL</label>
+              <input type="email" id="bar-email" name="email" class="bar-form-input" placeholder="contact@bar.fr" required />
+            </div>
+            <div class="bar-form-group">
+              <label for="bar-project" class="bar-form-label">VOTRE PROJET</label>
+              <textarea id="bar-project" name="project" class="bar-form-input" placeholder="Ex: Je gère un bar et j'ai besoin d'un site pour présenter ma carte et mes événements..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="bar-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="bar-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI BAR -->
+  <section class="bar-why-section">
+    <div class="bar-container">
+      <div class="bar-section-header">
+        <h2 class="bar-section-title">
+          Pourquoi un site internet pour votre <span class="bar-highlight">bar</span> ?
+        </h2>
+        <p class="bar-section-subtitle">
+          Dans un secteur compétitif, un site professionnel vous rend visible et met en avant votre carte et l’ambiance de votre bar.
+        </p>
+      </div>
+      <div class="bar-benefits-grid">
+        <div class="bar-benefit-card">
+          <div class="bar-benefit-icon">🔍</div>
+          <h3 class="bar-benefit-title">Visibilité locale</h3>
+          <p class="bar-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "bar [ville]" ou "bar à cocktails près de moi".
+          </p>
+        </div>
+        <div class="bar-benefit-card">
+          <div class="bar-benefit-icon">🍸</div>
+          <h3 class="bar-benefit-title">Carte des boissons</h3>
+          <p class="bar-benefit-description">
+            Présentez vos cocktails, bières artisanales et vins avec un design attrayant.
+          </p>
+        </div>
+        <div class="bar-benefit-card">
+          <div class="bar-benefit-icon">🎶</div>
+          <h3 class="bar-benefit-title">Événements et soirées</h3>
+          <p class="bar-benefit-description">
+            Mettez en avant vos soirées à thème, concerts ou happy hours.
+          </p>
+        </div>
+        <div class="bar-benefit-card">
+          <div class="bar-benefit-icon">🏅</div>
+          <h3 class="bar-benefit-title">Confiance et attractivité</h3>
+          <p class="bar-benefit-description">
+            Renforcez la confiance avec un site moderne qui valorise l’ambiance de votre bar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="bar-features-section">
+    <div class="bar-container">
+      <div class="bar-features-grid">
+        <div class="bar-features-content">
+          <h2 class="bar-section-title">
+            Fonctionnalités pour <span class="bar-highlight">bars</span>
+          </h2>
+          <p class="bar-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre bar.
+          </p>
+          <ul class="bar-features-list">
+            <li class="bar-feature-item">
+              <div class="bar-feature-icon">🍸</div>
+              <div class="bar-feature-content">
+                <h4>Carte des boissons</h4>
+                <p>Présentez vos cocktails, bières artisanales et autres boissons de manière attrayante.</p>
+              </div>
+            </li>
+            <li class="bar-feature-item">
+              <div class="bar-feature-icon">📅</div>
+              <div class="bar-feature-content">
+                <h4>Réservation en ligne</h4>
+                <p>Permettez aux clients de réserver une table directement via votre site.</p>
+              </div>
+            </li>
+            <li class="bar-feature-item">
+              <div class="bar-feature-icon">🎶</div>
+              <div class="bar-feature-content">
+                <h4>Événements et soirées</h4>
+                <p>Promouvez vos concerts, soirées à thème ou happy hours.</p>
+              </div>
+            </li>
+            <li class="bar-feature-item">
+              <div class="bar-feature-icon">🌟</div>
+              <div class="bar-feature-content">
+                <h4>Ambiance unique</h4>
+                <p>Mettez en avant l’atmosphère de votre bar (lounge, pub, à thème).</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="bar-features-visual">
+          <div class="bar-mockup">
+            <div class="bar-mockup-header"></div>
+            <div class="bar-mockup-content">
+              <h3 class="bar-mockup-title">Bar Lounge</h3>
+              <p class="bar-mockup-text">Carte • Réservations<br />Événements • Ambiance</p>
+              <button class="bar-mockup-button">Réserver une table</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="bar-testimonials-section">
+    <div class="bar-container">
+      <div class="bar-section-header">
+        <h2 class="bar-section-title">
+          Ce que disent nos <span class="bar-highlight">bars partenaires</span>
+        </h2>
+        <p class="bar-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="bar-testimonials-grid">
+        <div class="bar-testimonial-card">
+          <p class="bar-testimonial-quote">
+            "Notre site a boosté les réservations et la visibilité de nos soirées. Les clients adorent la simplicité."
+          </p>
+          <div class="bar-testimonial-author">
+            <div class="bar-testimonial-avatar">JD</div>
+            <div class="bar-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Bar, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="bar-testimonial-card">
+          <p class="bar-testimonial-quote">
+            "Présenter notre carte de cocktails sur le site a attiré de nouveaux clients. Très professionnel !"
+          </p>
+          <div class="bar-testimonial-author">
+            <div class="bar-testimonial-avatar">AL</div>
+            <div class="bar-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Bar, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="bar-testimonial-card">
+          <p class="bar-testimonial-quote">
+            "Le calendrier des événements sur notre site a simplifié la communication avec nos clients."
+          </p>
+          <div class="bar-testimonial-author">
+            <div class="bar-testimonial-avatar">MD</div>
+            <div class="bar-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Bar, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="bar-final-cta">
+    <div class="bar-container">
+      <h2>Boostez votre bar</h2>
+      <p>
+        Obtenez un site professionnel pour présenter votre carte et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="bar-final-button" onclick="barScrollToForm()">
+        Créer mon site de bar
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+<script>
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
+
+  const form = document.getElementById('bar-contact-form');
+  const button = form.querySelector('.bar-cta-button');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('bar-name').value;
+    const email = document.getElementById('bar-email').value;
+    const project = document.getElementById('bar-project').value;
+
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
+
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Bar - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Bar\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
+  });
+})();
+</script>

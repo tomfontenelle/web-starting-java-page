@@ -1,0 +1,757 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.theatre-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.theatre-wp-scope *, .theatre-wp-scope *::before, .theatre-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.theatre-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.theatre-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.theatre-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.theatre-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.theatre-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.theatre-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.theatre-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.theatre-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.theatre-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+
+.theatre-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.theatre-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.theatre-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.theatre-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.theatre-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.theatre-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.theatre-cta-button:hover {
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.theatre-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.theatre-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.theatre-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.theatre-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.theatre-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.theatre-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.theatre-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.theatre-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.theatre-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.3s ease !important;
+}
+
+.theatre-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.theatre-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.theatre-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.theatre-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
+
+.theatre-benefit-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.theatre-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.theatre-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.theatre-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.theatre-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.theatre-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.theatre-features-content {
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.theatre-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.theatre-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.theatre-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+}
+.theatre-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.theatre-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.theatre-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.theatre-features-visual {
+  animation: fadeInRight 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+
+.theatre-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.theatre-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.theatre-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.theatre-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.theatre-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.theatre-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.theatre-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.theatre-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.theatre-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.8s ease !important;
+}
+
+.theatre-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.theatre-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.theatre-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.theatre-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.theatre-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.theatre-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.theatre-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.theatre-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.theatre-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.theatre-final-button:hover {
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .theatre-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .theatre-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .theatre-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .theatre-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .theatre-hero-title {
+    font-size: 2rem !important;
+  }
+  .theatre-section-title {
+    font-size: 1.75rem !important;
+  }
+  .theatre-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .theatre-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .theatre-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .theatre-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .theatre-hero-form {
+    padding: 1.25rem !important;
+  }
+  .theatre-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+</style>
+
+
+
+<div class="theatre-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="theatre-hero-section">
+    <div class="theatre-hero-container">
+      <div class="theatre-hero-content">
+        <div class="theatre-hero-text">
+          <h1 class="theatre-hero-title">
+            Création de <span class="theatre-highlight-yellow">site internet</span> pour votre <span class="theatre-highlight-yellow">théâtre</span>
+          </h1>
+          <p class="theatre-hero-subtitle">
+            Attirez plus de spectateurs avec un site web professionnel. Programme des spectacles, réservation de billets, présentation de vos services et contact rapide. Faites briller votre scène.
+          </p>
+        </div>
+        <div class="theatre-hero-form">
+          <form id="theatre-contact-form">
+            <div class="theatre-form-group">
+              <label for="theatre-name" class="theatre-form-label">VOTRE NOM</label>
+              <input type="text" id="theatre-name" name="name" class="theatre-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="theatre-form-group">
+              <label for="theatre-email" class="theatre-form-label">VOTRE EMAIL</label>
+              <input type="email" id="theatre-email" name="email" class="theatre-form-input" placeholder="contact@theatre.fr" required />
+            </div>
+            <div class="theatre-form-group">
+              <label for="theatre-project" class="theatre-form-label">VOTRE PROJET</label>
+              <textarea id="theatre-project" name="project" class="theatre-form-input" placeholder="Ex: J’ai besoin d’un site pour promouvoir mon théâtre et vendre des billets..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="theatre-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="theatre-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI THÉÂTRE -->
+  <section class="theatre-why-section">
+    <div class="theatre-container">
+      <div class="theatre-section-header">
+        <h2 class="theatre-section-title">
+          Pourquoi un site internet pour votre <span class="theatre-highlight">théâtre</span> ?
+        </h2>
+        <p class="theatre-section-subtitle">
+          Dans un secteur culturel et compétitif, un site professionnel met en valeur vos spectacles et attire des spectateurs.
+        </p>
+      </div>
+      <div class="theatre-benefits-grid">
+        <div class="theatre-benefit-card">
+          <div class="theatre-benefit-icon">🔍</div>
+          <h3 class="theatre-benefit-title">Visibilité locale</h3>
+          <p class="theatre-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "théâtre [ville]" ou "spectacle théâtre".
+          </p>
+        </div>
+        <div class="theatre-benefit-card">
+          <div class="theatre-benefit-icon">🎭</div>
+          <h3 class="theatre-benefit-title">Programme des spectacles</h3>
+          <p class="theatre-benefit-description">
+            Présentez vos pièces et événements dans un calendrier attrayant.
+          </p>
+        </div>
+        <div class="theatre-benefit-card">
+          <div class="theatre-benefit-icon">📅</div>
+          <h3 class="theatre-benefit-title">Réservation de billets</h3>
+          <p class="theatre-benefit-description">
+            Permettez à vos spectateurs de réserver leurs places directement sur votre site.
+          </p>
+        </div>
+        <div class="theatre-benefit-card">
+          <div class="theatre-benefit-icon">🏅</div>
+          <h3 class="theatre-benefit-title">Confiance et professionnalisme</h3>
+          <p class="theatre-benefit-description">
+            Renforcez la confiance avec un site qui reflète l’âme de votre théâtre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="theatre-features-section">
+    <div class="theatre-container">
+      <div class="theatre-features-grid">
+        <div class="theatre-features-content">
+          <h2 class="theatre-section-title">
+            Fonctionnalités pour <span class="theatre-highlight">théâtres</span>
+          </h2>
+          <p class="theatre-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre activité théâtrale.
+          </p>
+          <ul class="theatre-features-list">
+            <li class="theatre-feature-item">
+              <div class="theatre-feature-icon">🎭</div>
+              <div class="theatre-feature-content">
+                <h4>Programme des spectacles</h4>
+                <p>Présentez vos pièces dans un calendrier visuellement attrayant.</p>
+              </div>
+            </li>
+            <li class="theatre-feature-item">
+              <div class="theatre-feature-icon">📅</div>
+              <div class="theatre-feature-content">
+                <h4>Réservation de billets</h4>
+                <p>Permettez à vos spectateurs de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="theatre-feature-item">
+              <div class="theatre-feature-icon">💼</div>
+              <div class="theatre-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos spectacles, cours de théâtre, ateliers, etc.</p>
+              </div>
+            </li>
+            <li class="theatre-feature-item">
+              <div class="theatre-feature-icon">📞</div>
+              <div class="theatre-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="theatre-features-visual">
+          <div class="theatre-mockup">
+            <div class="theatre-mockup-header"></div>
+            <div class="theatre-mockup-content">
+              <h3 class="theatre-mockup-title">Site Théâtre</h3>
+              <p class="theatre-mockup-text">Programme • Billetterie<br />Services • Contact</p>
+              <button class="theatre-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="theatre-testimonials-section">
+    <div class="theatre-container">
+      <div class="theatre-section-header">
+        <h2 class="theatre-section-title">
+          Ce que disent nos <span class="theatre-highlight">théâtres partenaires</span>
+        </h2>
+        <p class="theatre-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="theatre-testimonials-grid">
+        <div class="theatre-testimonial-card">
+          <p class="theatre-testimonial-quote">
+            "Notre programme en ligne a attiré plus de spectateurs pour nos spectacles."
+          </p>
+          <div class="theatre-testimonial-author">
+            <div class="theatre-testimonial-avatar">JD</div>
+            <div class="theatre-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Directeur de théâtre, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="theatre-testimonial-card">
+          <p class="theatre-testimonial-quote">
+            "Le site a simplifié la réservation de billets et renforcé notre image."
+          </p>
+          <div class="theatre-testimonial-author">
+            <div class="theatre-testimonial-avatar">AL</div>
+            <div class="theatre-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Directeur de théâtre, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="theatre-testimonial-card">
+          <p class="theatre-testimonial-quote">
+            "Nos spectateurs apprécient la facilité de contact via le formulaire."
+          </p>
+          <div class="theatre-testimonial-author">
+            <div class="theatre-testimonial-avatar">MD</div>
+            <div class="theatre-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Directrice de théâtre, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="theatre-final-cta">
+    <div class="theatre-container">
+      <h2>Boostez votre activité de théâtre</h2>
+      <p>
+        Obtenez un site professionnel pour promouvoir vos spectacles et attirer des spectateurs. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="theatre-final-button" onclick="theatreScrollToForm()">
+        Créer mon site de théâtre
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+<script>
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
+
+  const form = document.getElementById('theatre-contact-form');
+  const button = form.querySelector('.theatre-cta-button');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('theatre-name').value;
+    const email = document.getElementById('theatre-email').value;
+    const project = document.getElementById('theatre-project').value;
+
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
+
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Theatre - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Theatre\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
+  });
+})();
+</script>

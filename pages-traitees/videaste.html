@@ -1,0 +1,757 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+  }
+}
+
+
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.videaste-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.videaste-wp-scope *, .videaste-wp-scope *::before, .videaste-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.videaste-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.videaste-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.videaste-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.videaste-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.videaste-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.videaste-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.videaste-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.videaste-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.videaste-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+
+.videaste-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.videaste-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.videaste-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.videaste-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.videaste-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.videaste-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.videaste-cta-button:hover {
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.videaste-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.videaste-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.videaste-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.videaste-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.videaste-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.videaste-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.videaste-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.videaste-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.videaste-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.3s ease !important;
+}
+
+.videaste-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.videaste-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.videaste-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.videaste-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
+
+.videaste-benefit-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.videaste-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.videaste-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.videaste-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.videaste-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.videaste-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.videaste-features-content {
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
+  transition: all 0.8s ease !important;
+}
+
+.videaste-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.videaste-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.videaste-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+}
+.videaste-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.videaste-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.videaste-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.videaste-features-visual {
+  animation: fadeInRight 0.8s ease 0.5s both !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+
+.videaste-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.videaste-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.videaste-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.videaste-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.videaste-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.videaste-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.videaste-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.videaste-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.videaste-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  animation: fadeInUp 0.8s ease both !important;
+  transition: all 0.8s ease !important;
+}
+
+.videaste-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.videaste-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.videaste-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.videaste-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.videaste-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.videaste-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.videaste-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.videaste-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.videaste-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.videaste-final-button:hover {
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .videaste-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .videaste-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .videaste-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .videaste-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .videaste-hero-title {
+    font-size: 2rem !important;
+  }
+  .videaste-section-title {
+    font-size: 1.75rem !important;
+  }
+  .videaste-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .videaste-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .videaste-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .videaste-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .videaste-hero-form {
+    padding: 1.25rem !important;
+  }
+  .videaste-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+</style>
+
+
+
+<div class="videaste-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="videaste-hero-section">
+    <div class="videaste-hero-container">
+      <div class="videaste-hero-content">
+        <div class="videaste-hero-text">
+          <h1 class="videaste-hero-title">
+            Création de <span class="videaste-highlight-yellow">site internet</span> pour votre <span class="videaste-highlight-yellow">activité de vidéaste</span>
+          </h1>
+          <p class="videaste-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Portfolio vidéo, réservation de projets, présentation de vos services et contact rapide. Mettez en valeur votre talent de vidéaste.
+          </p>
+        </div>
+        <div class="videaste-hero-form">
+          <form id="videaste-contact-form">
+            <div class="videaste-form-group">
+              <label for="videaste-name" class="videaste-form-label">VOTRE NOM</label>
+              <input type="text" id="videaste-name" name="name" class="videaste-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="videaste-form-group">
+              <label for="videaste-email" class="videaste-form-label">VOTRE EMAIL</label>
+              <input type="email" id="videaste-email" name="email" class="videaste-form-input" placeholder="contact@videaste.fr" required />
+            </div>
+            <div class="videaste-form-group">
+              <label for="videaste-project" class="videaste-form-label">VOTRE PROJET</label>
+              <textarea id="videaste-project" name="project" class="videaste-form-input" placeholder="Ex: Je suis vidéaste et j’ai besoin d’un site pour présenter mon portfolio vidéo..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="videaste-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="videaste-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI VIDÉASTE -->
+  <section class="videaste-why-section">
+    <div class="videaste-container">
+      <div class="videaste-section-header">
+        <h2 class="videaste-section-title">
+          Pourquoi un site internet pour votre <span class="videaste-highlight">activité de vidéaste</span> ?
+        </h2>
+        <p class="videaste-section-subtitle">
+          Dans un secteur visuel et compétitif, un site professionnel met en valeur vos vidéos et attire des clients.
+        </p>
+      </div>
+      <div class="videaste-benefits-grid">
+        <div class="videaste-benefit-card">
+          <div class="videaste-benefit-icon">🔍</div>
+          <h3 class="videaste-benefit-title">Visibilité locale</h3>
+          <p class="videaste-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "vidéaste [ville]" ou "vidéaste mariage".
+          </p>
+        </div>
+        <div class="videaste-benefit-card">
+          <div class="videaste-benefit-icon">🎥</div>
+          <h3 class="videaste-benefit-title">Portfolio vidéo</h3>
+          <p class="videaste-benefit-description">
+            Présentez vos vidéos avec une galerie professionnelle et attrayante.
+          </p>
+        </div>
+        <div class="videaste-benefit-card">
+          <div class="videaste-benefit-icon">📅</div>
+          <h3 class="videaste-benefit-title">Réservation de projets</h3>
+          <p class="videaste-benefit-description">
+            Permettez à vos clients de réserver des projets directement sur votre site.
+          </p>
+        </div>
+        <div class="videaste-benefit-card">
+          <div class="videaste-benefit-icon">🏅</div>
+          <h3 class="videaste-benefit-title">Confiance et professionnalisme</h3>
+          <p class="videaste-benefit-description">
+            Renforcez la confiance avec un site qui reflète votre style et votre expertise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="videaste-features-section">
+    <div class="videaste-container">
+      <div class="videaste-features-grid">
+        <div class="videaste-features-content">
+          <h2 class="videaste-section-title">
+            Fonctionnalités pour <span class="videaste-highlight">vidéastes</span>
+          </h2>
+          <p class="videaste-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre activité de vidéaste.
+          </p>
+          <ul class="videaste-features-list">
+            <li class="videaste-feature-item">
+              <div class="videaste-feature-icon">🎥</div>
+              <div class="videaste-feature-content">
+                <h4>Portfolio vidéo</h4>
+                <p>Présentez vos vidéos dans une galerie visuellement attrayante.</p>
+              </div>
+            </li>
+            <li class="videaste-feature-item">
+              <div class="videaste-feature-icon">📅</div>
+              <div class="videaste-feature-content">
+                <h4>Réservation de projets</h4>
+                <p>Permettez à vos clients de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="videaste-feature-item">
+              <div class="videaste-feature-icon">💼</div>
+              <div class="videaste-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos spécialités : mariages, corporate, clips, etc.</p>
+              </div>
+            </li>
+            <li class="videaste-feature-item">
+              <div class="videaste-feature-icon">📞</div>
+              <div class="videaste-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="videaste-features-visual">
+          <div class="videaste-mockup">
+            <div class="videaste-mockup-header"></div>
+            <div class="videaste-mockup-content">
+              <h3 class="videaste-mockup-title">Portfolio Vidéaste</h3>
+              <p class="videaste-mockup-text">Portfolio • Réservations<br />Services • Contact</p>
+              <button class="videaste-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="videaste-testimonials-section">
+    <div class="videaste-container">
+      <div class="videaste-section-header">
+        <h2 class="videaste-section-title">
+          Ce que disent nos <span class="videaste-highlight">vidéastes partenaires</span>
+        </h2>
+        <p class="videaste-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="videaste-testimonials-grid">
+        <div class="videaste-testimonial-card">
+          <p class="videaste-testimonial-quote">
+            "Mon portfolio vidéo a attiré plus de clients pour mes projets de mariage."
+          </p>
+          <div class="videaste-testimonial-author">
+            <div class="videaste-testimonial-avatar">JD</div>
+            <div class="videaste-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Vidéaste, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="videaste-testimonial-card">
+          <p class="videaste-testimonial-quote">
+            "Le site a renforcé mon image professionnelle et simplifié les réservations."
+          </p>
+          <div class="videaste-testimonial-author">
+            <div class="videaste-testimonial-avatar">AL</div>
+            <div class="videaste-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Vidéaste, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="videaste-testimonial-card">
+          <p class="videaste-testimonial-quote">
+            "Mes clients adorent la facilité de prise de contact via le formulaire."
+          </p>
+          <div class="videaste-testimonial-author">
+            <div class="videaste-testimonial-avatar">MD</div>
+            <div class="videaste-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Vidéaste, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="videaste-final-cta">
+    <div class="videaste-container">
+      <h2>Boostez votre activité de vidéaste</h2>
+      <p>
+        Obtenez un site professionnel pour présenter votre portfolio vidéo et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="videaste-final-button" onclick="videasteScrollToForm()">
+        Créer mon site de vidéaste
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+<script>
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
+
+  const form = document.getElementById('videaste-contact-form');
+  const button = form.querySelector('.videaste-cta-button');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('videaste-name').value;
+    const email = document.getElementById('videaste-email').value;
+    const project = document.getElementById('videaste-project').value;
+
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
+
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Videaste - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Videaste\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
+  });
+})();
+</script>

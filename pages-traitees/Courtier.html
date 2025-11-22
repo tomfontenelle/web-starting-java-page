@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Création de site internet pour Courtier - Web Starting</title>
-  <meta name="description" content="Site internet professionnel pour courtier. Design moderne, simulateur de prêt, prise de rendez-vous et conseils financiers personnalisés. Attirez plus de clients avec un site qui inspire confiance.">
-  <!-- EmailJS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-<body>
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -16,84 +7,88 @@
 
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .courtier-wp-scope {
-all: initial !important;
-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
-box-sizing: border-box !important;
-width: 100% !important;
-display: block !important;
-position: relative !important;
-margin: 0 !important;
-padding: 0 !important;
-background: #082416 !important;
-min-height: 100vh !important;
-box-sizing: border-box !important;
-font-family: inherit !important;
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.courtier-wp-scope *, .courtier-wp-scope *::before, .courtier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
 }
 
 /* HERO SECTION */
 .courtier-hero-section {
-min-height: 100vh !important;
-background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
-position: relative !important;
-overflow: hidden !important;
-display: flex !important;
-align-items: center !important;
-justify-content: center !important;
-padding: 2rem 2rem 0 2rem !important;
-margin: 0 !important;
-margin-bottom: 0 !important;
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
 }
 .courtier-hero-section::before {
-content: '' !important;
-position: absolute !important;
-top: 0 !important;
-left: 0 !important;
-right: 0 !important;
-bottom: 0 !important;
-background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
-pointer-events: none !important;
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
 }
 .courtier-hero-container {
-max-width: 1400px !important;
-width: 100% !important;
-position: relative !important;
-z-index: 1 !important;
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 .courtier-hero-content {
-display: grid !important;
-grid-template-columns: 1fr 400px !important;
-gap: 6rem !important;
-align-items: center !important;
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
 }
 .courtier-hero-text {
   opacity: 0 !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .courtier-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .courtier-hero-title {
-font-size: 4rem !important;
-font-weight: 800 !important;
-line-height: 1.1 !important;
-margin: 0 0 2rem 0 !important;
-color: #ffffff !important;
-letter-spacing: -0.02em !important;
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
 }
 .courtier-highlight-yellow {
-color: #e8ff45 !important;
-position: relative !important;
+  color: #e8ff45 !important;
+  position: relative !important;
 }
 .courtier-hero-subtitle {
-font-size: 1.25rem !important;
-font-weight: 400 !important;
-color: #a0a0a0 !important;
-margin: 0 !important;
-line-height: 1.6 !important;
-max-width: 500px !important;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
 }
 .courtier-hero-form {
   background: rgba(8, 36, 22, 0.9) !important;
@@ -107,125 +102,124 @@ max-width: 500px !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .courtier-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .courtier-form-group {
-margin: 0 0 1.5rem 0 !important;
+  margin: 0 0 1.5rem 0 !important;
 }
 .courtier-form-label {
-display: block !important;
-font-size: 0.75rem !important;
-font-weight: 600 !important;
-color: #e8ff45 !important;
-margin: 0 0 0.5rem 0 !important;
-text-transform: uppercase !important;
-letter-spacing: 1px !important;
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
 }
 .courtier-form-input {
-width: 100% !important;
-padding: 1rem !important;
-background: rgba(8, 36, 22, 0.6) !important;
-border: 1px solid rgba(232, 255, 69, 0.3) !important;
-border-radius: 6px !important;
-color: #ffffff !important;
-font-size: 1rem !important;
-font-family: 'Montserrat', sans-serif !important;
-transition: all 0.3s ease !important;
-resize: vertical !important;
-min-height: 3rem !important;
-font-weight: 400 !important;
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
 }
 .courtier-form-input::placeholder {
-color: rgba(255, 255, 255, 0.6) !important;
-font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
 }
 .courtier-form-input:focus {
-outline: none !important;
-border-color: #e8ff45 !important;
-box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
-background: rgba(8, 36, 22, 0.8) !important;
-color: #ffffff !important;
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
 }
 .courtier-cta-button {
-width: 100% !important;
-padding: 1.25rem 2rem !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-color: #082416 !important;
-border: none !important;
-border-radius: 6px !important;
-font-size: 0.9rem !important;
-font-weight: 700 !important;
-font-family: 'Montserrat', sans-serif !important;
-cursor: pointer !important;
-transition: all 0.3s ease !important;
-text-transform: uppercase !important;
-letter-spacing: 0.5px !important;
-box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .courtier-cta-button:hover {
-transform: translateY(-2px) !important;
-box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
-background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
 .courtier-trust-badge {
-text-align: center !important;
-margin: 1.5rem 0 0 0 !important;
-font-size: 0.75rem !important;
-color: rgba(255, 255, 255, 0.6) !important;
-font-weight: 400 !important;
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
 }
 
 /* SECTIONS GÉNÉRALES */
 .courtier-container {
-max-width: 1200px !important;
-margin: 0 auto !important;
-padding: 0 2rem !important;
-position: relative !important;
-z-index: 1 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 .courtier-section-header {
-text-align: center !important;
-margin: 0 0 4rem 0 !important;
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
 }
 .courtier-section-title {
-font-size: 2.5rem !important;
-font-weight: 800 !important;
-color: #ffffff !important;
-margin: 0 0 1rem 0 !important;
-line-height: 1.2 !important;
-letter-spacing: -0.02em !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
 }
 .courtier-section-subtitle {
-font-size: 1.125rem !important;
-color: #a0a0a0 !important;
-margin: 0 auto !important;
-max-width: 600px !important;
-line-height: 1.6 !important;
-font-weight: 400 !important;
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
 }
 .courtier-highlight {
-color: #e8ff45 !important;
-position: relative !important;
+  color: #e8ff45 !important;
+  position: relative !important;
 }
 
 /* SECTION POURQUOI */
 .courtier-why-section {
-padding: 2rem 0 5rem 0 !important;
-background: #082416 !important;
-position: relative !important;
-margin: 0 !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .courtier-benefits-grid {
-display: grid !important;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-gap: 2rem !important;
-margin: 0 !important;
-padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .courtier-benefit-card {
   background: rgba(8, 36, 22, 0.4) !important;
@@ -238,180 +232,177 @@ padding: 0 !important;
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .courtier-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .courtier-benefit-card:hover {
-transform: translateY(-5px) !important;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-border-color: rgba(232, 255, 69, 0.3) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
 }
 .courtier-benefit-icon {
-width: 50px !important;
-height: 50px !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-border-radius: 10px !important;
-display: flex !important;
-align-items: center !important;
-justify-content: center !important;
-margin: 0 0 1.5rem 0 !important;
-font-size: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
 }
 .courtier-benefit-title {
-font-size: 1.25rem !important;
-font-weight: 700 !important;
-color: #ffffff !important;
-margin: 0 0 1rem 0 !important;
-line-height: 1.3 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
 }
 .courtier-benefit-description {
-font-size: 0.95rem !important;
-color: #a0a0a0 !important;
-line-height: 1.6 !important;
-margin: 0 !important;
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
 }
 
 /* SECTION FONCTIONNALITÉS */
 .courtier-features-section {
-padding: 5rem 0 !important;
-background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
-margin: 0 !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .courtier-features-grid {
-display: grid !important;
-grid-template-columns: 1fr 1fr !important;
-gap: 4rem !important;
-align-items: center !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
 }
 .courtier-features-content {
   opacity: 0 !important;
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .courtier-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
 .courtier-features-list {
-list-style: none !important;
-padding: 0 !important;
-margin: 2rem 0 0 0 !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
 }
 .courtier-feature-item {
-display: flex !important;
-align-items: flex-start !important;
-margin: 0 0 1.5rem 0 !important;
-padding: 1.5rem !important;
-background: rgba(8, 36, 22, 0.3) !important;
-border-radius: 10px !important;
-border-left: 3px solid #e8ff45 !important;
-transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .courtier-feature-item:hover {
-background: rgba(8, 36, 22, 0.5) !important;
-transform: translateX(5px) !important;
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .courtier-feature-icon {
-width: 35px !important;
-height: 35px !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-border-radius: 6px !important;
-display: flex !important;
-align-items: center !important;
-justify-content: center !important;
-margin: 0 1rem 0 0 !important;
-flex-shrink: 0 !important;
-font-size: 16px !important;
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
 }
 .courtier-feature-content h4 {
-font-size: 1rem !important;
-font-weight: 600 !important;
-color: #ffffff !important;
-margin: 0 0 0.5rem 0 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
 }
 .courtier-feature-content p {
-font-size: 0.9rem !important;
-color: #a0a0a0 !important;
-margin: 0 !important;
-line-height: 1.5 !important;
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
 }
 .courtier-features-visual {
   opacity: 0 !important;
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .courtier-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
 .courtier-mockup {
-background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
-border-radius: 16px !important;
-padding: 1.5rem !important;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-position: relative !important;
-overflow: hidden !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 .courtier-mockup-header {
-height: 30px !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-border-radius: 12px 12px 0 0 !important;
-margin: 0 0 1rem 0 !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
 }
 .courtier-mockup-content {
-background: #ffffff !important;
-border-radius: 8px !important;
-padding: 2rem !important;
-min-height: 200px !important;
-display: flex !important;
-flex-direction: column !important;
-justify-content: center !important;
-align-items: center !important;
-text-align: center !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 .courtier-mockup-title {
-font-size: 1.25rem !important;
-font-weight: 700 !important;
-color: #082416 !important;
-margin: 0 0 0.5rem 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
 }
 .courtier-mockup-text {
-color: #666666 !important;
-margin: 0 0 1.5rem 0 !important;
-font-size: 0.9rem !important;
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
 }
 .courtier-mockup-button {
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-color: #082416 !important;
-padding: 0.75rem 1.5rem !important;
-border: none !important;
-border-radius: 6px !important;
-font-weight: 600 !important;
-cursor: pointer !important;
-font-size: 0.9rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
 }
 
 /* SECTION TÉMOIGNAGES */
 .courtier-testimonials-section {
-padding: 5rem 0 !important;
-background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
-color: #ffffff !important;
-margin: 0 !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .courtier-testimonials-grid {
-display: grid !important;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-gap: 2rem !important;
-margin: 0 !important;
-padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .courtier-testimonial-card {
   background: rgba(8, 36, 22, 0.4) !important;
@@ -424,175 +415,160 @@ padding: 0 !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .courtier-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .courtier-testimonial-quote {
-font-size: 1rem !important;
-line-height: 1.6 !important;
-margin: 0 0 1.5rem 0 !important;
-font-style: italic !important;
-color: #e5e5e5 !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
 }
 .courtier-testimonial-author {
-display: flex !important;
-align-items: center !important;
+  display: flex !important;
+  align-items: center !important;
 }
 .courtier-testimonial-avatar {
-width: 40px !important;
-height: 40px !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-border-radius: 50% !important;
-display: flex !important;
-align-items: center !important;
-justify-content: center !important;
-margin: 0 1rem 0 0 !important;
-font-weight: 700 !important;
-color: #082416 !important;
-font-size: 0.9rem !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
 }
 .courtier-testimonial-info h4 {
-font-size: 0.95rem !important;
-font-weight: 600 !important;
-margin: 0 0 0.25rem 0 !important;
-color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
 }
 .courtier-testimonial-info p {
-font-size: 0.8rem !important;
-color: #a0a0a0 !important;
-margin: 0 !important;
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
 }
 
 /* SECTION CTA FINALE */
 .courtier-final-cta {
-padding: 5rem 0 !important;
-background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
-text-align: center !important;
-color: #082416 !important;
-margin: 0 !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .courtier-final-cta h2 {
-font-size: 2.5rem !important;
-font-weight: 800 !important;
-margin: 0 0 1rem 0 !important;
-line-height: 1.2 !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
 }
 .courtier-final-cta p {
-font-size: 1.125rem !important;
-margin: 0 0 2rem 0 !important;
-max-width: 600px !important;
-margin-left: auto !important;
-margin-right: auto !important;
-opacity: 0.8 !important;
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .courtier-final-button {
-background: #082416 !important;
-color: #ffffff !important;
-padding: 1.25rem 2.5rem !important;
-border: none !important;
-border-radius: 8px !important;
-font-size: 1rem !important;
-font-weight: 700 !important;
-font-family: 'Montserrat', sans-serif !important;
-cursor: pointer !important;
-transition: all 0.3s ease !important;
-text-transform: uppercase !important;
-letter-spacing: 0.5px !important;
-box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .courtier-final-button:hover {
-transform: translateY(-3px) !important;
-box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
-background: #0a2d1a !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
 }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-.courtier-hero-content {
-grid-template-columns: 1fr !important;
-gap: 3rem !important;
-text-align: center !important;
-}
-.courtier-features-grid {
-grid-template-columns: 1fr !important;
-gap: 3rem !important;
-}
-.courtier-hero-title {
-font-size: 3rem !important;
-}
+  .courtier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .courtier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .courtier-hero-title {
+    font-size: 3rem !important;
+  }
 }
 @media (max-width: 768px) {
-.courtier-hero-section {
-padding: 1rem 1rem 0 1rem !important;
-min-height: 70vh !important;
-}
-.courtier-hero-title {
-font-size: 2.5rem !important;
-}
-.courtier-section-title {
-font-size: 2rem !important;
-}
-.courtier-final-cta h2 {
-font-size: 2rem !important;
-}
-.courtier-benefits-grid {
-grid-template-columns: 1fr !important;
-}
-.courtier-testimonials-grid {
-grid-template-columns: 1fr !important;
-}
-.courtier-container {
-padding: 0 1rem !important;
-}
+  .courtier-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .courtier-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .courtier-section-title {
+    font-size: 2rem !important;
+  }
+  .courtier-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .courtier-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .courtier-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .courtier-container {
+    padding: 0 1rem !important;
+  }
 }
 @media (max-width: 480px) {
-.courtier-hero-section {
-padding: 1.5rem 1rem !important;
-min-height: 60vh !important;
-}
-.courtier-hero-content {
-gap: 2rem !important;
-}
-.courtier-hero-title {
-font-size: 2rem !important;
-}
-.courtier-hero-subtitle {
-font-size: 1rem !important;
-margin-bottom: 1.5rem !important;
-}
-.courtier-hero-form {
-  background: rgba(8, 36, 22, 0.9) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(232, 255, 69, 0.3) !important;
-  border-radius: 12px !important;
-  padding: 2.5rem !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-  position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
-  transition: all 0.8s ease 0.3s !important;
-}
-
-.courtier-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-.courtier-section-title {
-font-size: 1.75rem !important;
-}
-.courtier-final-cta h2 {
-font-size: 1.75rem !important;
-}
-.courtier-why-section, .courtier-features-section, .courtier-testimonials-section, .courtier-final-cta {
-padding: 1rem 0 3rem 0 !important;
-}
-.courtier-why-section {
-padding: 1rem 0 3rem 0 !important;
-}
+  .courtier-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .courtier-hero-content {
+    gap: 2rem !important;
+  }
+  .courtier-hero-title {
+    font-size: 2rem !important;
+  }
+  .courtier-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .courtier-hero-form {
+    padding: 1.5rem !important;
+  }
+  .courtier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .courtier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .courtier-why-section, .courtier-features-section, .courtier-testimonials-section, .courtier-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .courtier-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
 }
 </style>
 
@@ -632,7 +608,7 @@ padding: 1rem 0 3rem 0 !important;
   </section>
 
   <!-- SECTION POURQUOI COURTIER -->
-<section class="courtier-why-section">
+  <section class="courtier-why-section">
     <div class="courtier-container">
       <div class="courtier-section-header">
         <h2 class="courtier-section-title">
@@ -661,7 +637,7 @@ padding: 1rem 0 3rem 0 !important;
           <div class="courtier-benefit-icon">💸</div>
           <h3 class="courtier-benefit-title">Négociation de prêts</h3>
           <p class="courtier-benefit-description">
-            Mettez en avant votre expertise en négociation de taux d'intérêt pour attirer des clients à la recherche de solutions financières.
+            Mettez en avant votre expertise en négociation de taux d’intérêt pour attirer des clients à la recherche de solutions financières.
           </p>
         </div>
         <div class="courtier-benefit-card">
@@ -676,7 +652,7 @@ padding: 1rem 0 3rem 0 !important;
   </section>
 
   <!-- SECTION FONCTIONNALITÉS -->
-<section class="courtier-features-section">
+  <section class="courtier-features-section">
     <div class="courtier-container">
       <div class="courtier-features-grid">
         <div class="courtier-features-content">
@@ -697,7 +673,7 @@ padding: 1rem 0 3rem 0 !important;
             <li class="courtier-feature-item">
               <div class="courtier-feature-icon">🗺️</div>
               <div class="courtier-feature-content">
-                <h4>Zone d'intervention</h4>
+                <h4>Zone d’intervention</h4>
                 <p>Carte interactive montrant votre cabinet et les zones couvertes pour vos services de courtage.</p>
               </div>
             </li>
@@ -732,7 +708,7 @@ padding: 1rem 0 3rem 0 !important;
   </section>
 
   <!-- SECTION TÉMOIGNAGES -->
-<section class="courtier-testimonials-section">
+  <section class="courtier-testimonials-section">
     <div class="courtier-container">
       <div class="courtier-section-header">
         <h2 class="courtier-section-title" style="color: #ffffff !important;">
@@ -784,7 +760,7 @@ padding: 1rem 0 3rem 0 !important;
   </section>
 
   <!-- SECTION CTA FINALE -->
-<section class="courtier-final-cta">
+  <section class="courtier-final-cta">
     <div class="courtier-container">
       <h2>Prêt à développer votre activité de courtier ?</h2>
       <p>
@@ -807,7 +783,6 @@ padding: 1rem 0 3rem 0 !important;
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -834,7 +809,6 @@ padding: 1rem 0 3rem 0 !important;
   // Gestion du formulaire
   const form = root.querySelector('#courtier-contact-form');
   const button = root.querySelector('.courtier-cta-button');
-
   if (form && button) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -860,14 +834,11 @@ padding: 1rem 0 3rem 0 !important;
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Courtier - web-starting.fr',
         message: `Nouvelle demande pour un site de courtier depuis web-starting.fr
-
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
-
 Source: Page Courtier - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
-
 Cordialement,
 Système automatique web-starting.fr`
       };
@@ -923,8 +894,3 @@ Système automatique web-starting.fr`
   });
 })();
 </script>
-
-
-
-</body>
-</html>

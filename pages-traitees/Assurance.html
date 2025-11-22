@@ -1,4 +1,4 @@
-<!-- SCRIPT EMAILJS -->
+<!-- EmailJS Script -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
@@ -26,6 +26,11 @@
   font-family: inherit !important;
 }
 
+/* HERO SECTION */
+.assurance-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
@@ -61,7 +66,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .assurance-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -98,7 +102,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .assurance-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -124,6 +127,7 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -150,11 +154,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .assurance-cta-button:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -226,12 +232,12 @@
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .assurance-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .assurance-benefit-card:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -279,7 +285,6 @@
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .assurance-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -297,9 +302,11 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .assurance-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .assurance-feature-icon {
   width: 35px !important;
@@ -330,7 +337,6 @@
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .assurance-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -409,7 +415,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .assurance-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -472,6 +477,7 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .assurance-final-button {
   background: #082416 !important;
@@ -483,11 +489,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .assurance-final-button:hover {
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -607,7 +615,7 @@
           Pourquoi un site internet est <span class="assurance-highlight">essentiel</span> pour votre agence d'assurance ?
         </h2>
         <p class="assurance-section-subtitle">
-          Dans un marché concurrentiel, vos clients recherchent des solutions d'assurance en ligne. Soyez visible et accessible avec un site qui met en avant vos garanties.
+          Dans un marché concurrentiel, vos clients recherchent des solutions d’assurance en ligne. Soyez visible et accessible avec un site qui met en avant vos garanties.
         </p>
       </div>
       <div class="assurance-benefits-grid">
@@ -622,14 +630,14 @@
           <div class="assurance-benefit-icon">📅</div>
           <h3 class="assurance-benefit-title">Prise de rendez-vous en ligne</h3>
           <p class="assurance-benefit-description">
-            Permettez à vos clients de réserver des consultations pour des contrats d'assurance directement sur votre site. Simplifiez vos processus.
+            Permettez à vos clients de réserver des consultations pour des contrats d’assurance directement sur votre site. Simplifiez vos processus.
           </p>
         </div>
         <div class="assurance-benefit-card">
           <div class="assurance-benefit-icon">🛡️</div>
           <h3 class="assurance-benefit-title">Devis en ligne</h3>
           <p class="assurance-benefit-description">
-            Proposez des devis personnalisés pour l'assurance auto, habitation ou santé directement sur votre site.
+            Proposez des devis personnalisés pour l’assurance auto, habitation ou santé directement sur votre site.
           </p>
         </div>
         <div class="assurance-benefit-card">
@@ -652,28 +660,28 @@
             Fonctionnalités <span class="assurance-highlight">spécialisées</span> pour agences d'assurance
           </h2>
           <p class="assurance-section-subtitle">
-            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité d'assurance.
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité d’assurance.
           </p>
           <ul class="assurance-features-list">
             <li class="assurance-feature-item">
               <div class="assurance-feature-icon">📝</div>
               <div class="assurance-feature-content">
                 <h4>Devis en ligne</h4>
-                <p>Proposez un outil interactif pour générer des devis d'assurance auto, habitation ou santé en quelques clics.</p>
+                <p>Proposez un outil interactif pour générer des devis d’assurance auto, habitation ou santé en quelques clics.</p>
               </div>
             </li>
             <li class="assurance-feature-item">
               <div class="assurance-feature-icon">🗺️</div>
               <div class="assurance-feature-content">
-                <h4>Zone d'intervention</h4>
-                <p>Carte interactive montrant votre agence et les zones couvertes pour vos services d'assurance.</p>
+                <h4>Zone d’intervention</h4>
+                <p>Carte interactive montrant votre agence et les zones couvertes pour vos services d’assurance.</p>
               </div>
             </li>
             <li class="assurance-feature-item">
               <div class="assurance-feature-icon">📅</div>
               <div class="assurance-feature-content">
                 <h4>Prise de rendez-vous</h4>
-                <p>Système de réservation en ligne pour des consultations sur les contrats d'assurance.</p>
+                <p>Système de réservation en ligne pour des consultations sur les contrats d’assurance.</p>
               </div>
             </li>
             <li class="assurance-feature-item">
@@ -719,19 +727,19 @@
             <div class="assurance-testimonial-avatar">SD</div>
             <div class="assurance-testimonial-info">
               <h4>Sophie Dubois</h4>
-              <p>Directrice d'agence d'assurance, Paris</p>
+              <p>Directrice d’agence d’assurance, Paris</p>
             </div>
           </div>
         </div>
         <div class="assurance-testimonial-card">
           <p class="assurance-testimonial-quote">
-            "Le site nous a permis de présenter nos contrats d'assurance avec clarté. Nos clients nous perçoivent comme des experts fiables."
+            "Le site nous a permis de présenter nos contrats d’assurance avec clarté. Nos clients nous perçoivent comme des experts fiables."
           </p>
           <div class="assurance-testimonial-author">
             <div class="assurance-testimonial-avatar">AL</div>
             <div class="assurance-testimonial-info">
               <h4>Antoine Leclerc</h4>
-              <p>Agent d'assurance, Lyon</p>
+              <p>Agent d’assurance, Lyon</p>
             </div>
           </div>
         </div>
@@ -743,7 +751,7 @@
             <div class="assurance-testimonial-avatar">MD</div>
             <div class="assurance-testimonial-info">
               <h4>Marie Durand</h4>
-              <p>Responsable d'agence, Marseille</p>
+              <p>Responsable d’agence, Marseille</p>
             </div>
           </div>
         </div>
@@ -756,10 +764,10 @@
     <div class="assurance-container">
       <h2>Prêt à développer votre agence d'assurance ?</h2>
       <p>
-        Rejoignez les centaines d'agences d'assurance qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+        Rejoignez les centaines d’agences d’assurance qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
       <button class="assurance-final-button" onclick="assuranceScrollToForm()">
-        Obtenir mon site d'agence d'assurance
+        Obtenir mon site d’agence d’assurance
       </button>
     </div>
   </section>
@@ -770,12 +778,11 @@
   const root = document.querySelector('.assurance-wp-scope');
   if (!root) return;
 
-  // Animation d'entrée progressive avec IntersectionObserver
+  // Animation d'entrée progressive
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -799,14 +806,12 @@
     if (heroForm) heroForm.classList.add('animate');
   }, 500);
 
-  // Gestion du formulaire EmailJS
+  // Gestion du formulaire
   const form = root.querySelector('#assurance-contact-form');
   const button = root.querySelector('.assurance-cta-button');
-
   if (form && button) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-
       const name = form.querySelector('#assurance-name').value;
       const email = form.querySelector('#assurance-email').value;
       const project = form.querySelector('#assurance-project').value;
@@ -828,15 +833,12 @@
         project_description: project,
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Assurance - web-starting.fr',
-        message: `Nouvelle demande pour un site d'agence d'assurance depuis web-starting.fr
-
+        message: `Nouvelle demande pour un site d’agence d’assurance depuis web-starting.fr
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
-
 Source: Page Assurance - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
-
 Cordialement,
 Système automatique web-starting.fr`
       };
@@ -850,7 +852,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
             form.reset();
           }, 3000);
@@ -861,7 +863,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
           }, 3000);
         });
@@ -874,63 +876,6 @@ Système automatique web-starting.fr`
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Focus sur le champ nom après le scroll
-      setTimeout(() => {
-        const nameField = heroForm.querySelector('#assurance-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.assurance-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
-  });
-})();
-
-<script>
-(() => {
-  const root = document.querySelector('.assurance-wp-scope');
-  if (!root) return;
-
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
-
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.assurance-hero-text, .assurance-hero-form, .assurance-benefit-card, .assurance-testimonial-card, .assurance-features-content, .assurance-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.assurance-hero-text');
-    const heroForm = root.querySelector('.assurance-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
-
-  // Fonction pour scroller vers le formulaire
-  window.assuranceScrollToForm = function() {
-    const heroForm = root.querySelector('.assurance-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(() => {
         const nameField = heroForm.querySelector('#assurance-name');
         if (nameField) nameField.focus();

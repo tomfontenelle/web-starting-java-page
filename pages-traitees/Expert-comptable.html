@@ -1,4 +1,4 @@
-<!-- SCRIPT EMAILJS -->
+<!-- EmailJS Script -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
@@ -26,6 +26,11 @@
   font-family: inherit !important;
 }
 
+/* HERO SECTION */
+.expert-comptable-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
@@ -61,7 +66,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .expert-comptable-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -98,7 +102,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .expert-comptable-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -124,6 +127,7 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -150,11 +154,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .expert-comptable-cta-button:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -226,12 +232,12 @@
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .expert-comptable-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .expert-comptable-benefit-card:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -279,7 +285,6 @@
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .expert-comptable-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -297,9 +302,11 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .expert-comptable-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .expert-comptable-feature-icon {
   width: 35px !important;
@@ -330,7 +337,6 @@
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .expert-comptable-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -409,7 +415,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .expert-comptable-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -472,6 +477,7 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .expert-comptable-final-button {
   background: #082416 !important;
@@ -483,11 +489,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .expert-comptable-final-button:hover {
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -604,7 +612,7 @@
     <div class="expert-comptable-container">
       <div class="expert-comptable-section-header">
         <h2 class="expert-comptable-section-title">
-          Pourquoi un site internet est <span class="expert-comptable-highlight">essentiel</span> pour votre cabinet d'expertise comptable ?
+          Pourquoi un site internet est <span class="expert-comptable-highlight">essentiel</span> pour votre cabinet d’expertise comptable ?
         </h2>
         <p class="expert-comptable-section-subtitle">
           Dans un monde numérique, vos futurs clients vous cherchent en ligne. Soyez visible et accessible 24h/24 avec un site qui reflète votre expertise comptable.
@@ -636,7 +644,7 @@
           <div class="expert-comptable-benefit-icon">🏅</div>
           <h3 class="expert-comptable-benefit-title">Confiance et expertise</h3>
           <p class="expert-comptable-benefit-description">
-            Présentez votre rigueur et votre expertise en fiscalité ou gestion d'entreprise. Inspirez confiance avec un site professionnel.
+            Présentez votre rigueur et votre expertise en fiscalité ou gestion d’entreprise. Inspirez confiance avec un site professionnel.
           </p>
         </div>
       </div>
@@ -659,13 +667,13 @@
               <div class="expert-comptable-feature-icon">📊</div>
               <div class="expert-comptable-feature-content">
                 <h4>Présentation des services</h4>
-                <p>Décrivez vos spécialités : tenue de comptabilité, déclarations fiscales, audits ou conseil en gestion d'entreprise.</p>
+                <p>Décrivez vos spécialités : tenue de comptabilité, déclarations fiscales, audits ou conseil en gestion d’entreprise.</p>
               </div>
             </li>
             <li class="expert-comptable-feature-item">
               <div class="expert-comptable-feature-icon">🗺️</div>
               <div class="expert-comptable-feature-content">
-                <h4>Zone d'intervention</h4>
+                <h4>Zone d’intervention</h4>
                 <p>Carte interactive montrant votre cabinet et les options de consultations à distance ou en présentiel.</p>
               </div>
             </li>
@@ -725,13 +733,13 @@
         </div>
         <div class="expert-comptable-testimonial-card">
           <p class="expert-comptable-testimonial-quote">
-            "Le site m'a permis de partager des guides sur la fiscalité. Mes clients me perçoivent comme un expert fiable."
+            "Le site m’a permis de partager des guides sur la fiscalité. Mes clients me perçoivent comme un expert fiable."
           </p>
           <div class="expert-comptable-testimonial-author">
             <div class="expert-comptable-testimonial-avatar">AL</div>
             <div class="expert-comptable-testimonial-info">
               <h4>Antoine Leclerc</h4>
-              <p>Expert-comptable en gestion d'entreprise, Lyon</p>
+              <p>Expert-comptable en gestion d’entreprise, Lyon</p>
             </div>
           </div>
         </div>
@@ -754,12 +762,12 @@
   <!-- SECTION CTA FINALE -->
   <section class="expert-comptable-final-cta">
     <div class="expert-comptable-container">
-      <h2>Prêt à développer votre cabinet d'expertise comptable ?</h2>
+      <h2>Prêt à développer votre cabinet d’expertise comptable ?</h2>
       <p>
-        Rejoignez les centaines d'experts-comptables qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+        Rejoignez les centaines d’experts-comptables qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
       <button class="expert-comptable-final-button" onclick="expertComptableScrollToForm()">
-        Obtenir mon site d'expert-comptable
+        Obtenir mon site d’expert-comptable
       </button>
     </div>
   </section>
@@ -770,12 +778,11 @@
   const root = document.querySelector('.expert-comptable-wp-scope');
   if (!root) return;
 
-  // Animation d'entrée progressive avec IntersectionObserver
+  // Animation d'entrée progressive
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -799,10 +806,9 @@
     if (heroForm) heroForm.classList.add('animate');
   }, 500);
 
-  // Gestion du formulaire EmailJS
+  // Gestion du formulaire
   const form = root.querySelector('#expert-comptable-contact-form');
   const button = root.querySelector('.expert-comptable-cta-button');
-
   if (form && button) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -827,15 +833,12 @@
         project_description: project,
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Expert-comptable - web-starting.fr',
-        message: `Nouvelle demande pour un site d'expert-comptable depuis web-starting.fr
-
+        message: `Nouvelle demande pour un site d’expert-comptable depuis web-starting.fr
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
-
 Source: Page Expert-comptable - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
-
 Cordialement,
 Système automatique web-starting.fr`
       };
@@ -849,7 +852,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
             form.reset();
           }, 3000);
@@ -860,7 +863,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
           }, 3000);
         });
@@ -873,63 +876,6 @@ Système automatique web-starting.fr`
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Focus sur le champ nom après le scroll
-      setTimeout(() => {
-        const nameField = heroForm.querySelector('#expert-comptable-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.expert-comptable-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
-  });
-})();
-
-<script>
-(() => {
-  const root = document.querySelector('.expert-comptable-wp-scope');
-  if (!root) return;
-
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
-
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.expert-comptable-hero-text, .expert-comptable-hero-form, .expert-comptable-benefit-card, .expert-comptable-testimonial-card, .expert-comptable-features-content, .expert-comptable-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.expert-comptable-hero-text');
-    const heroForm = root.querySelector('.expert-comptable-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
-
-  // Fonction pour scroller vers le formulaire
-  window.expertcomptableScrollToForm = function() {
-    const heroForm = root.querySelector('.expert-comptable-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(() => {
         const nameField = heroForm.querySelector('#expert-comptable-name');
         if (nameField) nameField.focus();

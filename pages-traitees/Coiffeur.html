@@ -1,4 +1,4 @@
-<!-- SCRIPT EMAILJS - À charger avant le contenu -->
+<!-- EmailJS Script -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
@@ -21,11 +21,11 @@
   line-height: 1.6 !important;
   color: #ffffff !important;
 }
-
 .coiffeur-wp-scope *, .coiffeur-wp-scope *::before, .coiffeur-wp-scope *::after {
   box-sizing: border-box !important;
   font-family: inherit !important;
 }
+
 /* HERO SECTION */
 .coiffeur-hero-section {
   min-height: 100vh !important;
@@ -39,7 +39,6 @@
   margin: 0 !important;
   margin-bottom: 0 !important;
 }
-
 .coiffeur-hero-section::before {
   content: '' !important;
   position: absolute !important;
@@ -47,38 +46,30 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
   pointer-events: none !important;
 }
-
 .coiffeur-hero-container {
   max-width: 1400px !important;
   width: 100% !important;
   position: relative !important;
   z-index: 1 !important;
 }
-
 .coiffeur-hero-content {
   display: grid !important;
   grid-template-columns: 1fr 400px !important;
   gap: 6rem !important;
   align-items: center !important;
 }
-
 .coiffeur-hero-text {
   opacity: 0 !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .coiffeur-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
-
-
 .coiffeur-hero-title {
   font-size: 4rem !important;
   font-weight: 800 !important;
@@ -87,12 +78,10 @@
   color: #ffffff !important;
   letter-spacing: -0.02em !important;
 }
-
 .coiffeur-highlight-yellow {
   color: #e8ff45 !important;
   position: relative !important;
 }
-
 .coiffeur-hero-subtitle {
   font-size: 1.25rem !important;
   font-weight: 400 !important;
@@ -101,9 +90,6 @@
   line-height: 1.6 !important;
   max-width: 500px !important;
 }
-
-/* Animation CSS automatique pour hero-form */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-hero-form {
   background: rgba(8, 36, 22, 0.9) !important;
   backdrop-filter: blur(10px) !important;
@@ -112,20 +98,17 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-    opacity: 0 !important;
+  opacity: 0 !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .coiffeur-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
 .coiffeur-form-group {
   margin: 0 0 1.5rem 0 !important;
 }
-
 .coiffeur-form-label {
   display: block !important;
   font-size: 0.75rem !important;
@@ -135,7 +118,6 @@
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
 }
-
 .coiffeur-form-input {
   width: 100% !important;
   padding: 1rem !important;
@@ -150,12 +132,10 @@
   min-height: 3rem !important;
   font-weight: 400 !important;
 }
-
 .coiffeur-form-input::placeholder {
   color: rgba(255, 255, 255, 0.6) !important;
   font-weight: 300 !important;
 }
-
 .coiffeur-form-input:focus {
   outline: none !important;
   border-color: #e8ff45 !important;
@@ -163,7 +143,6 @@
   background: rgba(8, 36, 22, 0.8) !important;
   color: #ffffff !important;
 }
-
 .coiffeur-cta-button {
   width: 100% !important;
   padding: 1.25rem 2rem !important;
@@ -180,13 +159,11 @@
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
-
 .coiffeur-cta-button:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
-
 .coiffeur-trust-badge {
   text-align: center !important;
   margin: 1.5rem 0 0 0 !important;
@@ -203,12 +180,10 @@
   position: relative !important;
   z-index: 1 !important;
 }
-
 .coiffeur-section-header {
   text-align: center !important;
   margin: 0 0 4rem 0 !important;
 }
-
 .coiffeur-section-title {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
@@ -217,7 +192,6 @@
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
 }
-
 .coiffeur-section-subtitle {
   font-size: 1.125rem !important;
   color: #a0a0a0 !important;
@@ -226,7 +200,6 @@
   line-height: 1.6 !important;
   font-weight: 400 !important;
 }
-
 .coiffeur-highlight {
   color: #e8ff45 !important;
   position: relative !important;
@@ -241,7 +214,6 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-
 .coiffeur-benefits-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
@@ -249,9 +221,6 @@
   margin: 0 !important;
   padding: 0 !important;
 }
-
-/* Animation CSS automatique pour benefit-card */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-benefit-card {
   background: rgba(8, 36, 22, 0.4) !important;
   border-radius: 12px !important;
@@ -260,21 +229,18 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-    opacity: 0 !important;
+  opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .coiffeur-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
 .coiffeur-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
-
 .coiffeur-benefit-icon {
   width: 50px !important;
   height: 50px !important;
@@ -286,7 +252,6 @@
   margin: 0 0 1.5rem 0 !important;
   font-size: 20px !important;
 }
-
 .coiffeur-benefit-title {
   font-size: 1.25rem !important;
   font-weight: 700 !important;
@@ -294,7 +259,6 @@
   margin: 0 0 1rem 0 !important;
   line-height: 1.3 !important;
 }
-
 .coiffeur-benefit-description {
   font-size: 0.95rem !important;
   color: #a0a0a0 !important;
@@ -310,33 +274,26 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-
 .coiffeur-features-grid {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 4rem !important;
   align-items: center !important;
 }
-
 .coiffeur-features-content {
   opacity: 0 !important;
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .coiffeur-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
-
-
-
 .coiffeur-features-list {
   list-style: none !important;
   padding: 0 !important;
   margin: 2rem 0 0 0 !important;
 }
-
 .coiffeur-feature-item {
   display: flex !important;
   align-items: flex-start !important;
@@ -347,12 +304,10 @@
   border-left: 3px solid #e8ff45 !important;
   transition: all 0.3s ease !important;
 }
-
 .coiffeur-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
   transform: translateX(5px) !important;
 }
-
 .coiffeur-feature-icon {
   width: 35px !important;
   height: 35px !important;
@@ -365,34 +320,27 @@
   flex-shrink: 0 !important;
   font-size: 16px !important;
 }
-
 .coiffeur-feature-content h4 {
   font-size: 1rem !important;
   font-weight: 600 !important;
   color: #ffffff !important;
   margin: 0 0 0.5rem 0 !important;
 }
-
 .coiffeur-feature-content p {
   font-size: 0.9rem !important;
   color: #a0a0a0 !important;
   margin: 0 !important;
   line-height: 1.5 !important;
 }
-
 .coiffeur-features-visual {
   opacity: 0 !important;
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .coiffeur-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
-
-
-
 .coiffeur-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
   border-radius: 16px !important;
@@ -401,14 +349,12 @@
   position: relative !important;
   overflow: hidden !important;
 }
-
 .coiffeur-mockup-header {
   height: 30px !important;
   background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
   border-radius: 12px 12px 0 0 !important;
   margin: 0 0 1rem 0 !important;
 }
-
 .coiffeur-mockup-content {
   background: #ffffff !important;
   border-radius: 8px !important;
@@ -420,20 +366,17 @@
   align-items: center !important;
   text-align: center !important;
 }
-
 .coiffeur-mockup-title {
   font-size: 1.25rem !important;
   font-weight: 700 !important;
   color: #082416 !important;
   margin: 0 0 0.5rem 0 !important;
 }
-
 .coiffeur-mockup-text {
   color: #666666 !important;
   margin: 0 0 1.5rem 0 !important;
   font-size: 0.9rem !important;
 }
-
 .coiffeur-mockup-button {
   background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
   color: #082416 !important;
@@ -454,7 +397,6 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-
 .coiffeur-testimonials-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
@@ -462,9 +404,6 @@
   margin: 0 !important;
   padding: 0 !important;
 }
-
-/* Animation CSS automatique pour testimonial-card */
-/* Visible par défaut (sans JavaScript) */
 .coiffeur-testimonial-card {
   background: rgba(8, 36, 22, 0.4) !important;
   backdrop-filter: blur(10px) !important;
@@ -472,16 +411,14 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-    opacity: 0 !important;
+  opacity: 0 !important;
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .coiffeur-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
 .coiffeur-testimonial-quote {
   font-size: 1rem !important;
   line-height: 1.6 !important;
@@ -489,12 +426,10 @@
   font-style: italic !important;
   color: #e5e5e5 !important;
 }
-
 .coiffeur-testimonial-author {
   display: flex !important;
   align-items: center !important;
 }
-
 .coiffeur-testimonial-avatar {
   width: 40px !important;
   height: 40px !important;
@@ -508,14 +443,12 @@
   color: #082416 !important;
   font-size: 0.9rem !important;
 }
-
 .coiffeur-testimonial-info h4 {
   font-size: 0.95rem !important;
   font-weight: 600 !important;
   margin: 0 0 0.25rem 0 !important;
   color: #ffffff !important;
 }
-
 .coiffeur-testimonial-info p {
   font-size: 0.8rem !important;
   color: #a0a0a0 !important;
@@ -532,14 +465,12 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-
 .coiffeur-final-cta h2 {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   margin: 0 0 1rem 0 !important;
   line-height: 1.2 !important;
 }
-
 .coiffeur-final-cta p {
   font-size: 1.125rem !important;
   margin: 0 0 2rem 0 !important;
@@ -548,7 +479,6 @@
   margin-right: auto !important;
   opacity: 0.8 !important;
 }
-
 .coiffeur-final-button {
   background: #082416 !important;
   color: #ffffff !important;
@@ -564,7 +494,6 @@
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
-
 .coiffeur-final-button:hover {
   transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
@@ -586,7 +515,6 @@
     font-size: 3rem !important;
   }
 }
-
 @media (max-width: 768px) {
   .coiffeur-hero-section {
     padding: 1rem 1rem 0 1rem !important;
@@ -611,7 +539,6 @@
     padding: 0 1rem !important;
   }
 }
-
 @media (max-width: 480px) {
   .coiffeur-hero-section {
     padding: 1.5rem 1rem !important;
@@ -658,7 +585,6 @@
             Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de coiffures, prise de rendez-vous et conseils capillaires personnalisés. Votre salon mérite une présence digitale qui sublime votre talent.
           </p>
         </div>
-
         <div class="coiffeur-hero-form">
           <form id="coiffeur-contact-form">
             <div class="coiffeur-form-group">
@@ -692,7 +618,6 @@
           Dans un marché concurrentiel, vos clients recherchent des salons de coiffure en ligne. Soyez visible et mettez en avant votre style et expertise avec un site professionnel.
         </p>
       </div>
-
       <div class="coiffeur-benefits-grid">
         <div class="coiffeur-benefit-card">
           <div class="coiffeur-benefit-icon">🔍</div>
@@ -737,7 +662,6 @@
           <p class="coiffeur-section-subtitle">
             Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre salon de coiffure.
           </p>
-
           <ul class="coiffeur-features-list">
             <li class="coiffeur-feature-item">
               <div class="coiffeur-feature-icon">💇‍♀️</div>
@@ -750,7 +674,7 @@
               <div class="coiffeur-feature-icon">🗺️</div>
               <div class="coiffeur-feature-content">
                 <h4>Localisation du salon</h4>
-                <p>Carte interactive montrant l'emplacement de votre salon pour faciliter l'accès des clients.</p>
+                <p>Carte interactive montrant l’emplacement de votre salon pour faciliter l’accès des clients.</p>
               </div>
             </li>
             <li class="coiffeur-feature-item">
@@ -764,12 +688,11 @@
               <div class="coiffeur-feature-icon">🧴</div>
               <div class="coiffeur-feature-content">
                 <h4>Conseils capillaires</h4>
-                <p>Section pour guider vos clients sur l'entretien des cheveux et les produits recommandés.</p>
+                <p>Section pour guider vos clients sur l’entretien des cheveux et les produits recommandés.</p>
               </div>
             </li>
           </ul>
         </div>
-
         <div class="coiffeur-features-visual">
           <div class="coiffeur-mockup">
             <div class="coiffeur-mockup-header"></div>
@@ -795,7 +718,6 @@
           Découvrez comment un site professionnel a transformé leur activité.
         </p>
       </div>
-
       <div class="coiffeur-testimonials-grid">
         <div class="coiffeur-testimonial-card">
           <p class="coiffeur-testimonial-quote">
@@ -809,7 +731,6 @@
             </div>
           </div>
         </div>
-
         <div class="coiffeur-testimonial-card">
           <p class="coiffeur-testimonial-quote">
             "Le site nous a permis de présenter nos services avec clarté. Nos clients nous perçoivent comme un salon moderne et professionnel."
@@ -822,7 +743,6 @@
             </div>
           </div>
         </div>
-
         <div class="coiffeur-testimonial-card">
           <p class="coiffeur-testimonial-quote">
             "Grâce à notre site, nous attirons des clients de toute la région. La prise de rendez-vous en ligne est un vrai plus."
@@ -853,65 +773,6 @@
   </section>
 </div>
 
-<!-- JAVASCRIPT EMAILJS MINIMAL (30 lignes) -->
-<script>
-(function() {
-  // Attendre que EmailJS soit chargé
-  if (typeof emailjs === 'undefined') {
-    console.error('EmailJS not loaded');
-    return;
-  }
-
-  const form = document.getElementById('coiffeur-contact-form');
-  const button = form.querySelector('.coiffeur-cta-button');
-  const originalText = button.innerHTML;
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // État: Envoi en cours
-    button.disabled = true;
-    button.innerHTML = '⏳ Envoi en cours...';
-    button.style.opacity = '0.6';
-
-    // Configuration EmailJS
-    const templateParams = {
-      from_name: form.querySelector('#coiffeur-name').value,
-      from_email: form.querySelector('#coiffeur-email').value,
-      project_description: form.querySelector('#coiffeur-project').value,
-      to_email: 'contact.capitainepub@gmail.com',
-      subject: 'Nouvelle demande - Site Coiffeur - web-starting.fr',
-      message: `Nouvelle demande pour un site de salon de coiffure depuis web-starting.fr\n\nNom: ${form.querySelector('#coiffeur-name').value}\nEmail: ${form.querySelector('#coiffeur-email').value}\nProjet: ${form.querySelector('#coiffeur-project').value}\n\nSource: Page Coiffeur - web-starting.fr\nDate: ${new Date().toLocaleString('fr-FR')}\n\nCordialement,\nSystème automatique web-starting.fr`
-    };
-
-    emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
-      .then(function() {
-        // Succès ✅
-        button.innerHTML = '✅ Message envoyé !';
-        button.style.background = '#10b981';
-        form.reset();
-        setTimeout(() => {
-          button.innerHTML = originalText;
-          button.disabled = false;
-          button.style.opacity = '1';
-          button.style.background = '';
-        }, 3000);
-      })
-      .catch(function(error) {
-        // Erreur ❌
-        console.error('Erreur EmailJS:', error);
-        button.innerHTML = '❌ Erreur, réessayez';
-        button.style.background = '#ef4444';
-        setTimeout(() => {
-          button.innerHTML = originalText;
-          button.disabled = false;
-          button.style.opacity = '1';
-          button.style.background = '';
-        }, 3000);
-      });
-  });
-})();
-
 <script>
 (() => {
   const root = document.querySelector('.coiffeur-wp-scope');
@@ -922,7 +783,6 @@
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -946,11 +806,76 @@
     if (heroForm) heroForm.classList.add('animate');
   }, 500);
 
+  // Gestion du formulaire
+  const form = root.querySelector('#coiffeur-contact-form');
+  const button = root.querySelector('.coiffeur-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#coiffeur-name').value;
+      const email = form.querySelector('#coiffeur-email').value;
+      const project = form.querySelector('#coiffeur-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      // Animation du bouton
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      // Envoi via EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Coiffeur - web-starting.fr',
+        message: `Nouvelle demande pour un site de salon de coiffure depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Coiffeur - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Utilisation d'EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
+          setTimeout(() => {
+            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
   // Fonction pour scroller vers le formulaire
   window.coiffeurScrollToForm = function() {
     const heroForm = root.querySelector('.coiffeur-hero-form');
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
       setTimeout(() => {
         const nameField = heroForm.querySelector('#coiffeur-name');
         if (nameField) nameField.focus();

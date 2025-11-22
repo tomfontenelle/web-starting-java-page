@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Création de site internet pour Notaire - Web Starting</title>
-  <meta name="description" content="Site internet professionnel pour notaire. Design élégant, prise de rendez-vous en ligne, rédaction d'actes et conseil en droit immobilier. Attirez plus de clients avec un site qui inspire confiance.">
-  <!-- EmailJS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-<body>
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
@@ -26,6 +18,11 @@
   background: #082416 !important;
   min-height: 100vh !important;
   overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.notaire-wp-scope *, .notaire-wp-scope *::before, .notaire-wp-scope *::after {
+  box-sizing: border-box !important;
   font-family: inherit !important;
 }
 
@@ -69,7 +66,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .notaire-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -106,7 +102,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .notaire-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -132,6 +127,7 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -158,11 +154,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .notaire-cta-button:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -234,12 +232,12 @@
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .notaire-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .notaire-benefit-card:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -287,7 +285,6 @@
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .notaire-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -305,9 +302,11 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .notaire-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .notaire-feature-icon {
   width: 35px !important;
@@ -338,7 +337,6 @@
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .notaire-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -417,7 +415,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .notaire-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -480,6 +477,7 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .notaire-final-button {
   background: #082416 !important;
@@ -491,11 +489,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .notaire-final-button:hover {
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -582,7 +582,7 @@
             Création de <span class="notaire-highlight-yellow">site internet</span> pour <span class="notaire-highlight-yellow">notaire</span> professionnel
           </h1>
           <p class="notaire-hero-subtitle">
-            Attirez plus de clients avec un site web professionnel. Design élégant, prise de rendez-vous en ligne, rédaction d'actes et conseils en droit immobilier. Votre office notarial mérite une présence digitale qui inspire confiance.
+            Attirez plus de clients avec un site web professionnel. Design élégant, prise de rendez-vous en ligne, rédaction d’actes et conseils en droit immobilier. Votre office notarial mérite une présence digitale qui inspire confiance.
           </p>
         </div>
         <div class="notaire-hero-form">
@@ -630,14 +630,14 @@
           <div class="notaire-benefit-icon">📅</div>
           <h3 class="notaire-benefit-title">Prise de rendez-vous en ligne</h3>
           <p class="notaire-benefit-description">
-            Permettez à vos clients de réserver des consultations ou signatures d'actes directement sur votre site. Simplifiez votre gestion.
+            Permettez à vos clients de réserver des consultations ou signatures d’actes directement sur votre site. Simplifiez votre gestion.
           </p>
         </div>
         <div class="notaire-benefit-card">
           <div class="notaire-benefit-icon">🖋️</div>
-          <h3 class="notaire-benefit-title">Rédaction d'actes</h3>
+          <h3 class="notaire-benefit-title">Rédaction d’actes</h3>
           <p class="notaire-benefit-description">
-            Mettez en avant votre expertise en rédaction d'actes notariés, contrats de mariage ou gestion de successions pour attirer des clients.
+            Mettez en avant votre expertise en rédaction d’actes notariés, contrats de mariage ou gestion de successions pour attirer des clients.
           </p>
         </div>
         <div class="notaire-benefit-card">
@@ -667,13 +667,13 @@
               <div class="notaire-feature-icon">🖋️</div>
               <div class="notaire-feature-content">
                 <h4>Présentation des services</h4>
-                <p>Décrivez vos spécialités : rédaction d'actes, droit immobilier, gestion de successions ou contrats de mariage.</p>
+                <p>Décrivez vos spécialités : rédaction d’actes, droit immobilier, gestion de successions ou contrats de mariage.</p>
               </div>
             </li>
             <li class="notaire-feature-item">
               <div class="notaire-feature-icon">🗺️</div>
               <div class="notaire-feature-content">
-                <h4>Zone d'intervention</h4>
+                <h4>Zone d’intervention</h4>
                 <p>Carte interactive montrant votre office notarial et les options de consultations à distance ou en présentiel.</p>
               </div>
             </li>
@@ -681,7 +681,7 @@
               <div class="notaire-feature-icon">📅</div>
               <div class="notaire-feature-content">
                 <h4>Prise de rendez-vous</h4>
-                <p>Système de réservation en ligne pour consultations ou signatures d'actes notariés.</p>
+                <p>Système de réservation en ligne pour consultations ou signatures d’actes notariés.</p>
               </div>
             </li>
             <li class="notaire-feature-item">
@@ -733,7 +733,7 @@
         </div>
         <div class="notaire-testimonial-card">
           <p class="notaire-testimonial-quote">
-            "Le site m'a permis de partager des guides sur les successions. Mes clients me perçoivent comme une experte rigoureuse."
+            "Le site m’a permis de partager des guides sur les successions. Mes clients me perçoivent comme une experte rigoureuse."
           </p>
           <div class="notaire-testimonial-author">
             <div class="notaire-testimonial-avatar">AL</div>
@@ -778,12 +778,11 @@
   const root = document.querySelector('.notaire-wp-scope');
   if (!root) return;
 
-  // Animation d'entrée progressive avec IntersectionObserver
+  // Animation d'entrée progressive
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -810,11 +809,9 @@
   // Gestion du formulaire
   const form = root.querySelector('#notaire-contact-form');
   const button = root.querySelector('.notaire-cta-button');
-
   if (form && button) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-
       const name = form.querySelector('#notaire-name').value;
       const email = form.querySelector('#notaire-email').value;
       const project = form.querySelector('#notaire-project').value;
@@ -837,13 +834,11 @@
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Notaire - web-starting.fr',
         message: `Nouvelle demande pour un site de notaire depuis web-starting.fr
-
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
 Source: Page Notaire - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
-
 Cordialement,
 Système automatique web-starting.fr`
       };
@@ -857,7 +852,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
             form.reset();
           }, 3000);
@@ -868,7 +863,7 @@ Système automatique web-starting.fr`
           // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
             button.disabled = false;
           }, 3000);
         });
@@ -899,7 +894,3 @@ Système automatique web-starting.fr`
   });
 })();
 </script>
-
-
-</body>
-</html>

@@ -26,6 +26,11 @@
   font-family: inherit !important;
 }
 
+/* HERO SECTION */
+.artisan-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
@@ -61,7 +66,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .artisan-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -98,7 +102,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .artisan-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -124,6 +127,7 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -150,11 +154,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .artisan-cta-button:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -226,12 +232,12 @@
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .artisan-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .artisan-benefit-card:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -279,7 +285,6 @@
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .artisan-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -297,9 +302,11 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .artisan-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .artisan-feature-icon {
   width: 35px !important;
@@ -330,7 +337,6 @@
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .artisan-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -409,7 +415,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .artisan-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -472,6 +477,7 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .artisan-final-button {
   background: #082416 !important;
@@ -483,11 +489,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .artisan-final-button:hover {
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -571,7 +579,7 @@
       <div class="artisan-hero-content">
         <div class="artisan-hero-text">
           <h1 class="artisan-hero-title">
-            Création de <span class="artisan-highlight-yellow">site internet</span> pour votre <span class="artisan-highlight-yellow">activité d'artisan</span>
+            Création de <span class="artisan-highlight-yellow">site internet</span> pour votre <span class="artisan-highlight-yellow">activité d’artisan</span>
           </h1>
           <p class="artisan-hero-subtitle">
             Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de projets artisanaux, demande de devis et conseils personnalisés. Votre savoir-faire mérite une présence digitale qui met en valeur vos réalisations et votre expertise.
@@ -604,7 +612,7 @@
     <div class="artisan-container">
       <div class="artisan-section-header">
         <h2 class="artisan-section-title">
-          Pourquoi un site internet est <span class="artisan-highlight">essentiel</span> pour votre activité d'artisan ?
+          Pourquoi un site internet est <span class="artisan-highlight">essentiel</span> pour votre activité d’artisan ?
         </h2>
         <p class="artisan-section-subtitle">
           Dans un marché concurrentiel, vos clients recherchent des artisans en ligne. Soyez visible et mettez en avant votre savoir-faire avec un site professionnel.
@@ -652,7 +660,7 @@
             Fonctionnalités <span class="artisan-highlight">spécialisées</span> pour artisans
           </h2>
           <p class="artisan-section-subtitle">
-            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité d'artisan.
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre activité d’artisan.
           </p>
           <ul class="artisan-features-list">
             <li class="artisan-feature-item">
@@ -665,8 +673,8 @@
             <li class="artisan-feature-item">
               <div class="artisan-feature-icon">🗺️</div>
               <div class="artisan-feature-content">
-                <h4>Zone d'intervention</h4>
-                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+                <h4>Zone d’intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l’accès des clients.</p>
               </div>
             </li>
             <li class="artisan-feature-item">
@@ -754,12 +762,12 @@
   <!-- SECTION CTA FINALE -->
   <section class="artisan-final-cta">
     <div class="artisan-container">
-      <h2>Prêt à sublimer votre activité d'artisan ?</h2>
+      <h2>Prêt à sublimer votre activité d’artisan ?</h2>
       <p>
-        Rejoignez les centaines d'artisans qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+        Rejoignez les centaines d’artisans qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
       <button class="artisan-final-button" onclick="artisanScrollToForm()">
-        Obtenir mon site d'artisan
+        Obtenir mon site d’artisan
       </button>
     </div>
   </section>
@@ -825,7 +833,7 @@
         project_description: project,
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Artisan - web-starting.fr',
-        message: `Nouvelle demande pour un site d'artisan depuis web-starting.fr
+        message: `Nouvelle demande pour un site d’artisan depuis web-starting.fr
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
@@ -868,63 +876,6 @@ Système automatique web-starting.fr`
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Focus sur le champ nom après le scroll
-      setTimeout(() => {
-        const nameField = heroForm.querySelector('#artisan-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.artisan-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
-  });
-})();
-
-<script>
-(() => {
-  const root = document.querySelector('.artisan-wp-scope');
-  if (!root) return;
-
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
-
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.artisan-hero-text, .artisan-hero-form, .artisan-benefit-card, .artisan-testimonial-card, .artisan-features-content, .artisan-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.artisan-hero-text');
-    const heroForm = root.querySelector('.artisan-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
-
-  // Fonction pour scroller vers le formulaire
-  window.artisanScrollToForm = function() {
-    const heroForm = root.querySelector('.artisan-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(() => {
         const nameField = heroForm.querySelector('#artisan-name');
         if (nameField) nameField.focus();

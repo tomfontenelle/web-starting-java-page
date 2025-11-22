@@ -1,3 +1,6 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
@@ -26,6 +29,11 @@
 /* HERO SECTION */
 .plaquiste-hero-section {
   min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
   justify-content: center !important;
   padding: 2rem 2rem 0 2rem !important;
   margin: 0 !important;
@@ -58,7 +66,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .plaquiste-hero-text.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -95,7 +102,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
 }
-
 .plaquiste-hero-form.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -121,6 +127,7 @@
   color: #ffffff !important;
   font-size: 1rem !important;
   font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
   resize: vertical !important;
   min-height: 3rem !important;
   font-weight: 400 !important;
@@ -147,11 +154,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
 }
 .plaquiste-cta-button:hover {
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
   background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
 }
@@ -223,12 +232,12 @@
   opacity: 0 !important;
   transform: translateY(30px) !important;
 }
-
 .plaquiste-benefit-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 .plaquiste-benefit-card:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   border-color: rgba(232, 255, 69, 0.3) !important;
 }
@@ -276,7 +285,6 @@
   transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .plaquiste-features-content.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -294,9 +302,11 @@
   background: rgba(8, 36, 22, 0.3) !important;
   border-radius: 10px !important;
   border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
 }
 .plaquiste-feature-item:hover {
   background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
 }
 .plaquiste-feature-icon {
   width: 35px !important;
@@ -327,7 +337,6 @@
   transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
 }
-
 .plaquiste-features-visual.animate {
   opacity: 1 !important;
   transform: translateX(0) !important;
@@ -406,7 +415,6 @@
   transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
 }
-
 .plaquiste-testimonial-card.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -469,6 +477,7 @@
   max-width: 600px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  opacity: 0.8 !important;
 }
 .plaquiste-final-button {
   background: #082416 !important;
@@ -480,11 +489,13 @@
   font-weight: 700 !important;
   font-family: 'Montserrat', sans-serif !important;
   cursor: pointer !important;
+  transition: all 0.3s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
   box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
 }
 .plaquiste-final-button:hover {
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
   background: #0a2d1a !important;
 }
@@ -662,22 +673,22 @@
             <li class="plaquiste-feature-item">
               <div class="plaquiste-feature-icon">🗺️</div>
               <div class="plaquiste-feature-content">
-                <h4>Zone d'intervention</h4>
-                <p>Carte interactive montrant votre zone de service pour faciliter l'accès des clients.</p>
+                <h4>Zone d’intervention</h4>
+                <p>Carte interactive montrant votre zone de service pour faciliter l’accès des clients.</p>
               </div>
             </li>
             <li class="plaquiste-feature-item">
               <div class="plaquiste-feature-icon">📅</div>
               <div class="plaquiste-feature-content">
                 <h4>Demande de devis</h4>
-                <p>Système de demande de devis en ligne pour des travaux d'isolation ou d'aménagement intérieur.</p>
+                <p>Système de demande de devis en ligne pour des travaux d’isolation ou d’aménagement intérieur.</p>
               </div>
             </li>
             <li class="plaquiste-feature-item">
               <div class="plaquiste-feature-icon">🛠️</div>
               <div class="plaquiste-feature-content">
                 <h4>Expertise en isolation</h4>
-                <p>Section pour promouvoir vos services d'isolation phonique et thermique, et vos finitions de qualité.</p>
+                <p>Section pour promouvoir vos services d’isolation phonique et thermique, et vos finitions de qualité.</p>
               </div>
             </li>
           </ul>
@@ -722,7 +733,7 @@
         </div>
         <div class="plaquiste-testimonial-card">
           <p class="plaquiste-testimonial-quote">
-            "Le site nous a permis de présenter nos services d'isolation avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
+            "Le site nous a permis de présenter nos services d’isolation avec professionnalisme. Nos clients adorent consulter nos réalisations en ligne."
           </p>
           <div class="plaquiste-testimonial-author">
             <div class="plaquiste-testimonial-avatar">AL</div>
@@ -762,14 +773,12 @@
   </section>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script>
 (() => {
   const root = document.querySelector('.plaquiste-wp-scope');
   if (!root) return;
 
-  // Animation d'entrée progressive avec IntersectionObserver
+  // Animation d'entrée progressive
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -796,9 +805,6 @@
     if (heroText) heroText.classList.add('animate');
     if (heroForm) heroForm.classList.add('animate');
   }, 500);
-
-  // Initialisation EmailJS
-  emailjs.init('EbZUccJ9uKukb5WRE');
 
   // Gestion du formulaire
   const form = root.querySelector('#plaquiste-contact-form');
@@ -837,8 +843,8 @@ Cordialement,
 Système automatique web-starting.fr`
       };
 
-      // Utilisation d'EmailJS avec configuration complète
-      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams)
+      // Utilisation d'EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
           button.innerHTML = '✅ Demande envoyée !';
@@ -870,63 +876,6 @@ Système automatique web-starting.fr`
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Focus sur le champ nom après le scroll
-      setTimeout(() => {
-        const nameField = heroForm.querySelector('#plaquiste-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.plaquiste-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
-  });
-})();
-
-<script>
-(() => {
-  const root = document.querySelector('.plaquiste-wp-scope');
-  if (!root) return;
-
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
-
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.plaquiste-hero-text, .plaquiste-hero-form, .plaquiste-benefit-card, .plaquiste-testimonial-card, .plaquiste-features-content, .plaquiste-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.plaquiste-hero-text');
-    const heroForm = root.querySelector('.plaquiste-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
-
-  // Fonction pour scroller vers le formulaire
-  window.plaquisteScrollToForm = function() {
-    const heroForm = root.querySelector('.plaquiste-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(() => {
         const nameField = heroForm.querySelector('#plaquiste-name');
         if (nameField) nameField.focus();

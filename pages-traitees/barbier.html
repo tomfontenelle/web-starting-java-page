@@ -1,0 +1,930 @@
+<!-- SCRIPT EMAILJS - À charger avant le contenu -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.barbier-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+
+.barbier-wp-scope *, .barbier-wp-scope *::before, .barbier-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* ANIMATIONS CSS - Remplace IntersectionObserver */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HERO SECTION */
+.barbier-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.barbier-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+
+.barbier-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.barbier-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour hero-text */
+.barbier-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+}
+
+.barbier-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+
+.barbier-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+.barbier-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+
+/* Animation CSS automatique pour hero-form */
+.barbier-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+}
+
+.barbier-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+
+.barbier-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.barbier-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+
+.barbier-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+
+.barbier-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+
+.barbier-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+
+.barbier-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+
+.barbier-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.barbier-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.barbier-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+
+.barbier-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.barbier-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+.barbier-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.barbier-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.barbier-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour benefit-card */
+.barbier-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.barbier-benefit-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.barbier-benefit-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.barbier-benefit-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.barbier-benefit-card:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+
+.barbier-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+
+.barbier-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+
+.barbier-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+
+.barbier-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.barbier-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.barbier-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour features-content */
+.barbier-features-content {
+  animation: fadeInLeft 0.8s ease both !important;
+}
+
+.barbier-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+
+.barbier-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+
+.barbier-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+
+.barbier-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+
+.barbier-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.barbier-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Animation CSS automatique pour features-visual */
+.barbier-features-visual {
+  animation: fadeInRight 0.8s ease 0.2s both !important;
+}
+
+.barbier-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.barbier-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.barbier-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.barbier-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.barbier-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+
+.barbier-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.barbier-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.barbier-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour testimonial-card */
+.barbier-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.barbier-testimonial-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.barbier-testimonial-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.barbier-testimonial-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.barbier-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+
+.barbier-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.barbier-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+
+.barbier-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+
+.barbier-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.barbier-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.barbier-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+
+.barbier-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+
+.barbier-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+
+.barbier-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .barbier-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .barbier-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .barbier-hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .barbier-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .barbier-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .barbier-section-title {
+    font-size: 2rem !important;
+  }
+  .barbier-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .barbier-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .barbier-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .barbier-container {
+    padding: 0 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .barbier-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .barbier-hero-content {
+    gap: 2rem !important;
+  }
+  .barbier-hero-title {
+    font-size: 2rem !important;
+  }
+  .barbier-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .barbier-hero-form {
+    padding: 1.5rem !important;
+  }
+  .barbier-section-title {
+    font-size: 1.75rem !important;
+  }
+  .barbier-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .barbier-why-section, .barbier-features-section, .barbier-testimonials-section, .barbier-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .barbier-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="barbier-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="barbier-hero-section">
+    <div class="barbier-hero-container">
+      <div class="barbier-hero-content">
+        <div class="barbier-hero-text">
+          <h1 class="barbier-hero-title">
+            Création de <span class="barbier-highlight-yellow">site internet</span> pour <span class="barbier-highlight-yellow">barbier</span> professionnel
+          </h1>
+          <p class="barbier-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de styles de barbe, prise de rendez-vous et conseils d'entretien personnalisés. Votre salon mérite une présence digitale qui met en valeur votre savoir-faire.
+          </p>
+        </div>
+
+        <div class="barbier-hero-form">
+          <form id="barbier-contact-form">
+            <div class="barbier-form-group">
+              <label for="barbier-name" class="barbier-form-label">VOTRE NOM</label>
+              <input type="text" id="barbier-name" name="name" class="barbier-form-input" placeholder="Victor Dubois" required />
+            </div>
+            <div class="barbier-form-group">
+              <label for="barbier-email" class="barbier-form-label">VOTRE EMAIL</label>
+              <input type="email" id="barbier-email" name="email" class="barbier-form-input" placeholder="victor.dubois@barbier.fr" required />
+            </div>
+            <div class="barbier-form-group">
+              <label for="barbier-project" class="barbier-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="barbier-project" name="project" class="barbier-form-input" placeholder="Ex: Je gère un salon de barbier et j'ai besoin d'un site pour présenter mes services et faciliter les prises de rendez-vous..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="barbier-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="barbier-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI BARBIER -->
+  <section class="barbier-why-section">
+    <div class="barbier-container">
+      <div class="barbier-section-header">
+        <h2 class="barbier-section-title">
+          Pourquoi un site internet est <span class="barbier-highlight">essentiel</span> pour votre salon de barbier ?
+        </h2>
+        <p class="barbier-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des barbiers en ligne. Soyez visible et mettez en avant votre expertise avec un site professionnel.
+        </p>
+      </div>
+
+      <div class="barbier-benefits-grid">
+        <div class="barbier-benefit-card">
+          <div class="barbier-benefit-icon">🔍</div>
+          <h3 class="barbier-benefit-title">Visibilité renforcée</h3>
+          <p class="barbier-benefit-description">
+            Apparaissez en tête des recherches Google pour "barbier [ville]" ou "salon de barbier près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="barbier-benefit-card">
+          <div class="barbier-benefit-icon">📅</div>
+          <h3 class="barbier-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="barbier-benefit-description">
+            Permettez à vos clients de réserver des tailles de barbe ou rasages directement sur votre site.
+          </p>
+        </div>
+        <div class="barbier-benefit-card">
+          <div class="barbier-benefit-icon">🧔</div>
+          <h3 class="barbier-benefit-title">Portfolio de styles</h3>
+          <p class="barbier-benefit-description">
+            Présentez vos tailles de barbe et coupes avec une galerie visuelle pour attirer les clients à la recherche de styles tendance.
+          </p>
+        </div>
+        <div class="barbier-benefit-card">
+          <div class="barbier-benefit-icon">🏅</div>
+          <h3 class="barbier-benefit-title">Confiance et professionnalisme</h3>
+          <p class="barbier-benefit-description">
+            Mettez en avant votre expertise en rasage traditionnel et produits de qualité. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="barbier-features-section">
+    <div class="barbier-container">
+      <div class="barbier-features-grid">
+        <div class="barbier-features-content">
+          <h2 class="barbier-section-title">
+            Fonctionnalités <span class="barbier-highlight">spécialisées</span> pour barbiers
+          </h2>
+          <p class="barbier-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre salon de barbier.
+          </p>
+
+          <ul class="barbier-features-list">
+            <li class="barbier-feature-item">
+              <div class="barbier-feature-icon">🧔</div>
+              <div class="barbier-feature-content">
+                <h4>Portfolio de styles</h4>
+                <p>Présentez vos tailles de barbe, rasages et coupes avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="barbier-feature-item">
+              <div class="barbier-feature-icon">🗺️</div>
+              <div class="barbier-feature-content">
+                <h4>Localisation du salon</h4>
+                <p>Carte interactive montrant l'emplacement de votre salon pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="barbier-feature-item">
+              <div class="barbier-feature-icon">📅</div>
+              <div class="barbier-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des tailles de barbe ou rasages traditionnels.</p>
+              </div>
+            </li>
+            <li class="barbier-feature-item">
+              <div class="barbier-feature-icon">🪒</div>
+              <div class="barbier-feature-content">
+                <h4>Conseils d'entretien</h4>
+                <p>Section pour guider vos clients sur l'entretien de la barbe et les produits recommandés.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="barbier-features-visual">
+          <div class="barbier-mockup">
+            <div class="barbier-mockup-header"></div>
+            <div class="barbier-mockup-content">
+              <h3 class="barbier-mockup-title">Salon Victor Dubois</h3>
+              <p class="barbier-mockup-text">Tailles de barbe, rasages traditionnels<br />Portfolio • Prise de rendez-vous</p>
+              <button class="barbier-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="barbier-testimonials-section">
+    <div class="barbier-container">
+      <div class="barbier-section-header">
+        <h2 class="barbier-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="barbier-highlight">clients barbiers</span>
+        </h2>
+        <p class="barbier-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+
+      <div class="barbier-testimonials-grid">
+        <div class="barbier-testimonial-card">
+          <p class="barbier-testimonial-quote">
+            "Depuis notre site, les réservations en ligne ont triplé. Le portfolio met vraiment nos styles de barbe en valeur."
+          </p>
+          <div class="barbier-testimonial-author">
+            <div class="barbier-testimonial-avatar">VD</div>
+            <div class="barbier-testimonial-info">
+              <h4>Victor Dubois</h4>
+              <p>Barbier, Paris</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="barbier-testimonial-card">
+          <p class="barbier-testimonial-quote">
+            "Le site nous a permis de présenter notre savoir-faire. Nos clients nous perçoivent comme un salon professionnel et moderne."
+          </p>
+          <div class="barbier-testimonial-author">
+            <div class="barbier-testimonial-avatar">AL</div>
+            <div class="barbier-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Barbier, Lyon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="barbier-testimonial-card">
+          <p class="barbier-testimonial-quote">
+            "Grâce à notre site, nous attirons des clients de toute la région. La prise de rendez-vous en ligne est un vrai plus."
+          </p>
+          <div class="barbier-testimonial-author">
+            <div class="barbier-testimonial-avatar">MD</div>
+            <div class="barbier-testimonial-info">
+              <h4>Martin Durand</h4>
+              <p>Barbier, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="barbier-final-cta">
+    <div class="barbier-container">
+      <h2>Prêt à sublimer votre salon de barbier ?</h2>
+      <p>
+        Rejoignez les centaines de barbiers qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="barbier-final-button" onclick="document.querySelector('.barbier-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+        Obtenir mon site de salon de barbier
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- JAVASCRIPT EMAILJS MINIMAL (30 lignes) -->
+<script>
+(function() {
+  // Attendre que EmailJS soit chargé
+  if (typeof emailjs === 'undefined') {
+    console.error('EmailJS not loaded');
+    return;
+  }
+
+  const form = document.getElementById('barbier-contact-form');
+  const button = form.querySelector('.barbier-cta-button');
+  const originalText = button.innerHTML;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // État: Envoi en cours
+    button.disabled = true;
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.style.opacity = '0.6';
+
+    // Configuration EmailJS
+    const templateParams = {
+      from_name: form.querySelector('#barbier-name').value,
+      from_email: form.querySelector('#barbier-email').value,
+      project_description: form.querySelector('#barbier-project').value,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Barbier - web-starting.fr',
+      message: `Nouvelle demande pour un site de salon de barbier depuis web-starting.fr\n\nNom: ${form.querySelector('#barbier-name').value}\nEmail: ${form.querySelector('#barbier-email').value}\nProjet: ${form.querySelector('#barbier-project').value}\n\nSource: Page Barbier - web-starting.fr\nDate: ${new Date().toLocaleString('fr-FR')}\n\nCordialement,\nSystème automatique web-starting.fr`
+    };
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+      .then(function() {
+        // Succès ✅
+        button.innerHTML = '✅ Message envoyé !';
+        button.style.background = '#10b981';
+        form.reset();
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      })
+      .catch(function(error) {
+        // Erreur ❌
+        console.error('Erreur EmailJS:', error);
+        button.innerHTML = '❌ Erreur, réessayez';
+        button.style.background = '#ef4444';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      });
+  });
+})();
+</script>

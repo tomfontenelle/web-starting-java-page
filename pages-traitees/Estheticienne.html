@@ -1,0 +1,930 @@
+<!-- SCRIPT EMAILJS - À charger avant le contenu -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.estheticienne-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+
+.estheticienne-wp-scope *, .estheticienne-wp-scope *::before, .estheticienne-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* ANIMATIONS CSS - Remplace IntersectionObserver */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HERO SECTION */
+.estheticienne-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.estheticienne-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+
+.estheticienne-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.estheticienne-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour hero-text */
+.estheticienne-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+}
+
+.estheticienne-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+
+.estheticienne-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+.estheticienne-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+
+/* Animation CSS automatique pour hero-form */
+.estheticienne-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+}
+
+.estheticienne-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+
+.estheticienne-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.estheticienne-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+
+.estheticienne-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+
+.estheticienne-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+
+.estheticienne-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+
+.estheticienne-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+
+.estheticienne-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.estheticienne-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.estheticienne-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+
+.estheticienne-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.estheticienne-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+.estheticienne-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.estheticienne-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.estheticienne-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour benefit-card */
+.estheticienne-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.estheticienne-benefit-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.estheticienne-benefit-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.estheticienne-benefit-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.estheticienne-benefit-card:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+
+.estheticienne-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+
+.estheticienne-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+
+.estheticienne-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+
+.estheticienne-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.estheticienne-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.estheticienne-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour features-content */
+.estheticienne-features-content {
+  animation: fadeInLeft 0.8s ease both !important;
+}
+
+.estheticienne-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+
+.estheticienne-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+
+.estheticienne-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+
+.estheticienne-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+
+.estheticienne-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.estheticienne-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Animation CSS automatique pour features-visual */
+.estheticienne-features-visual {
+  animation: fadeInRight 0.8s ease 0.2s both !important;
+}
+
+.estheticienne-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.estheticienne-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.estheticienne-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.estheticienne-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.estheticienne-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+
+.estheticienne-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.estheticienne-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.estheticienne-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour testimonial-card */
+.estheticienne-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.estheticienne-testimonial-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.estheticienne-testimonial-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.estheticienne-testimonial-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.estheticienne-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+
+.estheticienne-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.estheticienne-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+
+.estheticienne-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+
+.estheticienne-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.estheticienne-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.estheticienne-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+
+.estheticienne-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+
+.estheticienne-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+
+.estheticienne-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .estheticienne-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .estheticienne-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .estheticienne-hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .estheticienne-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .estheticienne-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .estheticienne-section-title {
+    font-size: 2rem !important;
+  }
+  .estheticienne-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .estheticienne-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .estheticienne-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .estheticienne-container {
+    padding: 0 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .estheticienne-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .estheticienne-hero-content {
+    gap: 2rem !important;
+  }
+  .estheticienne-hero-title {
+    font-size: 2rem !important;
+  }
+  .estheticienne-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .estheticienne-hero-form {
+    padding: 1.5rem !important;
+  }
+  .estheticienne-section-title {
+    font-size: 1.75rem !important;
+  }
+  .estheticienne-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .estheticienne-why-section, .estheticienne-features-section, .estheticienne-testimonials-section, .estheticienne-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .estheticienne-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="estheticienne-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="estheticienne-hero-section">
+    <div class="estheticienne-hero-container">
+      <div class="estheticienne-hero-content">
+        <div class="estheticienne-hero-text">
+          <h1 class="estheticienne-hero-title">
+            Création de <span class="estheticienne-highlight-yellow">site internet</span> pour <span class="estheticienne-highlight-yellow">esthéticienne</span> professionnelle
+          </h1>
+          <p class="estheticienne-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de soins esthétiques, prise de rendez-vous et conseils beauté personnalisés. Votre institut mérite une présence digitale qui sublime votre expertise.
+          </p>
+        </div>
+
+        <div class="estheticienne-hero-form">
+          <form id="estheticienne-contact-form">
+            <div class="estheticienne-form-group">
+              <label for="estheticienne-name" class="estheticienne-form-label">VOTRE NOM</label>
+              <input type="text" id="estheticienne-name" name="name" class="estheticienne-form-input" placeholder="Sophie Martin" required />
+            </div>
+            <div class="estheticienne-form-group">
+              <label for="estheticienne-email" class="estheticienne-form-label">VOTRE EMAIL</label>
+              <input type="email" id="estheticienne-email" name="email" class="estheticienne-form-input" placeholder="sophie.martin@estheticienne.fr" required />
+            </div>
+            <div class="estheticienne-form-group">
+              <label for="estheticienne-project" class="estheticienne-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="estheticienne-project" name="project" class="estheticienne-form-input" placeholder="Ex: Je gère un institut de beauté et j'ai besoin d'un site pour présenter mes services et faciliter les prises de rendez-vous..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="estheticienne-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="estheticienne-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI ESTHÉTICIENNE -->
+  <section class="estheticienne-why-section">
+    <div class="estheticienne-container">
+      <div class="estheticienne-section-header">
+        <h2 class="estheticienne-section-title">
+          Pourquoi un site internet est <span class="estheticienne-highlight">essentiel</span> pour votre institut de beauté ?
+        </h2>
+        <p class="estheticienne-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des esthéticiennes en ligne. Soyez visible et mettez en avant votre expertise avec un site professionnel.
+        </p>
+      </div>
+
+      <div class="estheticienne-benefits-grid">
+        <div class="estheticienne-benefit-card">
+          <div class="estheticienne-benefit-icon">🔍</div>
+          <h3 class="estheticienne-benefit-title">Visibilité renforcée</h3>
+          <p class="estheticienne-benefit-description">
+            Apparaissez en tête des recherches Google pour "esthéticienne [ville]" ou "institut de beauté près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="estheticienne-benefit-card">
+          <div class="estheticienne-benefit-icon">📅</div>
+          <h3 class="estheticienne-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="estheticienne-benefit-description">
+            Permettez à vos clients de réserver des soins du visage, épilations ou manucures directement sur votre site.
+          </p>
+        </div>
+        <div class="estheticienne-benefit-card">
+          <div class="estheticienne-benefit-icon">💆‍♀️</div>
+          <h3 class="estheticienne-benefit-title">Portfolio de soins</h3>
+          <p class="estheticienne-benefit-description">
+            Présentez vos soins esthétiques et réalisations avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="estheticienne-benefit-card">
+          <div class="estheticienne-benefit-icon">🏅</div>
+          <h3 class="estheticienne-benefit-title">Confiance et professionnalisme</h3>
+          <p class="estheticienne-benefit-description">
+            Mettez en avant votre expertise et vos produits de qualité. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="estheticienne-features-section">
+    <div class="estheticienne-container">
+      <div class="estheticienne-features-grid">
+        <div class="estheticienne-features-content">
+          <h2 class="estheticienne-section-title">
+            Fonctionnalités <span class="estheticienne-highlight">spécialisées</span> pour esthéticiennes
+          </h2>
+          <p class="estheticienne-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre institut de beauté.
+          </p>
+
+          <ul class="estheticienne-features-list">
+            <li class="estheticienne-feature-item">
+              <div class="estheticienne-feature-icon">💆‍♀️</div>
+              <div class="estheticienne-feature-content">
+                <h4>Portfolio de soins</h4>
+                <p>Présentez vos soins du visage, manucures et maquillages avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="estheticienne-feature-item">
+              <div class="estheticienne-feature-icon">🗺️</div>
+              <div class="estheticienne-feature-content">
+                <h4>Localisation de l'institut</h4>
+                <p>Carte interactive montrant l'emplacement de votre institut pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="estheticienne-feature-item">
+              <div class="estheticienne-feature-icon">📅</div>
+              <div class="estheticienne-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des soins esthétiques ou épilations.</p>
+              </div>
+            </li>
+            <li class="estheticienne-feature-item">
+              <div class="estheticienne-feature-icon">💅</div>
+              <div class="estheticienne-feature-content">
+                <h4>Conseils beauté</h4>
+                <p>Section pour guider vos clients sur l'entretien de la peau et les produits recommandés.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="estheticienne-features-visual">
+          <div class="estheticienne-mockup">
+            <div class="estheticienne-mockup-header"></div>
+            <div class="estheticienne-mockup-content">
+              <h3 class="estheticienne-mockup-title">Institut Sophie Martin</h3>
+              <p class="estheticienne-mockup-text">Soins du visage, manucures, épilations<br />Portfolio • Prise de rendez-vous</p>
+              <button class="estheticienne-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="estheticienne-testimonials-section">
+    <div class="estheticienne-container">
+      <div class="estheticienne-section-header">
+        <h2 class="estheticienne-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="estheticienne-highlight">clientes esthéticiennes</span>
+        </h2>
+        <p class="estheticienne-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+
+      <div class="estheticienne-testimonials-grid">
+        <div class="estheticienne-testimonial-card">
+          <p class="estheticienne-testimonial-quote">
+            "Depuis notre site, les réservations en ligne ont doublé. Le portfolio met vraiment nos soins en valeur."
+          </p>
+          <div class="estheticienne-testimonial-author">
+            <div class="estheticienne-testimonial-avatar">SM</div>
+            <div class="estheticienne-testimonial-info">
+              <h4>Sophie Martin</h4>
+              <p>Esthéticienne, Paris</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="estheticienne-testimonial-card">
+          <p class="estheticienne-testimonial-quote">
+            "Le site nous a permis de présenter nos services avec clarté. Nos clientes nous perçoivent comme un institut moderne et professionnel."
+          </p>
+          <div class="estheticienne-testimonial-author">
+            <div class="estheticienne-testimonial-avatar">AL</div>
+            <div class="estheticienne-testimonial-info">
+              <h4>Amélie Leclerc</h4>
+              <p>Esthéticienne, Lyon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="estheticienne-testimonial-card">
+          <p class="estheticienne-testimonial-quote">
+            "Grâce à notre site, nous attirons des clientes de toute la région. La prise de rendez-vous en ligne est un vrai plus."
+          </p>
+          <div class="estheticienne-testimonial-author">
+            <div class="estheticienne-testimonial-avatar">MD</div>
+            <div class="estheticienne-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Esthéticienne, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="estheticienne-final-cta">
+    <div class="estheticienne-container">
+      <h2>Prêt à sublimer votre institut de beauté ?</h2>
+      <p>
+        Rejoignez les centaines d'esthéticiennes qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="estheticienne-final-button" onclick="document.querySelector('.estheticienne-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+        Obtenir mon site d'institut de beauté
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- JAVASCRIPT EMAILJS MINIMAL (30 lignes) -->
+<script>
+(function() {
+  // Attendre que EmailJS soit chargé
+  if (typeof emailjs === 'undefined') {
+    console.error('EmailJS not loaded');
+    return;
+  }
+
+  const form = document.getElementById('estheticienne-contact-form');
+  const button = form.querySelector('.estheticienne-cta-button');
+  const originalText = button.innerHTML;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // État: Envoi en cours
+    button.disabled = true;
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.style.opacity = '0.6';
+
+    // Configuration EmailJS
+    const templateParams = {
+      from_name: form.querySelector('#estheticienne-name').value,
+      from_email: form.querySelector('#estheticienne-email').value,
+      project_description: form.querySelector('#estheticienne-project').value,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Esthéticienne - web-starting.fr',
+      message: `Nouvelle demande pour un site d'institut de beauté depuis web-starting.fr\n\nNom: ${form.querySelector('#estheticienne-name').value}\nEmail: ${form.querySelector('#estheticienne-email').value}\nProjet: ${form.querySelector('#estheticienne-project').value}\n\nSource: Page Esthéticienne - web-starting.fr\nDate: ${new Date().toLocaleString('fr-FR')}\n\nCordialement,\nSystème automatique web-starting.fr`
+    };
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+      .then(function() {
+        // Succès ✅
+        button.innerHTML = '✅ Message envoyé !';
+        button.style.background = '#10b981';
+        form.reset();
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      })
+      .catch(function(error) {
+        // Erreur ❌
+        console.error('Erreur EmailJS:', error);
+        button.innerHTML = '❌ Erreur, réessayez';
+        button.style.background = '#ef4444';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      });
+  });
+})();
+</script>

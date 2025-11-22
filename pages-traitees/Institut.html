@@ -1,0 +1,930 @@
+<!-- SCRIPT EMAILJS - À charger avant le contenu -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS */
+.institut-beaute-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+
+.institut-beaute-wp-scope *, .institut-beaute-wp-scope *::before, .institut-beaute-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* ANIMATIONS CSS - Remplace IntersectionObserver */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HERO SECTION */
+.institut-beaute-hero-section {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem 2rem 0 2rem !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.institut-beaute-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+
+.institut-beaute-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.institut-beaute-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 6rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour hero-text */
+.institut-beaute-hero-text {
+  animation: fadeInUp 0.8s ease 0.5s both !important;
+}
+
+.institut-beaute-hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 2rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+
+.institut-beaute-highlight-yellow {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+.institut-beaute-hero-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+
+/* Animation CSS automatique pour hero-form */
+.institut-beaute-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease 0.8s both !important;
+}
+
+.institut-beaute-form-group {
+  margin: 0 0 1.5rem 0 !important;
+}
+
+.institut-beaute-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.institut-beaute-form-input {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 3rem !important;
+  font-weight: 400 !important;
+}
+
+.institut-beaute-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 300 !important;
+}
+
+.institut-beaute-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+  color: #ffffff !important;
+}
+
+.institut-beaute-cta-button {
+  width: 100% !important;
+  padding: 1.25rem 2rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(232, 255, 69, 0.3) !important;
+}
+
+.institut-beaute-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 255, 69, 0.4) !important;
+  background: linear-gradient(135deg, #d4f442 0%, #e8ff45 100%) !important;
+}
+
+.institut-beaute-trust-badge {
+  text-align: center !important;
+  margin: 1.5rem 0 0 0 !important;
+  font-size: 0.75rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.institut-beaute-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.institut-beaute-section-header {
+  text-align: center !important;
+  margin: 0 0 4rem 0 !important;
+}
+
+.institut-beaute-section-title {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.institut-beaute-section-subtitle {
+  font-size: 1.125rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+.institut-beaute-highlight {
+  color: #e8ff45 !important;
+  position: relative !important;
+}
+
+/* SECTION POURQUOI */
+.institut-beaute-why-section {
+  padding: 2rem 0 5rem 0 !important;
+  background: #082416 !important;
+  position: relative !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.institut-beaute-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour benefit-card */
+.institut-beaute-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.institut-beaute-benefit-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.institut-beaute-benefit-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.institut-beaute-benefit-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.institut-beaute-benefit-card:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+
+.institut-beaute-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(232, 255, 69, 0.3) !important;
+}
+
+.institut-beaute-benefit-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 20px !important;
+}
+
+.institut-beaute-benefit-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.3 !important;
+}
+
+.institut-beaute-benefit-description {
+  font-size: 0.95rem !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.institut-beaute-features-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.institut-beaute-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+/* Animation CSS automatique pour features-content */
+.institut-beaute-features-content {
+  animation: fadeInLeft 0.8s ease both !important;
+}
+
+.institut-beaute-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 0 !important;
+}
+
+.institut-beaute-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 10px !important;
+  border-left: 3px solid #e8ff45 !important;
+  transition: all 0.3s ease !important;
+}
+
+.institut-beaute-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+
+.institut-beaute-feature-icon {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+}
+
+.institut-beaute-feature-content h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.institut-beaute-feature-content p {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Animation CSS automatique pour features-visual */
+.institut-beaute-features-visual {
+  animation: fadeInRight 0.8s ease 0.2s both !important;
+}
+
+.institut-beaute-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.institut-beaute-mockup-header {
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.institut-beaute-mockup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  min-height: 200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.institut-beaute-mockup-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.institut-beaute-mockup-text {
+  color: #666666 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+
+.institut-beaute-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.institut-beaute-testimonials-section {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.institut-beaute-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Animation CSS automatique pour testimonial-card */
+.institut-beaute-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  position: relative !important;
+  animation: fadeInUp 0.8s ease both !important;
+}
+
+.institut-beaute-testimonial-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.institut-beaute-testimonial-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.institut-beaute-testimonial-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.institut-beaute-testimonial-quote {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+
+.institut-beaute-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.institut-beaute-testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 1rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+  font-size: 0.9rem !important;
+}
+
+.institut-beaute-testimonial-info h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #ffffff !important;
+}
+
+.institut-beaute-testimonial-info p {
+  font-size: 0.8rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+}
+
+/* SECTION CTA FINALE */
+.institut-beaute-final-cta {
+  padding: 5rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.institut-beaute-final-cta h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+
+.institut-beaute-final-cta p {
+  font-size: 1.125rem !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  opacity: 0.8 !important;
+}
+
+.institut-beaute-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1.25rem 2.5rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 25px rgba(8, 36, 22, 0.3) !important;
+}
+
+.institut-beaute-final-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(8, 36, 22, 0.4) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .institut-beaute-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .institut-beaute-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .institut-beaute-hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .institut-beaute-hero-section {
+    padding: 1rem 1rem 0 1rem !important;
+    min-height: 70vh !important;
+  }
+  .institut-beaute-hero-title {
+    font-size: 2.5rem !important;
+  }
+  .institut-beaute-section-title {
+    font-size: 2rem !important;
+  }
+  .institut-beaute-final-cta h2 {
+    font-size: 2rem !important;
+  }
+  .institut-beaute-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .institut-beaute-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .institut-beaute-container {
+    padding: 0 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .institut-beaute-hero-section {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  .institut-beaute-hero-content {
+    gap: 2rem !important;
+  }
+  .institut-beaute-hero-title {
+    font-size: 2rem !important;
+  }
+  .institut-beaute-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .institut-beaute-hero-form {
+    padding: 1.5rem !important;
+  }
+  .institut-beaute-section-title {
+    font-size: 1.75rem !important;
+  }
+  .institut-beaute-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+  .institut-beaute-why-section, .institut-beaute-features-section, .institut-beaute-testimonials-section, .institut-beaute-final-cta {
+    padding: 1rem 0 3rem 0 !important;
+  }
+  .institut-beaute-why-section {
+    padding: 1rem 0 3rem 0 !important;
+  }
+}
+</style>
+
+<div class="institut-beaute-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="institut-beaute-hero-section">
+    <div class="institut-beaute-hero-container">
+      <div class="institut-beaute-hero-content">
+        <div class="institut-beaute-hero-text">
+          <h1 class="institut-beaute-hero-title">
+            Création de <span class="institut-beaute-highlight-yellow">site internet</span> pour votre <span class="institut-beaute-highlight-yellow">institut de beauté</span>
+          </h1>
+          <p class="institut-beaute-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, portfolio de soins esthétiques, prise de rendez-vous et conseils personnalisés. Votre institut mérite une présence digitale qui sublime votre expertise et votre ambiance unique.
+          </p>
+        </div>
+
+        <div class="institut-beaute-hero-form">
+          <form id="institut-beaute-contact-form">
+            <div class="institut-beaute-form-group">
+              <label for="institut-beaute-name" class="institut-beaute-form-label">VOTRE NOM</label>
+              <input type="text" id="institut-beaute-name" name="name" class="institut-beaute-form-input" placeholder="Laura Martin" required />
+            </div>
+            <div class="institut-beaute-form-group">
+              <label for="institut-beaute-email" class="institut-beaute-form-label">VOTRE EMAIL</label>
+              <input type="email" id="institut-beaute-email" name="email" class="institut-beaute-form-input" placeholder="contact@institut-beaute.fr" required />
+            </div>
+            <div class="institut-beaute-form-group">
+              <label for="institut-beaute-project" class="institut-beaute-form-label">DÉCRIVEZ VOTRE PROJET</label>
+              <textarea id="institut-beaute-project" name="project" class="institut-beaute-form-input" placeholder="Ex: Je gère un institut de beauté et j'ai besoin d'un site pour présenter nos services et faciliter les prises de rendez-vous..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="institut-beaute-cta-button">RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT</button>
+            <div class="institut-beaute-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI INSTITUT DE BEAUTÉ -->
+  <section class="institut-beaute-why-section">
+    <div class="institut-beaute-container">
+      <div class="institut-beaute-section-header">
+        <h2 class="institut-beaute-section-title">
+          Pourquoi un site internet est <span class="institut-beaute-highlight">essentiel</span> pour votre institut de beauté ?
+        </h2>
+        <p class="institut-beaute-section-subtitle">
+          Dans un marché concurrentiel, vos clients recherchent des instituts de beauté en ligne. Soyez visible et mettez en avant votre expertise avec un site professionnel.
+        </p>
+      </div>
+
+      <div class="institut-beaute-benefits-grid">
+        <div class="institut-beaute-benefit-card">
+          <div class="institut-beaute-benefit-icon">🔍</div>
+          <h3 class="institut-beaute-benefit-title">Visibilité renforcée</h3>
+          <p class="institut-beaute-benefit-description">
+            Apparaissez en tête des recherches Google pour "institut de beauté [ville]" ou "salon esthétique près de moi". Attirez plus de clients localement.
+          </p>
+        </div>
+        <div class="institut-beaute-benefit-card">
+          <div class="institut-beaute-benefit-icon">📅</div>
+          <h3 class="institut-beaute-benefit-title">Prise de rendez-vous en ligne</h3>
+          <p class="institut-beaute-benefit-description">
+            Permettez à vos clients de réserver des soins du visage, épilations ou manucures directement sur votre site.
+          </p>
+        </div>
+        <div class="institut-beaute-benefit-card">
+          <div class="institut-beaute-benefit-icon">💆‍♀️</div>
+          <h3 class="institut-beaute-benefit-title">Portfolio de soins</h3>
+          <p class="institut-beaute-benefit-description">
+            Présentez vos soins esthétiques, maquillages et manucures avec une galerie visuelle pour attirer les clients.
+          </p>
+        </div>
+        <div class="institut-beaute-benefit-card">
+          <div class="institut-beaute-benefit-icon">🏅</div>
+          <h3 class="institut-beaute-benefit-title">Confiance et bien-être</h3>
+          <p class="institut-beaute-benefit-description">
+            Mettez en avant votre expertise, vos produits de qualité et une ambiance relaxante. Inspirez confiance avec un site moderne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="institut-beaute-features-section">
+    <div class="institut-beaute-container">
+      <div class="institut-beaute-features-grid">
+        <div class="institut-beaute-features-content">
+          <h2 class="institut-beaute-section-title">
+            Fonctionnalités <span class="institut-beaute-highlight">spécialisées</span> pour instituts de beauté
+          </h2>
+          <p class="institut-beaute-section-subtitle">
+            Chaque élément de votre site est conçu pour répondre aux besoins spécifiques de votre institut de beauté.
+          </p>
+
+          <ul class="institut-beaute-features-list">
+            <li class="institut-beaute-feature-item">
+              <div class="institut-beaute-feature-icon">💆‍♀️</div>
+              <div class="institut-beaute-feature-content">
+                <h4>Portfolio de soins</h4>
+                <p>Présentez vos soins du visage, épilations et maquillages avec une galerie visuelle interactive.</p>
+              </div>
+            </li>
+            <li class="institut-beaute-feature-item">
+              <div class="institut-beaute-feature-icon">🗺️</div>
+              <div class="institut-beaute-feature-content">
+                <h4>Localisation de l'institut</h4>
+                <p>Carte interactive montrant l'emplacement de votre institut pour faciliter l'accès des clients.</p>
+              </div>
+            </li>
+            <li class="institut-beaute-feature-item">
+              <div class="institut-beaute-feature-icon">📅</div>
+              <div class="institut-beaute-feature-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Système de réservation en ligne pour des soins esthétiques, massages ou manucures.</p>
+              </div>
+            </li>
+            <li class="institut-beaute-feature-item">
+              <div class="institut-beaute-feature-icon">🧴</div>
+              <div class="institut-beaute-feature-content">
+                <h4>Conseils beauté</h4>
+                <p>Section pour guider vos clients sur l'entretien de la peau, le maquillage et les produits recommandés.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="institut-beaute-features-visual">
+          <div class="institut-beaute-mockup">
+            <div class="institut-beaute-mockup-header"></div>
+            <div class="institut-beaute-mockup-content">
+              <h3 class="institut-beaute-mockup-title">Institut Laura Martin</h3>
+              <p class="institut-beaute-mockup-text">Soins du visage, manucures, massages<br />Portfolio • Prise de rendez-vous</p>
+              <button class="institut-beaute-mockup-button">Découvrir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="institut-beaute-testimonials-section">
+    <div class="institut-beaute-container">
+      <div class="institut-beaute-section-header">
+        <h2 class="institut-beaute-section-title" style="color: #ffffff !important;">
+          Ce que disent nos <span class="institut-beaute-highlight">instituts partenaires</span>
+        </h2>
+        <p class="institut-beaute-section-subtitle" style="color: #e5e5e5 !important;">
+          Découvrez comment un site professionnel a transformé leur activité.
+        </p>
+      </div>
+
+      <div class="institut-beaute-testimonials-grid">
+        <div class="institut-beaute-testimonial-card">
+          <p class="institut-beaute-testimonial-quote">
+            "Depuis notre site, les réservations en ligne ont triplé. Le portfolio met vraiment nos soins en valeur."
+          </p>
+          <div class="institut-beaute-testimonial-author">
+            <div class="institut-beaute-testimonial-avatar">LM</div>
+            <div class="institut-beaute-testimonial-info">
+              <h4>Laura Martin</h4>
+              <p>Gérante d'institut, Paris</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="institut-beaute-testimonial-card">
+          <p class="institut-beaute-testimonial-quote">
+            "Le site nous a permis de présenter notre gamme de services avec élégance. Nos clientes nous perçoivent comme un institut moderne."
+          </p>
+          <div class="institut-beaute-testimonial-author">
+            <div class="institut-beaute-testimonial-avatar">AL</div>
+            <div class="institut-beaute-testimonial-info">
+              <h4>Amélie Leclerc</h4>
+              <p>Gérante d'institut, Lyon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="institut-beaute-testimonial-card">
+          <p class="institut-beaute-testimonial-quote">
+            "Grâce à notre site, nous attirons des clientes de toute la région. La prise de rendez-vous en ligne simplifie tout."
+          </p>
+          <div class="institut-beaute-testimonial-author">
+            <div class="institut-beaute-testimonial-avatar">MD</div>
+            <div class="institut-beaute-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Gérante d'institut, Marseille</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="institut-beaute-final-cta">
+    <div class="institut-beaute-container">
+      <h2>Prêt à sublimer votre institut de beauté ?</h2>
+      <p>
+        Rejoignez les centaines d'instituts qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
+      </p>
+      <button class="institut-beaute-final-button" onclick="document.querySelector('.institut-beaute-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
+        Obtenir mon site d'institut de beauté
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- JAVASCRIPT EMAILJS MINIMAL (30 lignes) -->
+<script>
+(function() {
+  // Attendre que EmailJS soit chargé
+  if (typeof emailjs === 'undefined') {
+    console.error('EmailJS not loaded');
+    return;
+  }
+
+  const form = document.getElementById('institut-beaute-contact-form');
+  const button = form.querySelector('.institut-beaute-cta-button');
+  const originalText = button.innerHTML;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // État: Envoi en cours
+    button.disabled = true;
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.style.opacity = '0.6';
+
+    // Configuration EmailJS
+    const templateParams = {
+      from_name: form.querySelector('#institut-beaute-name').value,
+      from_email: form.querySelector('#institut-beaute-email').value,
+      project_description: form.querySelector('#institut-beaute-project').value,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Institut de Beauté - web-starting.fr',
+      message: `Nouvelle demande pour un site d'institut de beauté depuis web-starting.fr\n\nNom: ${form.querySelector('#institut-beaute-name').value}\nEmail: ${form.querySelector('#institut-beaute-email').value}\nProjet: ${form.querySelector('#institut-beaute-project').value}\n\nSource: Page Institut de Beauté - web-starting.fr\nDate: ${new Date().toLocaleString('fr-FR')}\n\nCordialement,\nSystème automatique web-starting.fr`
+    };
+
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+      .then(function() {
+        // Succès ✅
+        button.innerHTML = '✅ Message envoyé !';
+        button.style.background = '#10b981';
+        form.reset();
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      })
+      .catch(function(error) {
+        // Erreur ❌
+        console.error('Erreur EmailJS:', error);
+        button.innerHTML = '❌ Erreur, réessayez';
+        button.style.background = '#ef4444';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          button.style.opacity = '1';
+          button.style.background = '';
+        }, 3000);
+      });
+  });
+})();
+</script>

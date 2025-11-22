@@ -5,40 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
-/* ANIMATIONS CSS */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .agence-immobiliere-wp-scope {
   all: initial !important;
@@ -96,8 +62,13 @@
   align-items: center !important;
 }
 .agence-immobiliere-hero-text {
-  animation: fadeInUp 0.8s ease both !important;
-  animation-delay: 0.5s !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.agence-immobiliere-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .agence-immobiliere-hero-title {
   font-size: 4rem !important;
@@ -127,8 +98,13 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  animation: fadeInUp 0.8s ease both !important;
-  animation-delay: 0.8s !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.agence-immobiliere-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .agence-immobiliere-form-group {
   margin: 0 0 1.5rem 0 !important;
@@ -253,19 +229,12 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  animation: fadeInUp 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
 }
-.agence-immobiliere-benefit-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-.agence-immobiliere-benefit-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-.agence-immobiliere-benefit-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-.agence-immobiliere-benefit-card:nth-child(4) {
-  animation-delay: 0.4s !important;
+.agence-immobiliere-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .agence-immobiliere-benefit-card:hover {
   transform: translateY(-5px) !important;
@@ -312,8 +281,13 @@
   align-items: center !important;
 }
 .agence-immobiliere-features-content {
-  animation: fadeInLeft 0.8s ease both !important;
-  animation-delay: 0.2s !important;
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.agence-immobiliere-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 .agence-immobiliere-features-list {
   list-style: none !important;
@@ -359,8 +333,13 @@
   line-height: 1.5 !important;
 }
 .agence-immobiliere-features-visual {
-  animation: fadeInRight 0.8s ease both !important;
-  animation-delay: 0.4s !important;
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.agence-immobiliere-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 .agence-immobiliere-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -432,16 +411,13 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  animation: fadeInUp 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
-.agence-immobiliere-testimonial-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-.agence-immobiliere-testimonial-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-.agence-immobiliere-testimonial-card:nth-child(3) {
-  animation-delay: 0.3s !important;
+.agence-immobiliere-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .agence-immobiliere-testimonial-quote {
   font-size: 1rem !important;
@@ -798,12 +774,40 @@
 </div>
 
 <script>
-// JavaScript minimal pour EmailJS et scroll to form
 (() => {
   const root = document.querySelector('.agence-immobiliere-wp-scope');
   if (!root) return;
 
-  // Gestion du formulaire EmailJS
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.agence-immobiliere-hero-text, .agence-immobiliere-hero-form, .agence-immobiliere-benefit-card, .agence-immobiliere-testimonial-card, .agence-immobiliere-features-content, .agence-immobiliere-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.agence-immobiliere-hero-text');
+    const heroForm = root.querySelector('.agence-immobiliere-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
   const form = root.querySelector('#agence-immobiliere-contact-form');
   const button = root.querySelector('.agence-immobiliere-cta-button');
 
@@ -819,12 +823,12 @@
         return;
       }
 
-      // Feedback visuel : Envoi en cours
+      // Animation du bouton
       button.innerHTML = '⏳ Envoi en cours...';
       button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
       button.disabled = true;
 
-      // Préparation des paramètres EmailJS
+      // Envoi via EmailJS
       const templateParams = {
         from_name: name,
         from_email: email,
@@ -832,21 +836,24 @@
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Agence immobilière - web-starting.fr',
         message: `Nouvelle demande pour un site d'agence immobilière depuis web-starting.fr
+
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
 Source: Page Agence immobilière - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
+
 Cordialement,
 Système automatique web-starting.fr`
       };
 
-      // Envoi via EmailJS
+      // Utilisation d'EmailJS
       emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
         .then(function(response) {
-          // Feedback visuel : Succès
+          console.log('SUCCESS!', response.status, response.text);
           button.innerHTML = '✅ Demande envoyée !';
           button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
             button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
@@ -854,9 +861,10 @@ Système automatique web-starting.fr`
             form.reset();
           }, 3000);
         }, function(error) {
-          // Feedback visuel : Erreur
+          console.log('FAILED...', error);
           button.innerHTML = '❌ Erreur d\'envoi';
           button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
             button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
@@ -866,16 +874,27 @@ Système automatique web-starting.fr`
     });
   }
 
-  // Fonction scroll to form
+  // Fonction pour scroller vers le formulaire
   window.agenceImmobiliereScrollToForm = function() {
     const heroForm = root.querySelector('.agence-immobiliere-hero-form');
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
       setTimeout(() => {
         const nameField = heroForm.querySelector('#agence-immobiliere-name');
         if (nameField) nameField.focus();
       }, 1000);
     }
   };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.agence-immobiliere-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
 })();
 </script>

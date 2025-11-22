@@ -5,40 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
-/* ANIMATIONS CSS */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .expert-comptable-wp-scope {
   all: initial !important;
@@ -96,8 +62,13 @@
   align-items: center !important;
 }
 .expert-comptable-hero-text {
-  animation: fadeInUp 0.8s ease both !important;
-  animation-delay: 0.3s !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.expert-comptable-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .expert-comptable-hero-title {
   font-size: 4rem !important;
@@ -127,8 +98,13 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  animation: fadeInUp 0.8s ease both !important;
-  animation-delay: 0.6s !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.expert-comptable-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .expert-comptable-form-group {
   margin: 0 0 1.5rem 0 !important;
@@ -253,19 +229,12 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  animation: fadeInUp 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
 }
-.expert-comptable-benefit-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-.expert-comptable-benefit-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-.expert-comptable-benefit-card:nth-child(3) {
-  animation-delay: 0.3s !important;
-}
-.expert-comptable-benefit-card:nth-child(4) {
-  animation-delay: 0.4s !important;
+.expert-comptable-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .expert-comptable-benefit-card:hover {
   transform: translateY(-5px) !important;
@@ -312,8 +281,13 @@
   align-items: center !important;
 }
 .expert-comptable-features-content {
-  animation: fadeInLeft 0.8s ease both !important;
-  animation-delay: 0.2s !important;
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  transition: all 0.8s ease !important;
+}
+.expert-comptable-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 .expert-comptable-features-list {
   list-style: none !important;
@@ -359,8 +333,13 @@
   line-height: 1.5 !important;
 }
 .expert-comptable-features-visual {
-  animation: fadeInRight 0.8s ease both !important;
-  animation-delay: 0.4s !important;
+  opacity: 0 !important;
+  transform: translateX(30px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.expert-comptable-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 .expert-comptable-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -432,16 +411,13 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  animation: fadeInUp 0.8s ease both !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
 }
-.expert-comptable-testimonial-card:nth-child(1) {
-  animation-delay: 0.1s !important;
-}
-.expert-comptable-testimonial-card:nth-child(2) {
-  animation-delay: 0.2s !important;
-}
-.expert-comptable-testimonial-card:nth-child(3) {
-  animation-delay: 0.3s !important;
+.expert-comptable-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .expert-comptable-testimonial-quote {
   font-size: 1rem !important;
@@ -802,6 +778,35 @@
   const root = document.querySelector('.expert-comptable-wp-scope');
   if (!root) return;
 
+  // Animation d'entrée progressive avec IntersectionObserver
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.expert-comptable-hero-text, .expert-comptable-hero-form, .expert-comptable-benefit-card, .expert-comptable-testimonial-card, .expert-comptable-features-content, .expert-comptable-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.expert-comptable-hero-text');
+    const heroForm = root.querySelector('.expert-comptable-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
   // Gestion du formulaire EmailJS
   const form = root.querySelector('#expert-comptable-contact-form');
   const button = root.querySelector('.expert-comptable-cta-button');
@@ -818,12 +823,12 @@
         return;
       }
 
-      // Feedback visuel - Envoi en cours
+      // Animation du bouton
       button.innerHTML = '⏳ Envoi en cours...';
       button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
       button.disabled = true;
 
-      // Paramètres EmailJS
+      // Envoi via EmailJS
       const templateParams = {
         from_name: name,
         from_email: email,
@@ -831,21 +836,25 @@
         to_email: 'contact.capitainepub@gmail.com',
         subject: 'Nouvelle demande - Site Expert-comptable - web-starting.fr',
         message: `Nouvelle demande pour un site d'expert-comptable depuis web-starting.fr
+
 Nom: ${name}
 Email: ${email}
 Projet: ${project}
+
 Source: Page Expert-comptable - web-starting.fr
 Date: ${new Date().toLocaleString('fr-FR')}
+
 Cordialement,
 Système automatique web-starting.fr`
       };
 
-      // Envoi EmailJS
+      // Utilisation d'EmailJS
       emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
         .then(function(response) {
-          // Feedback visuel - Succès
+          console.log('SUCCESS!', response.status, response.text);
           button.innerHTML = '✅ Demande envoyée !';
           button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
             button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
@@ -853,9 +862,10 @@ Système automatique web-starting.fr`
             form.reset();
           }, 3000);
         }, function(error) {
-          // Feedback visuel - Erreur
+          console.log('FAILED...', error);
           button.innerHTML = '❌ Erreur d\'envoi';
           button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          // Réinitialiser après 3 secondes
           setTimeout(() => {
             button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
             button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
@@ -865,16 +875,27 @@ Système automatique web-starting.fr`
     });
   }
 
-  // Fonction scroll to form
+  // Fonction pour scroller vers le formulaire
   window.expertComptableScrollToForm = function() {
     const heroForm = root.querySelector('.expert-comptable-hero-form');
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Focus sur le champ nom après le scroll
       setTimeout(() => {
         const nameField = heroForm.querySelector('#expert-comptable-name');
         if (nameField) nameField.focus();
       }, 1000);
     }
   };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const heroSection = root.querySelector('.expert-comptable-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
 })();
 </script>

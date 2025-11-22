@@ -1,7 +1,45 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
 
 /* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
 .carreleur-wp-scope {
@@ -58,13 +96,8 @@
   align-items: center !important;
 }
 .carreleur-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
+  animation: fadeInUp 0.8s ease 0.5s both !important;
   transition: all 0.8s ease !important;
-}
-.carreleur-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .carreleur-hero-title {
   font-size: 3.5rem !important;
@@ -86,6 +119,7 @@
   max-width: 500px !important;
 }
 .carreleur-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
   background: rgba(8, 36, 22, 0.9) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(232, 255, 69, 0.3) !important;
@@ -93,13 +127,7 @@
   padding: 2rem !important;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
-}
-.carreleur-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .carreleur-form-group {
   margin: 0 0 1.25rem 0 !important;
@@ -196,19 +224,20 @@
   gap: 1.5rem !important;
 }
 .carreleur-benefit-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   border-radius: 10px !important;
   padding: 1.5rem !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   transition: all 0.3s ease !important;
-  opacity: 0 !important;
   transform: translateY(20px) !important;
 }
-.carreleur-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
+.carreleur-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.carreleur-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.carreleur-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.carreleur-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
 .carreleur-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
@@ -245,13 +274,9 @@
   gap: 3rem !important;
 }
 .carreleur-features-content {
-  opacity: 0 !important;
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
   transform: translateX(-20px) !important;
   transition: all 0.8s ease !important;
-}
-.carreleur-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .carreleur-features-list {
   list-style: none !important;
@@ -292,13 +317,9 @@
   color: #a0a0a0 !important;
 }
 .carreleur-features-visual {
-  opacity: 0 !important;
+  animation: fadeInRight 0.8s ease 0.5s both !important;
   transform: translateX(20px) !important;
   transition: all 0.8s ease 0.2s !important;
-}
-.carreleur-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .carreleur-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -352,18 +373,14 @@
   gap: 1.5rem !important;
 }
 .carreleur-testimonial-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   border-radius: 10px !important;
   padding: 1.5rem !important;
-  opacity: 0 !important;
   transform: translateY(20px) !important;
   transition: all 0.8s ease !important;
-}
-.carreleur-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .carreleur-testimonial-quote {
   font-size: 0.95rem !important;
@@ -474,13 +491,18 @@
     font-size: 0.9rem !important;
   }
   .carreleur-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
     padding: 1.25rem !important;
   }
   .carreleur-section-title {
     font-size: 1.5rem !important;
   }
 }
+
 </style>
+
+
+
 
 <div class="carreleur-wp-scope">
   <!-- HERO SECTION -->
@@ -676,7 +698,7 @@
       <p>
         Obtenez un site professionnel pour présenter vos travaux et attirer des clients. Demandez votre devis en 2 minutes.
       </p>
-      <button class="carreleur-final-button" onclick="carreleurScrollToForm()">
+      <button class="carreleur-final-button" onclick="document.querySelector('.carreleur-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
         Créer mon site de carreleur
       </button>
     </div>
@@ -684,119 +706,57 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
 <script>
-(() => {
-  const root = document.querySelector('.carreleur-wp-scope');
-  if (!root) return;
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
 
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
+  const form = document.getElementById('carreleur-contact-form');
+  const button = form.querySelector('.carreleur-cta-button');
 
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.carreleur-hero-text, .carreleur-hero-form, .carreleur-benefit-card, .carreleur-testimonial-card, .carreleur-features-content, .carreleur-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.carreleur-hero-text');
-    const heroForm = root.querySelector('.carreleur-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
+    const name = document.getElementById('carreleur-name').value;
+    const email = document.getElementById('carreleur-email').value;
+    const project = document.getElementById('carreleur-project').value;
 
-  // Gestion du formulaire
-  const form = root.querySelector('#carreleur-contact-form');
-  const button = root.querySelector('.carreleur-cta-button');
-  if (form && button) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.querySelector('#carreleur-name').value;
-      const email = form.querySelector('#carreleur-email').value;
-      const project = form.querySelector('#carreleur-project').value;
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
 
-      if (!name || !email || !project) {
-        alert('Veuillez remplir tous les champs.');
-        return;
-      }
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
 
-      button.innerHTML = '⏳ Envoi en cours...';
-      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
-      button.disabled = true;
-
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        project_description: project,
-        to_email: 'contact.capitainepub@gmail.com',
-        subject: 'Nouvelle demande - Site Carreleur - web-starting.fr',
-        message: `Nouvelle demande pour un site de carreleur depuis web-starting.fr
-Nom: ${name}
-Email: ${email}
-Projet: ${project}
-Source: Page Carreleur - web-starting.fr
-Date: ${new Date().toLocaleString('fr-FR')}
-Cordialement,
-Système automatique web-starting.fr`
-      };
-
-      // Remplacez ces identifiants par les vôtres depuis EmailJS
-      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          button.innerHTML = '✅ Demande envoyée !';
-          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-          setTimeout(() => {
-            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
-            button.disabled = false;
-            form.reset();
-          }, 3000);
-        }, function(error) {
-          console.log('FAILED...', error);
-          button.innerHTML = '❌ Erreur d\'envoi';
-          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
-          setTimeout(() => {
-            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
-            button.disabled = false;
-          }, 3000);
-        });
-    });
-  }
-
-  // Fonction pour scroller vers le formulaire
-  window.carreleurScrollToForm = function() {
-    const heroForm = root.querySelector('.carreleur-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Carreleur - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Carreleur\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
       setTimeout(() => {
-        const nameField = heroForm.querySelector('#carreleur-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.2;
-    const heroSection = root.querySelector('.carreleur-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
   });
 })();
 </script>

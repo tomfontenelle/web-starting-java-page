@@ -1,6 +1,45 @@
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
 
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .menuisier-wp-scope {
@@ -57,13 +96,8 @@
   align-items: center !important;
 }
 .menuisier-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
+  animation: fadeInUp 0.8s ease 0.5s both !important;
   transition: all 0.8s ease !important;
-}
-.menuisier-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .menuisier-hero-title {
   font-size: 4rem !important;
@@ -85,6 +119,7 @@
   max-width: 500px !important;
 }
 .menuisier-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
   background: rgba(8, 36, 22, 0.9) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(232, 255, 69, 0.3) !important;
@@ -92,13 +127,7 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
-}
-.menuisier-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .menuisier-form-group {
   margin: 0 0 1.5rem 0 !important;
@@ -195,19 +224,19 @@
   gap: 2rem !important;
 }
 .menuisier-benefit-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   border-radius: 12px !important;
   padding: 2rem !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   transition: all 0.3s ease !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
 }
-.menuisier-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
+.menuisier-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.menuisier-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.menuisier-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.menuisier-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
 .menuisier-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
@@ -244,13 +273,8 @@
   gap: 4rem !important;
 }
 .menuisier-features-content {
-  opacity: 0 !important;
-  transform: translateX(-30px) !important;
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
   transition: all 0.8s ease !important;
-}
-.menuisier-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .menuisier-features-list {
   list-style: none !important;
@@ -291,13 +315,8 @@
   color: #a0a0a0 !important;
 }
 .menuisier-features-visual {
-  opacity: 0 !important;
-  transform: translateX(30px) !important;
+  animation: fadeInRight 0.8s ease 0.5s both !important;
   transition: all 0.8s ease 0.2s !important;
-}
-.menuisier-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .menuisier-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -351,18 +370,13 @@
   gap: 2rem !important;
 }
 .menuisier-testimonial-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   border-radius: 12px !important;
   padding: 2rem !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
-}
-.menuisier-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .menuisier-testimonial-quote {
   font-size: 1rem !important;
@@ -472,13 +486,17 @@
     font-size: 1rem !important;
   }
   .menuisier-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
     padding: 1.5rem !important;
   }
   .menuisier-section-title {
     font-size: 1.75rem !important;
   }
 }
+
 </style>
+
+
 
 <div class="menuisier-wp-scope">
   <!-- HERO SECTION -->
@@ -674,7 +692,7 @@
       <p>
         Rejoignez les centaines de menuisiers qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
-      <button class="menuisier-final-button" onclick="menuisierScrollToForm()">
+      <button class="menuisier-final-button" onclick="document.querySelector('.menuisier-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
         Obtenir mon site de menuisier
       </button>
     </div>
@@ -682,119 +700,57 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
 <script>
-(() => {
-  const root = document.querySelector('.menuisier-wp-scope');
-  if (!root) return;
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
 
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
+  const form = document.getElementById('menuisier-contact-form');
+  const button = form.querySelector('.menuisier-cta-button');
 
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.menuisier-hero-text, .menuisier-hero-form, .menuisier-benefit-card, .menuisier-testimonial-card, .menuisier-features-content, .menuisier-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.menuisier-hero-text');
-    const heroForm = root.querySelector('.menuisier-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
+    const name = document.getElementById('menuisier-name').value;
+    const email = document.getElementById('menuisier-email').value;
+    const project = document.getElementById('menuisier-project').value;
 
-  // Gestion du formulaire
-  const form = root.querySelector('#menuisier-contact-form');
-  const button = root.querySelector('.menuisier-cta-button');
-  if (form && button) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.querySelector('#menuisier-name').value;
-      const email = form.querySelector('#menuisier-email').value;
-      const project = form.querySelector('#menuisier-project').value;
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
 
-      if (!name || !email || !project) {
-        alert('Veuillez remplir tous les champs.');
-        return;
-      }
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
 
-      button.innerHTML = '⏳ Envoi en cours...';
-      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
-      button.disabled = true;
-
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        project_description: project,
-        to_email: 'contact.capitainepub@gmail.com',
-        subject: 'Nouvelle demande - Site Menuisier - web-starting.fr',
-        message: `Nouvelle demande pour un site de menuisier depuis web-starting.fr
-Nom: ${name}
-Email: ${email}
-Projet: ${project}
-Source: Page Menuisier - web-starting.fr
-Date: ${new Date().toLocaleString('fr-FR')}
-Cordialement,
-Système automatique web-starting.fr`
-      };
-
-      // Remplacez ces identifiants par les vôtres depuis EmailJS
-      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          button.innerHTML = '✅ Demande envoyée !';
-          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-          setTimeout(() => {
-            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-            form.reset();
-          }, 3000);
-        }, function(error) {
-          console.log('FAILED...', error);
-          button.innerHTML = '❌ Erreur d\'envoi';
-          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
-          setTimeout(() => {
-            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-          }, 3000);
-        });
-    });
-  }
-
-  // Fonction pour scroller vers le formulaire
-  window.menuisierScrollToForm = function() {
-    const heroForm = root.querySelector('.menuisier-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Menuisier - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Menuisier\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
       setTimeout(() => {
-        const nameField = heroForm.querySelector('#menuisier-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.menuisier-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
   });
 })();
 </script>

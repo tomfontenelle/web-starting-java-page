@@ -2,8 +2,44 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
 
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .tatoueur-wp-scope {
@@ -62,13 +98,8 @@
   align-items: center !important;
 }
 .tatoueur-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
+  animation: fadeInUp 0.8s ease 0.5s both !important;
   transition: all 0.8s ease !important;
-}
-.tatoueur-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .tatoueur-hero-title {
   font-size: 4rem !important;
@@ -91,6 +122,7 @@
   max-width: 500px !important;
 }
 .tatoueur-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
   background: rgba(8, 36, 22, 0.9) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(232, 255, 69, 0.3) !important;
@@ -98,13 +130,7 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
-}
-.tatoueur-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .tatoueur-form-group {
   margin: 0 0 1.5rem 0 !important;
@@ -222,6 +248,7 @@
   padding: 0 !important;
 }
 .tatoueur-benefit-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   border-radius: 12px !important;
   padding: 2rem !important;
@@ -229,13 +256,12 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
 }
-.tatoueur-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
+.tatoueur-benefit-card:nth-child(1) { animation-delay: 0.1s !important; }
+.tatoueur-benefit-card:nth-child(2) { animation-delay: 0.2s !important; }
+.tatoueur-benefit-card:nth-child(3) { animation-delay: 0.3s !important; }
+.tatoueur-benefit-card:nth-child(4) { animation-delay: 0.4s !important; }
+
 .tatoueur-benefit-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
@@ -281,13 +307,8 @@
   align-items: center !important;
 }
 .tatoueur-features-content {
-  opacity: 0 !important;
-  transform: translateX(-30px) !important;
+  animation: fadeInLeft 0.8s ease 0.3s both !important;
   transition: all 0.8s ease !important;
-}
-.tatoueur-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .tatoueur-features-list {
   list-style: none !important;
@@ -333,13 +354,8 @@
   line-height: 1.5 !important;
 }
 .tatoueur-features-visual {
-  opacity: 0 !important;
-  transform: translateX(30px) !important;
+  animation: fadeInRight 0.8s ease 0.5s both !important;
   transition: all 0.8s ease 0.2s !important;
-}
-.tatoueur-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .tatoueur-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -405,19 +421,14 @@
   padding: 0 !important;
 }
 .tatoueur-testimonial-card {
+  animation: fadeInUp 0.8s ease both !important;
   background: rgba(8, 36, 22, 0.4) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
-}
-.tatoueur-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .tatoueur-testimonial-quote {
   font-size: 1rem !important;
@@ -555,6 +566,7 @@
     margin-bottom: 1.5rem !important;
   }
   .tatoueur-hero-form {
+  animation: fadeInUp 0.8s ease 0.8s both !important;
     padding: 1.5rem !important;
   }
   .tatoueur-section-title {
@@ -570,7 +582,11 @@
     padding: 1rem 0 3rem 0 !important;
   }
 }
+
 </style>
+
+
+
 
 <div class="tatoueur-wp-scope">
   <!-- HERO SECTION -->
@@ -766,131 +782,65 @@
       <p>
         Rejoignez les centaines de tatoueurs qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
-      <button class="tatoueur-final-button" onclick="tatoueurScrollToForm()">
+      <button class="tatoueur-final-button" onclick="document.querySelector('.tatoueur-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
         Obtenir mon site de tatoueur
       </button>
     </div>
   </section>
 </div>
 
+
+
+
 <script>
-(() => {
-  const root = document.querySelector('.tatoueur-wp-scope');
-  if (!root) return;
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
 
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
+  const form = document.getElementById('tatoueur-contact-form');
+  const button = form.querySelector('.tatoueur-cta-button');
 
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.tatoueur-hero-text, .tatoueur-hero-form, .tatoueur-benefit-card, .tatoueur-testimonial-card, .tatoueur-features-content, .tatoueur-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.tatoueur-hero-text');
-    const heroForm = root.querySelector('.tatoueur-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
+    const name = document.getElementById('tatoueur-name').value;
+    const email = document.getElementById('tatoueur-email').value;
+    const project = document.getElementById('tatoueur-project').value;
 
-  // Gestion du formulaire
-  const form = root.querySelector('#tatoueur-contact-form');
-  const button = root.querySelector('.tatoueur-cta-button');
-  if (form && button) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.querySelector('#tatoueur-name').value;
-      const email = form.querySelector('#tatoueur-email').value;
-      const project = form.querySelector('#tatoueur-project').value;
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
 
-      if (!name || !email || !project) {
-        alert('Veuillez remplir tous les champs.');
-        return;
-      }
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
 
-      // Animation du bouton
-      button.innerHTML = '⏳ Envoi en cours...';
-      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
-      button.disabled = true;
-
-      // Envoi via EmailJS
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        project_description: project,
-        to_email: 'contact.capitainepub@gmail.com',
-        subject: 'Nouvelle demande - Site Tatoueur - web-starting.fr',
-        message: `Nouvelle demande pour un site de tatoueur depuis web-starting.fr
-Nom: ${name}
-Email: ${email}
-Projet: ${project}
-Source: Page Tatoueur - web-starting.fr
-Date: ${new Date().toLocaleString('fr-FR')}
-Cordialement,
-Système automatique web-starting.fr`
-      };
-
-      // Utilisation d'EmailJS
-      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          button.innerHTML = '✅ Demande envoyée !';
-          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-          // Réinitialiser après 3 secondes
-          setTimeout(() => {
-            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-            form.reset();
-          }, 3000);
-        }, function(error) {
-          console.log('FAILED...', error);
-          button.innerHTML = '❌ Erreur d\'envoi';
-          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
-          // Réinitialiser après 3 secondes
-          setTimeout(() => {
-            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-          }, 3000);
-        });
-    });
-  }
-
-  // Fonction pour scroller vers le formulaire
-  window.tatoueurScrollToForm = function() {
-    const heroForm = root.querySelector('.tatoueur-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Focus sur le champ nom après le scroll
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Tatoueur - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Tatoueur\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
       setTimeout(() => {
-        const nameField = heroForm.querySelector('#tatoueur-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.tatoueur-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
   });
 })();
 </script>

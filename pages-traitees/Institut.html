@@ -2,8 +2,44 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* ANIMATIONS AUTOMATIQUES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0 !important;
+    transform: translateX(-30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+}
+
 
 /* RESET COMPLET ET ISOLATION WORDPRESS */
 .institut-beaute-wp-scope {
@@ -62,13 +98,7 @@
   align-items: center !important;
 }
 .institut-beaute-hero-text {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
-}
-.institut-beaute-hero-text.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .institut-beaute-hero-title {
   font-size: 4rem !important;
@@ -98,13 +128,7 @@
   padding: 2.5rem !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease 0.3s !important;
-}
-.institut-beaute-hero-form.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .institut-beaute-form-group {
   margin: 0 0 1.5rem 0 !important;
@@ -229,12 +253,6 @@
   border: 1px solid rgba(232, 255, 69, 0.1) !important;
   position: relative !important;
   transition: all 0.3s ease !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
-}
-.institut-beaute-benefit-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .institut-beaute-benefit-card:hover {
   transform: translateY(-5px) !important;
@@ -281,13 +299,7 @@
   align-items: center !important;
 }
 .institut-beaute-features-content {
-  opacity: 0 !important;
-  transform: translateX(-30px) !important;
   transition: all 0.8s ease !important;
-}
-.institut-beaute-features-content.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .institut-beaute-features-list {
   list-style: none !important;
@@ -333,13 +345,7 @@
   line-height: 1.5 !important;
 }
 .institut-beaute-features-visual {
-  opacity: 0 !important;
-  transform: translateX(30px) !important;
   transition: all 0.8s ease 0.2s !important;
-}
-.institut-beaute-features-visual.animate {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
 }
 .institut-beaute-mockup {
   background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
@@ -411,13 +417,7 @@
   border-radius: 12px !important;
   padding: 2rem !important;
   position: relative !important;
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
   transition: all 0.8s ease !important;
-}
-.institut-beaute-testimonial-card.animate {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .institut-beaute-testimonial-quote {
   font-size: 1rem !important;
@@ -570,7 +570,11 @@
     padding: 1rem 0 3rem 0 !important;
   }
 }
+
 </style>
+
+
+
 
 <div class="institut-beaute-wp-scope">
   <!-- HERO SECTION -->
@@ -766,131 +770,65 @@
       <p>
         Rejoignez les centaines d’instituts qui ont choisi notre expertise. Obtenez votre devis personnalisé en 2 minutes.
       </p>
-      <button class="institut-beaute-final-button" onclick="institutBeauteScrollToForm()">
+      <button class="institut-beaute-final-button" onclick="document.querySelector('.institut-hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });">
         Obtenir mon site d’institut de beauté
       </button>
     </div>
   </section>
 </div>
 
+
+
+
 <script>
-(() => {
-  const root = document.querySelector('.institut-beaute-wp-scope');
-  if (!root) return;
+(function() {
+  emailjs.init('EbZUccJ9uKukb5WRE');
 
-  // Animation d'entrée progressive
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, observerOptions);
+  const form = document.getElementById('institut-contact-form');
+  const button = form.querySelector('.institut-cta-button');
 
-  // Initialisation des animations
-  const animatedElements = root.querySelectorAll('.institut-beaute-hero-text, .institut-beaute-hero-form, .institut-beaute-benefit-card, .institut-beaute-testimonial-card, .institut-beaute-features-content, .institut-beaute-features-visual');
-  animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Animation immédiate pour le hero
-  setTimeout(() => {
-    const heroText = root.querySelector('.institut-beaute-hero-text');
-    const heroForm = root.querySelector('.institut-beaute-hero-form');
-    if (heroText) heroText.classList.add('animate');
-    if (heroForm) heroForm.classList.add('animate');
-  }, 500);
+    const name = document.getElementById('institut-name').value;
+    const email = document.getElementById('institut-email').value;
+    const project = document.getElementById('institut-project').value;
 
-  // Gestion du formulaire
-  const form = root.querySelector('#institut-beaute-contact-form');
-  const button = root.querySelector('.institut-beaute-cta-button');
-  if (form && button) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.querySelector('#institut-beaute-name').value;
-      const email = form.querySelector('#institut-beaute-email').value;
-      const project = form.querySelector('#institut-beaute-project').value;
+    if (!name || !email || !project) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
 
-      if (!name || !email || !project) {
-        alert('Veuillez remplir tous les champs.');
-        return;
-      }
+    button.innerHTML = '⏳ Envoi en cours...';
+    button.disabled = true;
 
-      // Animation du bouton
-      button.innerHTML = '⏳ Envoi en cours...';
-      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
-      button.disabled = true;
-
-      // Envoi via EmailJS
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        project_description: project,
-        to_email: 'contact.capitainepub@gmail.com',
-        subject: 'Nouvelle demande - Site Institut de Beauté - web-starting.fr',
-        message: `Nouvelle demande pour un site d’institut de beauté depuis web-starting.fr
-Nom: ${name}
-Email: ${email}
-Projet: ${project}
-Source: Page Institut de Beauté - web-starting.fr
-Date: ${new Date().toLocaleString('fr-FR')}
-Cordialement,
-Système automatique web-starting.fr`
-      };
-
-      // Utilisation d'EmailJS
-      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          button.innerHTML = '✅ Demande envoyée !';
-          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-          // Réinitialiser après 3 secondes
-          setTimeout(() => {
-            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-            form.reset();
-          }, 3000);
-        }, function(error) {
-          console.log('FAILED...', error);
-          button.innerHTML = '❌ Erreur d\'envoi';
-          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
-          // Réinitialiser après 3 secondes
-          setTimeout(() => {
-            button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
-            button.style.background = 'linear-gradient(135deg, #e0fd51 0%, #d4f442 100%)';
-            button.disabled = false;
-          }, 3000);
-        });
-    });
-  }
-
-  // Fonction pour scroller vers le formulaire
-  window.institutBeauteScrollToForm = function() {
-    const heroForm = root.querySelector('.institut-beaute-hero-form');
-    if (heroForm) {
-      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Focus sur le champ nom après le scroll
+    emailjs.send('service_btbtgzn', 'template_m06wtf1', {
+      from_name: name,
+      from_email: email,
+      project_description: project,
+      to_email: 'contact.capitainepub@gmail.com',
+      subject: 'Nouvelle demande - Site Institut - web-starting.fr',
+      message: `Nouvelle demande depuis web-starting.fr\nNom: ${name}\nEmail: ${email}\nProjet: ${project}\nPage: Institut\nDate: ${new Date().toLocaleString('fr-FR')}`
+    }, 'EbZUccJ9uKukb5WRE')
+    .then(function() {
+      button.innerHTML = '✅ Demande envoyée !';
+      button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
       setTimeout(() => {
-        const nameField = heroForm.querySelector('#institut-beaute-name');
-        if (nameField) nameField.focus();
-      }, 1000);
-    }
-  };
-
-  // Effet de parallaxe subtil
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.3;
-    const heroSection = root.querySelector('.institut-beaute-hero-section');
-    if (heroSection) {
-      heroSection.style.transform = `translateY(${rate}px)`;
-    }
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+        form.reset();
+      }, 3000);
+    })
+    .catch(function() {
+      button.innerHTML = '❌ Erreur';
+      button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      setTimeout(() => {
+        button.innerHTML = 'RÉSERVEZ VOTRE RENDEZ-VOUS GRATUIT';
+        button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+        button.disabled = false;
+      }, 3000);
+    });
   });
 })();
 </script>

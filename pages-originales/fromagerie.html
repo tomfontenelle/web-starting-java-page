@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.fromager-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.fromager-wp-scope *, .fromager-wp-scope *::before, .fromager-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.fromager-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.fromager-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.fromager-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.fromager-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.fromager-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.fromager-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fromager-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.fromager-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.fromager-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.fromager-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.fromager-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fromager-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.fromager-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.fromager-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.fromager-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.fromager-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.fromager-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.fromager-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.fromager-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.fromager-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.fromager-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.fromager-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.fromager-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.fromager-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.fromager-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.fromager-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.fromager-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.fromager-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fromager-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.fromager-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.fromager-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.fromager-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.fromager-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.fromager-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.fromager-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.fromager-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.fromager-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.fromager-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.fromager-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.fromager-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.fromager-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.fromager-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.fromager-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.fromager-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.fromager-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.fromager-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.fromager-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.fromager-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.fromager-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.fromager-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.fromager-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.fromager-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.fromager-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.fromager-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fromager-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.fromager-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.fromager-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.fromager-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.fromager-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.fromager-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.fromager-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.fromager-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.fromager-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.fromager-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .fromager-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .fromager-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .fromager-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .fromager-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .fromager-hero-title {
+    font-size: 2rem !important;
+  }
+  .fromager-section-title {
+    font-size: 1.75rem !important;
+  }
+  .fromager-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .fromager-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .fromager-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .fromager-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .fromager-hero-form {
+    padding: 1.25rem !important;
+  }
+  .fromager-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="fromager-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="fromager-hero-section">
+    <div class="fromager-hero-container">
+      <div class="fromager-hero-content">
+        <div class="fromager-hero-text">
+          <h1 class="fromager-hero-title">
+            Création de <span class="fromager-highlight-yellow">site internet</span> pour votre <span class="fromager-highlight-yellow">fromagerie</span>
+          </h1>
+          <p class="fromager-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Commande en ligne, présentation de vos fromages artisanaux, click & collect et plateaux de fromages. Mettez en valeur votre savoir-faire.
+          </p>
+        </div>
+        <div class="fromager-hero-form">
+          <form id="fromager-contact-form">
+            <div class="fromager-form-group">
+              <label for="fromager-name" class="fromager-form-label">VOTRE NOM</label>
+              <input type="text" id="fromager-name" name="name" class="fromager-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="fromager-form-group">
+              <label for="fromager-email" class="fromager-form-label">VOTRE EMAIL</label>
+              <input type="email" id="fromager-email" name="email" class="fromager-form-input" placeholder="contact@fromagerie.fr" required />
+            </div>
+            <div class="fromager-form-group">
+              <label for="fromager-project" class="fromager-form-label">VOTRE PROJET</label>
+              <textarea id="fromager-project" name="project" class="fromager-form-input" placeholder="Ex: Je gère une fromagerie et j'ai besoin d'un site pour proposer des commandes en ligne..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="fromager-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="fromager-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI FROMAGER -->
+  <section class="fromager-why-section">
+    <div class="fromager-container">
+      <div class="fromager-section-header">
+        <h2 class="fromager-section-title">
+          Pourquoi un site internet pour votre <span class="fromager-highlight">fromagerie</span> ?
+        </h2>
+        <p class="fromager-section-subtitle">
+          Dans un secteur compétitif, un site professionnel vous rend visible et met en avant vos fromages artisanaux.
+        </p>
+      </div>
+      <div class="fromager-benefits-grid">
+        <div class="fromager-benefit-card">
+          <div class="fromager-benefit-icon">🔍</div>
+          <h3 class="fromager-benefit-title">Visibilité locale</h3>
+          <p class="fromager-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "fromagerie [ville]" ou "fromages près de moi".
+          </p>
+        </div>
+        <div class="fromager-benefit-card">
+          <div class="fromager-benefit-icon">🧀</div>
+          <h3 class="fromager-benefit-title">Commande en ligne</h3>
+          <p class="fromager-benefit-description">
+            Présentez vos fromages artisanaux avec un design appétissant.
+          </p>
+        </div>
+        <div class="fromager-benefit-card">
+          <div class="fromager-benefit-icon">🛒</div>
+          <h3 class="fromager-benefit-title">Click & Collect</h3>
+          <p class="fromager-benefit-description">
+            Facilitez les commandes avec un système de retrait en magasin.
+          </p>
+        </div>
+        <div class="fromager-benefit-card">
+          <div class="fromager-benefit-icon">🏅</div>
+          <h3 class="fromager-benefit-title">Confiance et qualité</h3>
+          <p class="fromager-benefit-description">
+            Renforcez la confiance avec un site qui valorise votre savoir-faire artisanal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="fromager-features-section">
+    <div class="fromager-container">
+      <div class="fromager-features-grid">
+        <div class="fromager-features-content">
+          <h2 class="fromager-section-title">
+            Fonctionnalités pour <span class="fromager-highlight">fromagers</span>
+          </h2>
+          <p class="fromager-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre fromagerie.
+          </p>
+          <ul class="fromager-features-list">
+            <li class="fromager-feature-item">
+              <div class="fromager-feature-icon">🧀</div>
+              <div class="fromager-feature-content">
+                <h4>Présentation des fromages</h4>
+                <p>Présentez vos fromages artisanaux et locaux de manière appétissante.</p>
+              </div>
+            </li>
+            <li class="fromager-feature-item">
+              <div class="fromager-feature-icon">🛒</div>
+              <div class="fromager-feature-content">
+                <h4>Commande en ligne</h4>
+                <p>Permettez à vos clients de commander directement via votre site.</p>
+              </div>
+            </li>
+            <li class="fromager-feature-item">
+              <div class="fromager-feature-icon">📍</div>
+              <div class="fromager-feature-content">
+                <h4>Click & Collect</h4>
+                <p>Offrez un service de retrait rapide en magasin pour plus de commodité.</p>
+              </div>
+            </li>
+            <li class="fromager-feature-item">
+              <div class="fromager-feature-icon">🎁</div>
+              <div class="fromager-feature-content">
+                <h4>Plateaux de fromages</h4>
+                <p>Promouvez vos plateaux de dégustation pour événements ou apéritifs.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="fromager-features-visual">
+          <div class="fromager-mockup">
+            <div class="fromager-mockup-header"></div>
+            <div class="fromager-mockup-content">
+              <h3 class="fromager-mockup-title">Fromagerie Artisanale</h3>
+              <p class="fromager-mockup-text">Fromages • Plateaux<br />Click & Collect • Offres</p>
+              <button class="fromager-mockup-button">Commander maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="fromager-testimonials-section">
+    <div class="fromager-container">
+      <div class="fromager-section-header">
+        <h2 class="fromager-section-title">
+          Ce que disent nos <span class="fromager-highlight">fromagers partenaires</span>
+        </h2>
+        <p class="fromager-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="fromager-testimonials-grid">
+        <div class="fromager-testimonial-card">
+          <p class="fromager-testimonial-quote">
+            "Notre site a boosté les commandes en ligne et les demandes de plateaux. Le click & collect est un succès !"
+          </p>
+          <div class="fromager-testimonial-author">
+            <div class="fromager-testimonial-avatar">JD</div>
+            <div class="fromager-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Fromager, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="fromager-testimonial-card">
+          <p class="fromager-testimonial-quote">
+            "Présenter nos fromages artisanaux sur le site a renforcé notre image. Très professionnel !"
+          </p>
+          <div class="fromager-testimonial-author">
+            <div class="fromager-testimonial-avatar">AL</div>
+            <div class="fromager-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Fromager, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="fromager-testimonial-card">
+          <p class="fromager-testimonial-quote">
+            "Le système de commande en ligne a simplifié la gestion des ventes. Les clients adorent la fluidité."
+          </p>
+          <div class="fromager-testimonial-author">
+            <div class="fromager-testimonial-avatar">MD</div>
+            <div class="fromager-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Fromager, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="fromager-final-cta">
+    <div class="fromager-container">
+      <h2>Boostez votre fromagerie</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos fromages et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="fromager-final-button" onclick="fromagerScrollToForm()">
+        Créer mon site de fromagerie
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.fromager-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.fromager-hero-text, .fromager-hero-form, .fromager-benefit-card, .fromager-testimonial-card, .fromager-features-content, .fromager-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.fromager-hero-text');
+    const heroForm = root.querySelector('.fromager-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#fromager-contact-form');
+  const button = root.querySelector('.fromager-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#fromager-name').value;
+      const email = form.querySelector('#fromager-email').value;
+      const project = form.querySelector('#fromager-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Fromager - web-starting.fr',
+        message: `Nouvelle demande pour un site de fromagerie depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Fromager - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.fromagerScrollToForm = function() {
+    const heroForm = root.querySelector('.fromager-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#fromager-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.fromager-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

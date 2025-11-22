@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.dj-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.dj-wp-scope *, .dj-wp-scope *::before, .dj-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.dj-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.dj-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.dj-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.dj-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.dj-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.dj-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.dj-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.dj-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.dj-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.dj-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.dj-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.dj-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.dj-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.dj-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.dj-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.dj-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.dj-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.dj-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.dj-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.dj-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.dj-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.dj-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.dj-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.dj-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.dj-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.dj-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.dj-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.dj-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.dj-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.dj-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.dj-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.dj-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.dj-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.dj-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.dj-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.dj-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.dj-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.dj-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.dj-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.dj-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.dj-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.dj-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.dj-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.dj-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.dj-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.dj-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.dj-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.dj-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.dj-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.dj-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.dj-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.dj-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.dj-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.dj-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.dj-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.dj-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.dj-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.dj-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.dj-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.dj-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.dj-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.dj-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.dj-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.dj-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .dj-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .dj-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .dj-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .dj-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .dj-hero-title {
+    font-size: 2rem !important;
+  }
+  .dj-section-title {
+    font-size: 1.75rem !important;
+  }
+  .dj-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .dj-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .dj-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .dj-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .dj-hero-form {
+    padding: 1.25rem !important;
+  }
+  .dj-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="dj-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="dj-hero-section">
+    <div class="dj-hero-container">
+      <div class="dj-hero-content">
+        <div class="dj-hero-text">
+          <h1 class="dj-hero-title">
+            Création de <span class="dj-highlight-yellow">site internet</span> pour votre <span class="dj-highlight-yellow">activité de DJ</span>
+          </h1>
+          <p class="dj-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Portfolio de mixes, réservation pour événements, présentation de vos services et contact rapide. Faites vibrer votre audience.
+          </p>
+        </div>
+        <div class="dj-hero-form">
+          <form id="dj-contact-form">
+            <div class="dj-form-group">
+              <label for="dj-name" class="dj-form-label">VOTRE NOM</label>
+              <input type="text" id="dj-name" name="name" class="dj-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="dj-form-group">
+              <label for="dj-email" class="dj-form-label">VOTRE EMAIL</label>
+              <input type="email" id="dj-email" name="email" class="dj-form-input" placeholder="contact@dj.fr" required />
+            </div>
+            <div class="dj-form-group">
+              <label for="dj-project" class="dj-form-label">VOTRE PROJET</label>
+              <textarea id="dj-project" name="project" class="dj-form-input" placeholder="Ex: Je suis DJ et j’ai besoin d’un site pour présenter mes mixes..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="dj-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="dj-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI DJ -->
+  <section class="dj-why-section">
+    <div class="dj-container">
+      <div class="dj-section-header">
+        <h2 class="dj-section-title">
+          Pourquoi un site internet pour votre <span class="dj-highlight">activité de DJ</span> ?
+        </h2>
+        <p class="dj-section-subtitle">
+          Dans un secteur festif et compétitif, un site professionnel met en valeur votre style et attire des clients.
+        </p>
+      </div>
+      <div class="dj-benefits-grid">
+        <div class="dj-benefit-card">
+          <div class="dj-benefit-icon">🔍</div>
+          <h3 class="dj-benefit-title">Visibilité locale</h3>
+          <p class="dj-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "DJ [ville]" ou "DJ mariage".
+          </p>
+        </div>
+        <div class="dj-benefit-card">
+          <div class="dj-benefit-icon">🎧</div>
+          <h3 class="dj-benefit-title">Portfolio de mixes</h3>
+          <p class="dj-benefit-description">
+            Présentez vos mixes audio et vidéo dans une galerie professionnelle.
+          </p>
+        </div>
+        <div class="dj-benefit-card">
+          <div class="dj-benefit-icon">📅</div>
+          <h3 class="dj-benefit-title">Réservation d’événements</h3>
+          <p class="dj-benefit-description">
+            Permettez à vos clients de réserver vos services directement sur votre site.
+          </p>
+        </div>
+        <div class="dj-benefit-card">
+          <div class="dj-benefit-icon">🏅</div>
+          <h3 class="dj-benefit-title">Confiance et professionnalisme</h3>
+          <p class="dj-benefit-description">
+            Renforcez la confiance avec un site qui reflète votre énergie et votre talent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="dj-features-section">
+    <div class="dj-container">
+      <div class="dj-features-grid">
+        <div class="dj-features-content">
+          <h2 class="dj-section-title">
+            Fonctionnalités pour <span class="dj-highlight">DJ</span>
+          </h2>
+          <p class="dj-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre activité de DJ.
+          </p>
+          <ul class="dj-features-list">
+            <li class="dj-feature-item">
+              <div class="dj-feature-icon">🎧</div>
+              <div class="dj-feature-content">
+                <h4>Portfolio de mixes</h4>
+                <p>Présentez vos mixes dans une galerie visuellement attrayante.</p>
+              </div>
+            </li>
+            <li class="dj-feature-item">
+              <div class="dj-feature-icon">📅</div>
+              <div class="dj-feature-content">
+                <h4>Réservation d’événements</h4>
+                <p>Permettez à vos clients de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="dj-feature-item">
+              <div class="dj-feature-icon">💼</div>
+              <div class="dj-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos spécialités : mariages, soirées, clubs, etc.</p>
+              </div>
+            </li>
+            <li class="dj-feature-item">
+              <div class="dj-feature-icon">📞</div>
+              <div class="dj-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="dj-features-visual">
+          <div class="dj-mockup">
+            <div class="dj-mockup-header"></div>
+            <div class="dj-mockup-content">
+              <h3 class="dj-mockup-title">Portfolio DJ</h3>
+              <p class="dj-mockup-text">Mixes • Réservations<br />Services • Contact</p>
+              <button class="dj-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="dj-testimonials-section">
+    <div class="dj-container">
+      <div class="dj-section-header">
+        <h2 class="dj-section-title">
+          Ce que disent nos <span class="dj-highlight">DJ partenaires</span>
+        </h2>
+        <p class="dj-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="dj-testimonials-grid">
+        <div class="dj-testimonial-card">
+          <p class="dj-testimonial-quote">
+            "Mon portfolio de mixes a attiré plus de clients pour mes soirées."
+          </p>
+          <div class="dj-testimonial-author">
+            <div class="dj-testimonial-avatar">JD</div>
+            <div class="dj-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>DJ, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="dj-testimonial-card">
+          <p class="dj-testimonial-quote">
+            "Le site a renforcé mon image professionnelle et simplifié les réservations."
+          </p>
+          <div class="dj-testimonial-author">
+            <div class="dj-testimonial-avatar">AL</div>
+            <div class="dj-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>DJ, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="dj-testimonial-card">
+          <p class="dj-testimonial-quote">
+            "Mes clients adorent la facilité de prise de contact via le formulaire."
+          </p>
+          <div class="dj-testimonial-author">
+            <div class="dj-testimonial-avatar">MD</div>
+            <div class="dj-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>DJ, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="dj-final-cta">
+    <div class="dj-container">
+      <h2>Boostez votre activité de DJ</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos mixes et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="dj-final-button" onclick="djScrollToForm()">
+        Créer mon site de DJ
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.dj-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.dj-hero-text, .dj-hero-form, .dj-benefit-card, .dj-testimonial-card, .dj-features-content, .dj-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.dj-hero-text');
+    const heroForm = root.querySelector('.dj-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#dj-contact-form');
+  const button = root.querySelector('.dj-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#dj-name').value;
+      const email = form.querySelector('#dj-email').value;
+      const project = form.querySelector('#dj-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site DJ - web-starting.fr',
+        message: `Nouvelle demande pour un site de DJ depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page DJ - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.djScrollToForm = function() {
+    const heroForm = root.querySelector('.dj-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#dj-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.dj-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

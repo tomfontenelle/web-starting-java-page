@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.chambre-hotes-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.chambre-hotes-wp-scope *, .chambre-hotes-wp-scope *::before, .chambre-hotes-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.chambre-hotes-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.chambre-hotes-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.chambre-hotes-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.chambre-hotes-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.chambre-hotes-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.chambre-hotes-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chambre-hotes-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.chambre-hotes-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.chambre-hotes-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.chambre-hotes-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.chambre-hotes-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chambre-hotes-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.chambre-hotes-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.chambre-hotes-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.chambre-hotes-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.chambre-hotes-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.chambre-hotes-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.chambre-hotes-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.chambre-hotes-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.chambre-hotes-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.chambre-hotes-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.chambre-hotes-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.chambre-hotes-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.chambre-hotes-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.chambre-hotes-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.chambre-hotes-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.chambre-hotes-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.chambre-hotes-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chambre-hotes-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.chambre-hotes-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.chambre-hotes-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.chambre-hotes-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.chambre-hotes-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.chambre-hotes-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.chambre-hotes-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.chambre-hotes-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.chambre-hotes-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.chambre-hotes-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.chambre-hotes-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.chambre-hotes-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.chambre-hotes-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.chambre-hotes-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.chambre-hotes-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.chambre-hotes-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.chambre-hotes-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.chambre-hotes-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.chambre-hotes-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.chambre-hotes-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.chambre-hotes-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.chambre-hotes-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.chambre-hotes-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.chambre-hotes-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.chambre-hotes-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.chambre-hotes-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.chambre-hotes-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.chambre-hotes-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.chambre-hotes-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.chambre-hotes-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.chambre-hotes-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.chambre-hotes-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.chambre-hotes-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.chambre-hotes-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.chambre-hotes-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.chambre-hotes-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .chambre-hotes-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .chambre-hotes-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .chambre-hotes-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .chambre-hotes-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .chambre-hotes-hero-title {
+    font-size: 2rem !important;
+  }
+  .chambre-hotes-section-title {
+    font-size: 1.75rem !important;
+  }
+  .chambre-hotes-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .chambre-hotes-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .chambre-hotes-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .chambre-hotes-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .chambre-hotes-hero-form {
+    padding: 1.25rem !important;
+  }
+  .chambre-hotes-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="chambre-hotes-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="chambre-hotes-hero-section">
+    <div class="chambre-hotes-hero-container">
+      <div class="chambre-hotes-hero-content">
+        <div class="chambre-hotes-hero-text">
+          <h1 class="chambre-hotes-hero-title">
+            Création de <span class="chambre-hotes-highlight-yellow">site internet</span> pour votre <span class="chambre-hotes-highlight-yellow">chambre d’hôtes</span>
+          </h1>
+          <p class="chambre-hotes-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Réservation en ligne, présentation de vos chambres, ambiance chaleureuse et localisation. Mettez en valeur l’expérience unique de votre maison d’hôtes.
+          </p>
+        </div>
+        <div class="chambre-hotes-hero-form">
+          <form id="chambre-hotes-contact-form">
+            <div class="chambre-hotes-form-group">
+              <label for="chambre-hotes-name" class="chambre-hotes-form-label">VOTRE NOM</label>
+              <input type="text" id="chambre-hotes-name" name="name" class="chambre-hotes-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="chambre-hotes-form-group">
+              <label for="chambre-hotes-email" class="chambre-hotes-form-label">VOTRE EMAIL</label>
+              <input type="email" id="chambre-hotes-email" name="email" class="chambre-hotes-form-input" placeholder="contact@chambrehotes.fr" required />
+            </div>
+            <div class="chambre-hotes-form-group">
+              <label for="chambre-hotes-project" class="chambre-hotes-form-label">VOTRE PROJET</label>
+              <textarea id="chambre-hotes-project" name="project" class="chambre-hotes-form-input" placeholder="Ex: Je gère une chambre d’hôtes et j’ai besoin d’un site pour proposer des réservations en ligne..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="chambre-hotes-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="chambre-hotes-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI CHAMBRE D’HÔTES -->
+  <section class="chambre-hotes-why-section">
+    <div class="chambre-hotes-container">
+      <div class="chambre-hotes-section-header">
+        <h2 class="chambre-hotes-section-title">
+          Pourquoi un site internet pour votre <span class="chambre-hotes-highlight">chambre d’hôtes</span> ?
+        </h2>
+        <p class="chambre-hotes-section-subtitle">
+          Dans un secteur touristique compétitif, un site professionnel attire les voyageurs et simplifie les réservations.
+        </p>
+      </div>
+      <div class="chambre-hotes-benefits-grid">
+        <div class="chambre-hotes-benefit-card">
+          <div class="chambre-hotes-benefit-icon">🔍</div>
+          <h3 class="chambre-hotes-benefit-title">Visibilité locale</h3>
+          <p class="chambre-hotes-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "chambre d’hôtes [ville]" ou "maison d’hôtes près de moi".
+          </p>
+        </div>
+        <div class="chambre-hotes-benefit-card">
+          <div class="chambre-hotes-benefit-icon">📅</div>
+          <h3 class="chambre-hotes-benefit-title">Réservation en ligne</h3>
+          <p class="chambre-hotes-benefit-description">
+            Offrez un système de réservation simple et rapide directement sur votre site.
+          </p>
+        </div>
+        <div class="chambre-hotes-benefit-card">
+          <div class="chambre-hotes-benefit-icon">🏡</div>
+          <h3 class="chambre-hotes-benefit-title">Ambiance chaleureuse</h3>
+          <p class="chambre-hotes-benefit-description">
+            Mettez en avant vos chambres et l’atmosphère unique de votre maison d’hôtes.
+          </p>
+        </div>
+        <div class="chambre-hotes-benefit-card">
+          <div class="chambre-hotes-benefit-icon">🏅</div>
+          <h3 class="chambre-hotes-benefit-title">Confiance et attractivité</h3>
+          <p class="chambre-hotes-benefit-description">
+            Renforcez la confiance avec un site qui valorise l’expérience personnalisée de votre maison d’hôtes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="chambre-hotes-features-section">
+    <div class="chambre-hotes-container">
+      <div class="chambre-hotes-features-grid">
+        <div class="chambre-hotes-features-content">
+          <h2 class="chambre-hotes-section-title">
+            Fonctionnalités pour <span class="chambre-hotes-highlight">chambres d’hôtes</span>
+          </h2>
+          <p class="chambre-hotes-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre maison d’hôtes.
+          </p>
+          <ul class="chambre-hotes-features-list">
+            <li class="chambre-hotes-feature-item">
+              <div class="chambre-hotes-feature-icon">🏡</div>
+              <div class="chambre-hotes-feature-content">
+                <h4>Présentation des chambres</h4>
+                <p>Présentez vos chambres et leur ambiance avec des visuels attrayants.</p>
+              </div>
+            </li>
+            <li class="chambre-hotes-feature-item">
+              <div class="chambre-hotes-feature-icon">📅</div>
+              <div class="chambre-hotes-feature-content">
+                <h4>Réservation en ligne</h4>
+                <p>Permettez à vos clients de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="chambre-hotes-feature-item">
+              <div class="chambre-hotes-feature-icon">📍</div>
+              <div class="chambre-hotes-feature-content">
+                <h4>Localisation</h4>
+                <p>Affichez votre emplacement avec une carte interactive pour faciliter l’accès.</p>
+              </div>
+            </li>
+            <li class="chambre-hotes-feature-item">
+              <div class="chambre-hotes-feature-icon">🎁</div>
+              <div class="chambre-hotes-feature-content">
+                <h4>Offres spéciales</h4>
+                <p>Promouvez vos séjours romantiques ou forfaits touristiques pour attirer plus de clients.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chambre-hotes-features-visual">
+          <div class="chambre-hotes-mockup">
+            <div class="chambre-hotes-mockup-header"></div>
+            <div class="chambre-hotes-mockup-content">
+              <h3 class="chambre-hotes-mockup-title">Maison d’Hôtes de Charme</h3>
+              <p class="chambre-hotes-mockup-text">Chambres • Réservations<br />Offres • Localisation</p>
+              <button class="chambre-hotes-mockup-button">Réserver maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="chambre-hotes-testimonials-section">
+    <div class="chambre-hotes-container">
+      <div class="chambre-hotes-section-header">
+        <h2 class="chambre-hotes-section-title">
+          Ce que disent nos <span class="chambre-hotes-highlight">propriétaires partenaires</span>
+        </h2>
+        <p class="chambre-hotes-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="chambre-hotes-testimonials-grid">
+        <div class="chambre-hotes-testimonial-card">
+          <p class="chambre-hotes-testimonial-quote">
+            "Notre site a boosté les réservations directes et mis en valeur l’ambiance de notre maison d’hôtes."
+          </p>
+          <div class="chambre-hotes-testimonial-author">
+            <div class="chambre-hotes-testimonial-avatar">JD</div>
+            <div class="chambre-hotes-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Propriétaire, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="chambre-hotes-testimonial-card">
+          <p class="chambre-hotes-testimonial-quote">
+            "Présenter nos chambres sur un site moderne a attiré plus de voyageurs."
+          </p>
+          <div class="chambre-hotes-testimonial-author">
+            <div class="chambre-hotes-testimonial-avatar">AL</div>
+            <div class="chambre-hotes-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Propriétaire, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="chambre-hotes-testimonial-card">
+          <p class="chambre-hotes-testimonial-quote">
+            "Le système de réservation en ligne est fluide et apprécié par nos hôtes."
+          </p>
+          <div class="chambre-hotes-testimonial-author">
+            <div class="chambre-hotes-testimonial-avatar">MD</div>
+            <div class="chambre-hotes-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Propriétaire, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="chambre-hotes-final-cta">
+    <div class="chambre-hotes-container">
+      <h2>Boostez votre chambre d’hôtes</h2>
+      <p>
+        Obtenez un site professionnel pour présenter votre maison d’hôtes et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="chambre-hotes-final-button" onclick="chambreHotesScrollToForm()">
+        Créer mon site de chambre d’hôtes
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.chambre-hotes-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.chambre-hotes-hero-text, .chambre-hotes-hero-form, .chambre-hotes-benefit-card, .chambre-hotes-testimonial-card, .chambre-hotes-features-content, .chambre-hotes-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.chambre-hotes-hero-text');
+    const heroForm = root.querySelector('.chambre-hotes-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#chambre-hotes-contact-form');
+  const button = root.querySelector('.chambre-hotes-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#chambre-hotes-name').value;
+      const email = form.querySelector('#chambre-hotes-email').value;
+      const project = form.querySelector('#chambre-hotes-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Chambre d’Hôtes - web-starting.fr',
+        message: `Nouvelle demande pour un site de chambre d’hôtes depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Chambre d’Hôtes - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.chambreHotesScrollToForm = function() {
+    const heroForm = root.querySelector('.chambre-hotes-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#chambre-hotes-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.chambre-hotes-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.association-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.association-wp-scope *, .association-wp-scope *::before, .association-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.association-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.association-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.association-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.association-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.association-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.association-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.association-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.association-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.association-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.association-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.association-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.association-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.association-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.association-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.association-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.association-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.association-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.association-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.association-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.association-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.association-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.association-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.association-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.association-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.association-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.association-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.association-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.association-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.association-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.association-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.association-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.association-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.association-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.association-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.association-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.association-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.association-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.association-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.association-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.association-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.association-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.association-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.association-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.association-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.association-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.association-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.association-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.association-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.association-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.association-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.association-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.association-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.association-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.association-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.association-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.association-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.association-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.association-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.association-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.association-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.association-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.association-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.association-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.association-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .association-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .association-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .association-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .association-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .association-hero-title {
+    font-size: 2rem !important;
+  }
+  .association-section-title {
+    font-size: 1.75rem !important;
+  }
+  .association-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .association-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .association-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .association-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .association-hero-form {
+    padding: 1.25rem !important;
+  }
+  .association-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="association-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="association-hero-section">
+    <div class="association-hero-container">
+      <div class="association-hero-content">
+        <div class="association-hero-text">
+          <h1 class="association-hero-title">
+            Création de <span class="association-highlight-yellow">site internet</span> pour votre <span class="association-highlight-yellow">association</span>
+          </h1>
+          <p class="association-hero-subtitle">
+            Donnez de la visibilité à votre mission avec un site web professionnel. Présentation de votre cause, adhésions en ligne, agenda des événements et contact rapide.
+          </p>
+        </div>
+        <div class="association-hero-form">
+          <form id="association-contact-form">
+            <div class="association-form-group">
+              <label for="association-name" class="association-form-label">VOTRE NOM</label>
+              <input type="text" id="association-name" name="name" class="association-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="association-form-group">
+              <label for="association-email" class="association-form-label">VOTRE EMAIL</label>
+              <input type="email" id="association-email" name="email" class="association-form-input" placeholder="contact@association.fr" required />
+            </div>
+            <div class="association-form-group">
+              <label for="association-project" class="association-form-label">VOTRE PROJET</label>
+              <textarea id="association-project" name="project" class="association-form-input" placeholder="Ex: J’ai besoin d’un site pour promouvoir notre association et gérer les adhésions..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="association-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="association-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI ASSOCIATION -->
+  <section class="association-why-section">
+    <div class="association-container">
+      <div class="association-section-header">
+        <h2 class="association-section-title">
+          Pourquoi un site internet pour votre <span class="association-highlight">association</span> ?
+        </h2>
+        <p class="association-section-subtitle">
+          Un site professionnel renforce votre visibilité et engage votre communauté autour de votre cause.
+        </p>
+      </div>
+      <div class="association-benefits-grid">
+        <div class="association-benefit-card">
+          <div class="association-benefit-icon">🔍</div>
+          <h3 class="association-benefit-title">Visibilité accrue</h3>
+          <p class="association-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "association [ville]" ou "association caritative".
+          </p>
+        </div>
+        <div class="association-benefit-card">
+          <div class="association-benefit-icon">🤝</div>
+          <h3 class="association-benefit-title">Présentation de la mission</h3>
+          <p class="association-benefit-description">
+            Mettez en avant vos valeurs et vos projets dans une section claire et engageante.
+          </p>
+        </div>
+        <div class="association-benefit-card">
+          <div class="association-benefit-icon">📅</div>
+          <h3 class="association-benefit-title">Adhésions en ligne</h3>
+          <p class="association-benefit-description">
+            Permettez aux membres de s’inscrire ou de faire un don directement sur votre site.
+          </p>
+        </div>
+        <div class="association-benefit-card">
+          <div class="association-benefit-icon">🏅</div>
+          <h3 class="association-benefit-title">Confiance et crédibilité</h3>
+          <p class="association-benefit-description">
+            Renforcez la confiance avec un site qui reflète votre engagement et votre professionnalisme.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="association-features-section">
+    <div class="association-container">
+      <div class="association-features-grid">
+        <div class="association-features-content">
+          <h2 class="association-section-title">
+            Fonctionnalités pour <span class="association-highlight">associations</span>
+          </h2>
+          <p class="association-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre association.
+          </p>
+          <ul class="association-features-list">
+            <li class="association-feature-item">
+              <div class="association-feature-icon">🤝</div>
+              <div class="association-feature-content">
+                <h4>Présentation de la mission</h4>
+                <p>Communiquez vos valeurs et projets de manière attrayante.</p>
+              </div>
+            </li>
+            <li class="association-feature-item">
+              <div class="association-feature-icon">📅</div>
+              <div class="association-feature-content">
+                <h4>Adhésions en ligne</h4>
+                <p>Permettez aux membres de s’inscrire ou de faire un don en ligne.</p>
+              </div>
+            </li>
+            <li class="association-feature-item">
+              <div class="association-feature-icon">📅</div>
+              <div class="association-feature-content">
+                <h4>Agenda des événements</h4>
+                <p>Présentez vos événements dans un calendrier clair et accessible.</p>
+              </div>
+            </li>
+            <li class="association-feature-item">
+              <div class="association-feature-icon">📞</div>
+              <div class="association-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="association-features-visual">
+          <div class="association-mockup">
+            <div class="association-mockup-header"></div>
+            <div class="association-mockup-content">
+              <h3 class="association-mockup-title">Site Association</h3>
+              <p class="association-mockup-text">Mission • Adhésions<br />Événements • Contact</p>
+              <button class="association-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="association-testimonials-section">
+    <div class="association-container">
+      <div class="association-section-header">
+        <h2 class="association-section-title">
+          Ce que disent nos <span class="association-highlight">associations partenaires</span>
+        </h2>
+        <p class="association-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur mission.
+        </p>
+      </div>
+      <div class="association-testimonials-grid">
+        <div class="association-testimonial-card">
+          <p class="association-testimonial-quote">
+            "Notre site a permis de mieux communiquer notre mission et d’attirer plus de membres."
+          </p>
+          <div class="association-testimonial-author">
+            <div class="association-testimonial-avatar">JD</div>
+            <div class="association-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Président d’association, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="association-testimonial-card">
+          <p class="association-testimonial-quote">
+            "Le site a simplifié les adhésions et renforcé notre visibilité."
+          </p>
+          <div class="association-testimonial-author">
+            <div class="association-testimonial-avatar">AL</div>
+            <div class="association-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Responsable d’association, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="association-testimonial-card">
+          <p class="association-testimonial-quote">
+            "Nos membres apprécient la facilité d’accès à notre agenda d’événements."
+          </p>
+          <div class="association-testimonial-author">
+            <div class="association-testimonial-avatar">MD</div>
+            <div class="association-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Secrétaire d’association, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="association-final-cta">
+    <div class="association-container">
+      <h2>Donnez de la visibilité à votre association</h2>
+      <p>
+        Obtenez un site professionnel pour promouvoir votre mission et engager votre communauté. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="association-final-button" onclick="associationScrollToForm()">
+        Créer mon site d’association
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.association-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.association-hero-text, .association-hero-form, .association-benefit-card, .association-testimonial-card, .association-features-content, .association-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.association-hero-text');
+    const heroForm = root.querySelector('.association-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#association-contact-form');
+  const button = root.querySelector('.association-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#association-name').value;
+      const email = form.querySelector('#association-email').value;
+      const project = form.querySelector('#association-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Association - web-starting.fr',
+        message: `Nouvelle demande pour un site d’association depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Association - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.associationScrollToForm = function() {
+    const heroForm = root.querySelector('.association-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#association-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.association-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.ecole-danse-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.ecole-danse-wp-scope *, .ecole-danse-wp-scope *::before, .ecole-danse-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.ecole-danse-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.ecole-danse-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.ecole-danse-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.ecole-danse-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.ecole-danse-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.ecole-danse-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.ecole-danse-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.ecole-danse-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.ecole-danse-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.ecole-danse-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.ecole-danse-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.ecole-danse-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.ecole-danse-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.ecole-danse-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.ecole-danse-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.ecole-danse-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.ecole-danse-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.ecole-danse-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.ecole-danse-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.ecole-danse-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.ecole-danse-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.ecole-danse-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.ecole-danse-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.ecole-danse-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.ecole-danse-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.ecole-danse-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.ecole-danse-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.ecole-danse-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.ecole-danse-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.ecole-danse-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.ecole-danse-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.ecole-danse-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.ecole-danse-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.ecole-danse-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.ecole-danse-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.ecole-danse-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.ecole-danse-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.ecole-danse-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.ecole-danse-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.ecole-danse-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.ecole-danse-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.ecole-danse-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.ecole-danse-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.ecole-danse-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.ecole-danse-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.ecole-danse-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.ecole-danse-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.ecole-danse-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.ecole-danse-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.ecole-danse-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.ecole-danse-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.ecole-danse-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.ecole-danse-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.ecole-danse-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.ecole-danse-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.ecole-danse-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.ecole-danse-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.ecole-danse-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.ecole-danse-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.ecole-danse-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.ecole-danse-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.ecole-danse-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.ecole-danse-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.ecole-danse-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .ecole-danse-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .ecole-danse-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .ecole-danse-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .ecole-danse-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .ecole-danse-hero-title {
+    font-size: 2rem !important;
+  }
+  .ecole-danse-section-title {
+    font-size: 1.75rem !important;
+  }
+  .ecole-danse-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .ecole-danse-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .ecole-danse-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .ecole-danse-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .ecole-danse-hero-form {
+    padding: 1.25rem !important;
+  }
+  .ecole-danse-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="ecole-danse-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="ecole-danse-hero-section">
+    <div class="ecole-danse-hero-container">
+      <div class="ecole-danse-hero-content">
+        <div class="ecole-danse-hero-text">
+          <h1 class="ecole-danse-hero-title">
+            Création de <span class="ecole-danse-highlight-yellow">site internet</span> pour votre <span class="ecole-danse-highlight-yellow">école de danse</span>
+          </h1>
+          <p class="ecole-danse-hero-subtitle">
+            Attirez plus d’élèves avec un site web professionnel. Programme des cours, inscription en ligne, présentation de vos services et contact rapide. Faites danser votre communauté.
+          </p>
+        </div>
+        <div class="ecole-danse-hero-form">
+          <form id="ecole-danse-contact-form">
+            <div class="ecole-danse-form-group">
+              <label for="ecole-danse-name" class="ecole-danse-form-label">VOTRE NOM</label>
+              <input type="text" id="ecole-danse-name" name="name" class="ecole-danse-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="ecole-danse-form-group">
+              <label for="ecole-danse-email" class="ecole-danse-form-label">VOTRE EMAIL</label>
+              <input type="email" id="ecole-danse-email" name="email" class="ecole-danse-form-input" placeholder="contact@ecolededanse.fr" required />
+            </div>
+            <div class="ecole-danse-form-group">
+              <label for="ecole-danse-project" class="ecole-danse-form-label">VOTRE PROJET</label>
+              <textarea id="ecole-danse-project" name="project" class="ecole-danse-form-input" placeholder="Ex: J’ai besoin d’un site pour promouvoir mon école de danse et gérer les inscriptions..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="ecole-danse-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="ecole-danse-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI ÉCOLE DE DANSE -->
+  <section class="ecole-danse-why-section">
+    <div class="ecole-danse-container">
+      <div class="ecole-danse-section-header">
+        <h2 class="ecole-danse-section-title">
+          Pourquoi un site internet pour votre <span class="ecole-danse-highlight">école de danse</span> ?
+        </h2>
+        <p class="ecole-danse-section-subtitle">
+          Dans un secteur artistique et compétitif, un site professionnel met en valeur vos cours et attire de nouveaux élèves.
+        </p>
+      </div>
+      <div class="ecole-danse-benefits-grid">
+        <div class="ecole-danse-benefit-card">
+          <div class="ecole-danse-benefit-icon">🔍</div>
+          <h3 class="ecole-danse-benefit-title">Visibilité locale</h3>
+          <p class="ecole-danse-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "école de danse [ville]" ou "cours de danse".
+          </p>
+        </div>
+        <div class="ecole-danse-benefit-card">
+          <div class="ecole-danse-benefit-icon">💃</div>
+          <h3 class="ecole-danse-benefit-title">Programme des cours</h3>
+          <p class="ecole-danse-benefit-description">
+            Présentez vos cours de danse dans un calendrier clair et attrayant.
+          </p>
+        </div>
+        <div class="ecole-danse-benefit-card">
+          <div class="ecole-danse-benefit-icon">📅</div>
+          <h3 class="ecole-danse-benefit-title">Inscription en ligne</h3>
+          <p class="ecole-danse-benefit-description">
+            Permettez à vos élèves de s’inscrire directement sur votre site.
+          </p>
+        </div>
+        <div class="ecole-danse-benefit-card">
+          <div class="ecole-danse-benefit-icon">🏅</div>
+          <h3 class="ecole-danse-benefit-title">Confiance et professionnalisme</h3>
+          <p class="ecole-danse-benefit-description">
+            Renforcez la confiance avec un site qui reflète l’énergie de votre école.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="ecole-danse-features-section">
+    <div class="ecole-danse-container">
+      <div class="ecole-danse-features-grid">
+        <div class="ecole-danse-features-content">
+          <h2 class="ecole-danse-section-title">
+            Fonctionnalités pour <span class="ecole-danse-highlight">écoles de danse</span>
+          </h2>
+          <p class="ecole-danse-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre école de danse.
+          </p>
+          <ul class="ecole-danse-features-list">
+            <li class="ecole-danse-feature-item">
+              <div class="ecole-danse-feature-icon">💃</div>
+              <div class="ecole-danse-feature-content">
+                <h4>Programme des cours</h4>
+                <p>Présentez vos cours dans un calendrier visuellement attrayant.</p>
+              </div>
+            </li>
+            <li class="ecole-danse-feature-item">
+              <div class="ecole-danse-feature-icon">📅</div>
+              <div class="ecole-danse-feature-content">
+                <h4>Inscription en ligne</h4>
+                <p>Permettez à vos élèves de s’inscrire directement via votre site.</p>
+              </div>
+            </li>
+            <li class="ecole-danse-feature-item">
+              <div class="ecole-danse-feature-icon">💼</div>
+              <div class="ecole-danse-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos cours, spectacles, ateliers, etc.</p>
+              </div>
+            </li>
+            <li class="ecole-danse-feature-item">
+              <div class="ecole-danse-feature-icon">📞</div>
+              <div class="ecole-danse-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ecole-danse-features-visual">
+          <div class="ecole-danse-mockup">
+            <div class="ecole-danse-mockup-header"></div>
+            <div class="ecole-danse-mockup-content">
+              <h3 class="ecole-danse-mockup-title">Site École de Danse</h3>
+              <p class="ecole-danse-mockup-text">Cours • Inscriptions<br />Services • Contact</p>
+              <button class="ecole-danse-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="ecole-danse-testimonials-section">
+    <div class="ecole-danse-container">
+      <div class="ecole-danse-section-header">
+        <h2 class="ecole-danse-section-title">
+          Ce que disent nos <span class="ecole-danse-highlight">écoles de danse partenaires</span>
+        </h2>
+        <p class="ecole-danse-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="ecole-danse-testimonials-grid">
+        <div class="ecole-danse-testimonial-card">
+          <p class="ecole-danse-testimonial-quote">
+            "Notre programme en ligne a attiré plus d’élèves pour nos cours."
+          </p>
+          <div class="ecole-danse-testimonial-author">
+            <div class="ecole-danse-testimonial-avatar">JD</div>
+            <div class="ecole-danse-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Directeur d’école de danse, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="ecole-danse-testimonial-card">
+          <p class="ecole-danse-testimonial-quote">
+            "Le site a simplifié les inscriptions et renforcé notre image."
+          </p>
+          <div class="ecole-danse-testimonial-author">
+            <div class="ecole-danse-testimonial-avatar">AL</div>
+            <div class="ecole-danse-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Directeur d’école de danse, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="ecole-danse-testimonial-card">
+          <p class="ecole-danse-testimonial-quote">
+            "Nos élèves apprécient la facilité de contact via le formulaire."
+          </p>
+          <div class="ecole-danse-testimonial-author">
+            <div class="ecole-danse-testimonial-avatar">MD</div>
+            <div class="ecole-danse-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Directrice d’école de danse, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="ecole-danse-final-cta">
+    <div class="ecole-danse-container">
+      <h2>Boostez votre école de danse</h2>
+      <p>
+        Obtenez un site professionnel pour promouvoir vos cours et attirer de nouveaux élèves. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="ecole-danse-final-button" onclick="ecoleDanseScrollToForm()">
+        Créer mon site d’école de danse
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.ecole-danse-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.ecole-danse-hero-text, .ecole-danse-hero-form, .ecole-danse-benefit-card, .ecole-danse-testimonial-card, .ecole-danse-features-content, .ecole-danse-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.ecole-danse-hero-text');
+    const heroForm = root.querySelector('.ecole-danse-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#ecole-danse-contact-form');
+  const button = root.querySelector('.ecole-danse-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#ecole-danse-name').value;
+      const email = form.querySelector('#ecole-danse-email').value;
+      const project = form.querySelector('#ecole-danse-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site École de Danse - web-starting.fr',
+        message: `Nouvelle demande pour un site d’école de danse depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page École de Danse - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.ecoleDanseScrollToForm = function() {
+    const heroForm = root.querySelector('.ecole-danse-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#ecole-danse-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.ecole-danse-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

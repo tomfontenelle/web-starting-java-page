@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.coach-sportif-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.coach-sportif-wp-scope *, .coach-sportif-wp-scope *::before, .coach-sportif-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.coach-sportif-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.coach-sportif-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.coach-sportif-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.coach-sportif-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.coach-sportif-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.coach-sportif-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.coach-sportif-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.coach-sportif-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.coach-sportif-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.coach-sportif-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.coach-sportif-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.coach-sportif-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.coach-sportif-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.coach-sportif-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.coach-sportif-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.coach-sportif-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.coach-sportif-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.coach-sportif-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.coach-sportif-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.coach-sportif-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.coach-sportif-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.coach-sportif-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.coach-sportif-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.coach-sportif-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.coach-sportif-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.coach-sportif-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.coach-sportif-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.coach-sportif-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.coach-sportif-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.coach-sportif-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.coach-sportif-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.coach-sportif-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.coach-sportif-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.coach-sportif-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.coach-sportif-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.coach-sportif-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.coach-sportif-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.coach-sportif-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.coach-sportif-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.coach-sportif-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.coach-sportif-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.coach-sportif-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.coach-sportif-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.coach-sportif-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.coach-sportif-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.coach-sportif-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.coach-sportif-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.coach-sportif-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.coach-sportif-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.coach-sportif-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.coach-sportif-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.coach-sportif-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.coach-sportif-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.coach-sportif-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.coach-sportif-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.coach-sportif-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.coach-sportif-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.coach-sportif-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.coach-sportif-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.coach-sportif-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.coach-sportif-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.coach-sportif-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.coach-sportif-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.coach-sportif-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .coach-sportif-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .coach-sportif-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .coach-sportif-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .coach-sportif-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .coach-sportif-hero-title {
+    font-size: 2rem !important;
+  }
+  .coach-sportif-section-title {
+    font-size: 1.75rem !important;
+  }
+  .coach-sportif-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .coach-sportif-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .coach-sportif-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .coach-sportif-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .coach-sportif-hero-form {
+    padding: 1.25rem !important;
+  }
+  .coach-sportif-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="coach-sportif-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="coach-sportif-hero-section">
+    <div class="coach-sportif-hero-container">
+      <div class="coach-sportif-hero-content">
+        <div class="coach-sportif-hero-text">
+          <h1 class="coach-sportif-hero-title">
+            Création de <span class="coach-sportif-highlight-yellow">site internet</span> pour votre activité de <span class="coach-sportif-highlight-yellow">coach sportif</span>
+          </h1>
+          <p class="coach-sportif-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Programme d’entraînement, réservation de séances, présentation de vos services et contact rapide. Boostez votre coaching.
+          </p>
+        </div>
+        <div class="coach-sportif-hero-form">
+          <form id="coach-sportif-contact-form">
+            <div class="coach-sportif-form-group">
+              <label for="coach-sportif-name" class="coach-sportif-form-label">VOTRE NOM</label>
+              <input type="text" id="coach-sportif-name" name="name" class="coach-sportif-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="coach-sportif-form-group">
+              <label for="coach-sportif-email" class="coach-sportif-form-label">VOTRE EMAIL</label>
+              <input type="email" id="coach-sportif-email" name="email" class="coach-sportif-form-input" placeholder="contact@coachsportif.fr" required />
+            </div>
+            <div class="coach-sportif-form-group">
+              <label for="coach-sportif-project" class="coach-sportif-form-label">VOTRE PROJET</label>
+              <textarea id="coach-sportif-project" name="project" class="coach-sportif-form-input" placeholder="Ex: J’ai besoin d’un site pour promouvoir mon coaching sportif et gérer les réservations..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="coach-sportif-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="coach-sportif-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI COACH SPORTIF -->
+  <section class="coach-sportif-why-section">
+    <div class="coach-sportif-container">
+      <div class="coach-sportif-section-header">
+        <h2 class="coach-sportif-section-title">
+          Pourquoi un site internet pour votre activité de <span class="coach-sportif-highlight">coach sportif</span> ?
+        </h2>
+        <p class="coach-sportif-section-subtitle">
+          Dans un secteur compétitif, un site professionnel met en valeur vos compétences et attire de nouveaux clients.
+        </p>
+      </div>
+      <div class="coach-sportif-benefits-grid">
+        <div class="coach-sportif-benefit-card">
+          <div class="coach-sportif-benefit-icon">🔍</div>
+          <h3 class="coach-sportif-benefit-title">Visibilité locale</h3>
+          <p class="coach-sportif-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "coach sportif [ville]" ou "coaching fitness".
+          </p>
+        </div>
+        <div class="coach-sportif-benefit-card">
+          <div class="coach-sportif-benefit-icon">💪</div>
+          <h3 class="coach-sportif-benefit-title">Programme d’entraînement</h3>
+          <p class="coach-sportif-benefit-description">
+            Présentez vos plans d’entraînement dans une section claire et attrayante.
+          </p>
+        </div>
+        <div class="coach-sportif-benefit-card">
+          <div class="coach-sportif-benefit-icon">📅</div>
+          <h3 class="coach-sportif-benefit-title">Réservation de séances</h3>
+          <p class="coach-sportif-benefit-description">
+            Permettez à vos clients de réserver leurs séances directement sur votre site.
+          </p>
+        </div>
+        <div class="coach-sportif-benefit-card">
+          <div class="coach-sportif-benefit-icon">🏅</div>
+          <h3 class="coach-sportif-benefit-title">Confiance et professionnalisme</h3>
+          <p class="coach-sportif-benefit-description">
+            Renforcez la confiance avec un site qui reflète votre expertise et votre dynamisme.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="coach-sportif-features-section">
+    <div class="coach-sportif-container">
+      <div class="coach-sportif-features-grid">
+        <div class="coach-sportif-features-content">
+          <h2 class="coach-sportif-section-title">
+            Fonctionnalités pour <span class="coach-sportif-highlight">coach sportif</span>
+          </h2>
+          <p class="coach-sportif-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre activité de coaching.
+          </p>
+          <ul class="coach-sportif-features-list">
+            <li class="coach-sportif-feature-item">
+              <div class="coach-sportif-feature-icon">💪</div>
+              <div class="coach-sportif-feature-content">
+                <h4>Programme d’entraînement</h4>
+                <p>Présentez vos plans d’entraînement dans une section attrayante.</p>
+              </div>
+            </li>
+            <li class="coach-sportif-feature-item">
+              <div class="coach-sportif-feature-icon">📅</div>
+              <div class="coach-sportif-feature-content">
+                <h4>Réservation de séances</h4>
+                <p>Permettez à vos clients de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="coach-sportif-feature-item">
+              <div class="coach-sportif-feature-icon">💼</div>
+              <div class="coach-sportif-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos coaching personnalisé, cours collectifs, etc.</p>
+              </div>
+            </li>
+            <li class="coach-sportif-feature-item">
+              <div class="coach-sportif-feature-icon">📞</div>
+              <div class="coach-sportif-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="coach-sportif-features-visual">
+          <div class="coach-sportif-mockup">
+            <div class="coach-sportif-mockup-header"></div>
+            <div class="coach-sportif-mockup-content">
+              <h3 class="coach-sportif-mockup-title">Site Coach Sportif</h3>
+              <p class="coach-sportif-mockup-text">Programmes • Réservations<br />Services • Contact</p>
+              <button class="coach-sportif-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="coach-sportif-testimonials-section">
+    <div class="coach-sportif-container">
+      <div class="coach-sportif-section-header">
+        <h2 class="coach-sportif-section-title">
+          Ce que disent nos <span class="coach-sportif-highlight">coachs partenaires</span>
+        </h2>
+        <p class="coach-sportif-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="coach-sportif-testimonials-grid">
+        <div class="coach-sportif-testimonial-card">
+          <p class="coach-sportif-testimonial-quote">
+            "Mon programme en ligne a attiré plus de clients pour mes séances."
+          </p>
+          <div class="coach-sportif-testimonial-author">
+            <div class="coach-sportif-testimonial-avatar">JD</div>
+            <div class="coach-sportif-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Coach sportif, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="coach-sportif-testimonial-card">
+          <p class="coach-sportif-testimonial-quote">
+            "Le site a simplifié les réservations et renforcé mon image professionnelle."
+          </p>
+          <div class="coach-sportif-testimonial-author">
+            <div class="coach-sportif-testimonial-avatar">AL</div>
+            <div class="coach-sportif-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Coach sportif, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="coach-sportif-testimonial-card">
+          <p class="coach-sportif-testimonial-quote">
+            "Mes clients apprécient la facilité de contact via le formulaire."
+          </p>
+          <div class="coach-sportif-testimonial-author">
+            <div class="coach-sportif-testimonial-avatar">MD</div>
+            <div class="coach-sportif-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Coach sportif, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="coach-sportif-final-cta">
+    <div class="coach-sportif-container">
+      <h2>Boostez votre activité de coach sportif</h2>
+      <p>
+        Obtenez un site professionnel pour promouvoir vos services et attirer de nouveaux clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="coach-sportif-final-button" onclick="coachSportifScrollToForm()">
+        Créer mon site de coach sportif
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.coach-sportif-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.coach-sportif-hero-text, .coach-sportif-hero-form, .coach-sportif-benefit-card, .coach-sportif-testimonial-card, .coach-sportif-features-content, .coach-sportif-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.coach-sportif-hero-text');
+    const heroForm = root.querySelector('.coach-sportif-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#coach-sportif-contact-form');
+  const button = root.querySelector('.coach-sportif-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#coach-sportif-name').value;
+      const email = form.querySelector('#coach-sportif-email').value;
+      const project = form.querySelector('#coach-sportif-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Coach Sportif - web-starting.fr',
+        message: `Nouvelle demande pour un site de coach sportif depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Coach Sportif - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.coachSportifScrollToForm = function() {
+    const heroForm = root.querySelector('.coach-sportif-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#coach-sportif-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.coach-sportif-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

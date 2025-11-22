@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.musicien-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.musicien-wp-scope *, .musicien-wp-scope *::before, .musicien-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.musicien-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.musicien-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.musicien-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.musicien-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.musicien-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.musicien-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.musicien-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.musicien-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.musicien-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.musicien-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.musicien-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.musicien-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.musicien-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.musicien-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.musicien-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.musicien-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.musicien-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.musicien-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.musicien-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.musicien-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.musicien-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.musicien-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.musicien-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.musicien-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.musicien-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.musicien-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.musicien-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.musicien-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.musicien-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.musicien-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.musicien-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.musicien-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.musicien-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.musicien-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.musicien-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.musicien-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.musicien-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.musicien-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.musicien-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.musicien-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.musicien-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.musicien-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.musicien-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.musicien-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.musicien-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.musicien-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.musicien-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.musicien-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.musicien-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.musicien-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.musicien-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.musicien-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.musicien-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.musicien-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.musicien-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.musicien-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.musicien-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.musicien-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.musicien-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.musicien-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.musicien-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.musicien-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.musicien-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.musicien-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .musicien-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .musicien-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .musicien-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .musicien-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .musicien-hero-title {
+    font-size: 2rem !important;
+  }
+  .musicien-section-title {
+    font-size: 1.75rem !important;
+  }
+  .musicien-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .musicien-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .musicien-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .musicien-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .musicien-hero-form {
+    padding: 1.25rem !important;
+  }
+  .musicien-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="musicien-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="musicien-hero-section">
+    <div class="musicien-hero-container">
+      <div class="musicien-hero-content">
+        <div class="musicien-hero-text">
+          <h1 class="musicien-hero-title">
+            Création de <span class="musicien-highlight-yellow">site internet</span> pour votre <span class="musicien-highlight-yellow">activité de musicien</span>
+          </h1>
+          <p class="musicien-hero-subtitle">
+            Attirez plus de fans et clients avec un site web professionnel. Portfolio musical, réservation de concerts, présentation de vos services et contact rapide. Mettez en valeur votre talent de musicien.
+          </p>
+        </div>
+        <div class="musicien-hero-form">
+          <form id="musicien-contact-form">
+            <div class="musicien-form-group">
+              <label for="musicien-name" class="musicien-form-label">VOTRE NOM</label>
+              <input type="text" id="musicien-name" name="name" class="musicien-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="musicien-form-group">
+              <label for="musicien-email" class="musicien-form-label">VOTRE EMAIL</label>
+              <input type="email" id="musicien-email" name="email" class="musicien-form-input" placeholder="contact@musicien.fr" required />
+            </div>
+            <div class="musicien-form-group">
+              <label for="musicien-project" class="musicien-form-label">VOTRE PROJET</label>
+              <textarea id="musicien-project" name="project" class="musicien-form-input" placeholder="Ex: Je suis musicien et j’ai besoin d’un site pour présenter mon portfolio musical..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="musicien-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="musicien-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI MUSICIEN -->
+  <section class="musicien-why-section">
+    <div class="musicien-container">
+      <div class="musicien-section-header">
+        <h2 class="musicien-section-title">
+          Pourquoi un site internet pour votre <span class="musicien-highlight">activité de musicien</span> ?
+        </h2>
+        <p class="musicien-section-subtitle">
+          Dans un secteur artistique et compétitif, un site professionnel met en valeur votre musique et attire des clients.
+        </p>
+      </div>
+      <div class="musicien-benefits-grid">
+        <div class="musicien-benefit-card">
+          <div class="musicien-benefit-icon">🔍</div>
+          <h3 class="musicien-benefit-title">Visibilité locale</h3>
+          <p class="musicien-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "musicien [ville]" ou "musicien mariage".
+          </p>
+        </div>
+        <div class="musicien-benefit-card">
+          <div class="musicien-benefit-icon">🎵</div>
+          <h3 class="musicien-benefit-title">Portfolio musical</h3>
+          <p class="musicien-benefit-description">
+            Présentez vos morceaux et vidéos dans une galerie professionnelle.
+          </p>
+        </div>
+        <div class="musicien-benefit-card">
+          <div class="musicien-benefit-icon">📅</div>
+          <h3 class="musicien-benefit-title">Réservation de concerts</h3>
+          <p class="musicien-benefit-description">
+            Permettez à vos clients de réserver vos performances directement sur votre site.
+          </p>
+        </div>
+        <div class="musicien-benefit-card">
+          <div class="musicien-benefit-icon">🏅</div>
+          <h3 class="musicien-benefit-title">Confiance et professionnalisme</h3>
+          <p class="musicien-benefit-description">
+            Renforcez la confiance avec un site qui reflète votre style et votre talent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="musicien-features-section">
+    <div class="musicien-container">
+      <div class="musicien-features-grid">
+        <div class="musicien-features-content">
+          <h2 class="musicien-section-title">
+            Fonctionnalités pour <span class="musicien-highlight">musiciens</span>
+          </h2>
+          <p class="musicien-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre activité de musicien.
+          </p>
+          <ul class="musicien-features-list">
+            <li class="musicien-feature-item">
+              <div class="musicien-feature-icon">🎵</div>
+              <div class="musicien-feature-content">
+                <h4>Portfolio musical</h4>
+                <p>Présentez vos morceaux et clips dans une galerie attrayante.</p>
+              </div>
+            </li>
+            <li class="musicien-feature-item">
+              <div class="musicien-feature-icon">📅</div>
+              <div class="musicien-feature-content">
+                <h4>Réservation de concerts</h4>
+                <p>Permettez à vos clients de réserver vos performances directement.</p>
+              </div>
+            </li>
+            <li class="musicien-feature-item">
+              <div class="musicien-feature-icon">💼</div>
+              <div class="musicien-feature-content">
+                <h4>Présentation des services</h4>
+                <p>Mettez en avant vos spécialités : concerts, cours, événements, etc.</p>
+              </div>
+            </li>
+            <li class="musicien-feature-item">
+              <div class="musicien-feature-icon">📞</div>
+              <div class="musicien-feature-content">
+                <h4>Contact rapide</h4>
+                <p>Facilitez la prise de contact avec un formulaire intuitif.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="musicien-features-visual">
+          <div class="musicien-mockup">
+            <div class="musicien-mockup-header"></div>
+            <div class="musicien-mockup-content">
+              <h3 class="musicien-mockup-title">Portfolio Musicien</h3>
+              <p class="musicien-mockup-text">Portfolio • Réservations<br />Services • Contact</p>
+              <button class="musicien-mockup-button">Découvrir maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="musicien-testimonials-section">
+    <div class="musicien-container">
+      <div class="musicien-section-header">
+        <h2 class="musicien-section-title">
+          Ce que disent nos <span class="musicien-highlight">musiciens partenaires</span>
+        </h2>
+        <p class="musicien-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="musicien-testimonials-grid">
+        <div class="musicien-testimonial-card">
+          <p class="musicien-testimonial-quote">
+            "Mon portfolio musical a attiré plus de clients pour mes concerts."
+          </p>
+          <div class="musicien-testimonial-author">
+            <div class="musicien-testimonial-avatar">JD</div>
+            <div class="musicien-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Musicien, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="musicien-testimonial-card">
+          <p class="musicien-testimonial-quote">
+            "Le site a renforcé mon image professionnelle et simplifié les réservations."
+          </p>
+          <div class="musicien-testimonial-author">
+            <div class="musicien-testimonial-avatar">AL</div>
+            <div class="musicien-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Musicien, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="musicien-testimonial-card">
+          <p class="musicien-testimonial-quote">
+            "Mes clients adorent la facilité de prise de contact via le formulaire."
+          </p>
+          <div class="musicien-testimonial-author">
+            <div class="musicien-testimonial-avatar">MD</div>
+            <div class="musicien-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Musicien, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="musicien-final-cta">
+    <div class="musicien-container">
+      <h2>Boostez votre activité de musicien</h2>
+      <p>
+        Obtenez un site professionnel pour présenter votre portfolio musical et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="musicien-final-button" onclick="musicienScrollToForm()">
+        Créer mon site de musicien
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.musicien-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.musicien-hero-text, .musicien-hero-form, .musicien-benefit-card, .musicien-testimonial-card, .musicien-features-content, .musicien-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.musicien-hero-text');
+    const heroForm = root.querySelector('.musicien-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#musicien-contact-form');
+  const button = root.querySelector('.musicien-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#musicien-name').value;
+      const email = form.querySelector('#musicien-email').value;
+      const project = form.querySelector('#musicien-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Musicien - web-starting.fr',
+        message: `Nouvelle demande pour un site de musicien depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Musicien - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.musicienScrollToForm = function() {
+    const heroForm = root.querySelector('.musicien-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#musicien-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.musicien-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

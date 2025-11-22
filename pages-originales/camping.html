@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.camping-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.camping-wp-scope *, .camping-wp-scope *::before, .camping-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.camping-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.camping-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.camping-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.camping-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.camping-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.camping-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.camping-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.camping-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.camping-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.camping-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.camping-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.camping-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.camping-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.camping-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.camping-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.camping-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.camping-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.camping-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.camping-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.camping-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.camping-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.camping-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.camping-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.camping-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.camping-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.camping-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.camping-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.camping-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.camping-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.camping-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.camping-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.camping-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.camping-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.camping-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.camping-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.camping-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.camping-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.camping-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.camping-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.camping-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.camping-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.camping-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.camping-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.camping-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.camping-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.camping-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.camping-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.camping-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.camping-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.camping-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.camping-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.camping-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.camping-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.camping-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.camping-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.camping-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.camping-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.camping-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.camping-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.camping-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.camping-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.camping-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.camping-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.camping-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .camping-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .camping-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .camping-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .camping-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .camping-hero-title {
+    font-size: 2rem !important;
+  }
+  .camping-section-title {
+    font-size: 1.75rem !important;
+  }
+  .camping-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .camping-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .camping-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .camping-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .camping-hero-form {
+    padding: 1.25rem !important;
+  }
+  .camping-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="camping-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="camping-hero-section">
+    <div class="camping-hero-container">
+      <div class="camping-hero-content">
+        <div class="camping-hero-text">
+          <h1 class="camping-hero-title">
+            Création de <span class="camping-highlight-yellow">site internet</span> pour votre <span class="camping-highlight-yellow">camping</span>
+          </h1>
+          <p class="camping-hero-subtitle">
+            Attirez plus de vacanciers avec un site web professionnel. Réservation en ligne, présentation des emplacements et hébergements, activités et localisation. Mettez en valeur l’expérience unique de votre camping.
+          </p>
+        </div>
+        <div class="camping-hero-form">
+          <form id="camping-contact-form">
+            <div class="camping-form-group">
+              <label for="camping-name" class="camping-form-label">VOTRE NOM</label>
+              <input type="text" id="camping-name" name="name" class="camping-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="camping-form-group">
+              <label for="camping-email" class="camping-form-label">VOTRE EMAIL</label>
+              <input type="email" id="camping-email" name="email" class="camping-form-input" placeholder="contact@camping.fr" required />
+            </div>
+            <div class="camping-form-group">
+              <label for="camping-project" class="camping-form-label">VOTRE PROJET</label>
+              <textarea id="camping-project" name="project" class="camping-form-input" placeholder="Ex: Je gère un camping et j’ai besoin d’un site pour proposer des réservations en ligne..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="camping-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="camping-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI CAMPING -->
+  <section class="camping-why-section">
+    <div class="camping-container">
+      <div class="camping-section-header">
+        <h2 class="camping-section-title">
+          Pourquoi un site internet pour votre <span class="camping-highlight">camping</span> ?
+        </h2>
+        <p class="camping-section-subtitle">
+          Dans un secteur touristique compétitif, un site professionnel attire les vacanciers et simplifie les réservations.
+        </p>
+      </div>
+      <div class="camping-benefits-grid">
+        <div class="camping-benefit-card">
+          <div class="camping-benefit-icon">🔍</div>
+          <h3 class="camping-benefit-title">Visibilité locale</h3>
+          <p class="camping-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "camping [ville]" ou "camping près de moi".
+          </p>
+        </div>
+        <div class="camping-benefit-card">
+          <div class="camping-benefit-icon">📅</div>
+          <h3 class="camping-benefit-title">Réservation en ligne</h3>
+          <p class="camping-benefit-description">
+            Offrez un système de réservation simple et rapide directement sur votre site.
+          </p>
+        </div>
+        <div class="camping-benefit-card">
+          <div class="camping-benefit-icon">⛺</div>
+          <h3 class="camping-benefit-title">Présentation des emplacements</h3>
+          <p class="camping-benefit-description">
+            Mettez en avant vos emplacements, mobil-homes et activités avec un design attractif.
+          </p>
+        </div>
+        <div class="camping-benefit-card">
+          <div class="camping-benefit-icon">🏅</div>
+          <h3 class="camping-benefit-title">Confiance et attractivité</h3>
+          <p class="camping-benefit-description">
+            Renforcez la confiance avec un site qui valorise l’expérience de votre camping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="camping-features-section">
+    <div class="camping-container">
+      <div class="camping-features-grid">
+        <div class="camping-features-content">
+          <h2 class="camping-section-title">
+            Fonctionnalités pour <span class="camping-highlight">campings</span>
+          </h2>
+          <p class="camping-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre camping.
+          </p>
+          <ul class="camping-features-list">
+            <li class="camping-feature-item">
+              <div class="camping-feature-icon">⛺</div>
+              <div class="camping-feature-content">
+                <h4>Présentation des emplacements</h4>
+                <p>Présentez vos emplacements, mobil-homes et tentes avec des visuels attrayants.</p>
+              </div>
+            </li>
+            <li class="camping-feature-item">
+              <div class="camping-feature-icon">📅</div>
+              <div class="camping-feature-content">
+                <h4>Réservation en ligne</h4>
+                <p>Permettez à vos clients de réserver directement via votre site.</p>
+              </div>
+            </li>
+            <li class="camping-feature-item">
+              <div class="camping-feature-icon">📍</div>
+              <div class="camping-feature-content">
+                <h4>Localisation</h4>
+                <p>Affichez votre emplacement avec une carte interactive pour faciliter l’accès.</p>
+              </div>
+            </li>
+            <li class="camping-feature-item">
+              <div class="camping-feature-icon">🏊</div>
+              <div class="camping-feature-content">
+                <h4>Activités et animations</h4>
+                <p>Promouvez vos activités comme piscine, randonnées ou animations pour enfants.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="camping-features-visual">
+          <div class="camping-mockup">
+            <div class="camping-mockup-header"></div>
+            <div class="camping-mockup-content">
+              <h3 class="camping-mockup-title">Camping Nature</h3>
+              <p class="camping-mockup-text">Emplacements • Réservations<br />Activités • Localisation</p>
+              <button class="camping-mockup-button">Réserver maintenant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="camping-testimonials-section">
+    <div class="camping-container">
+      <div class="camping-section-header">
+        <h2 class="camping-section-title">
+          Ce que disent nos <span class="camping-highlight">gérants de camping partenaires</span>
+        </h2>
+        <p class="camping-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="camping-testimonials-grid">
+        <div class="camping-testimonial-card">
+          <p class="camping-testimonial-quote">
+            "Notre site a boosté les réservations directes et mis en valeur nos emplacements et activités."
+          </p>
+          <div class="camping-testimonial-author">
+            <div class="camping-testimonial-avatar">JD</div>
+            <div class="camping-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Gérant de camping, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="camping-testimonial-card">
+          <p class="camping-testimonial-quote">
+            "Présenter notre camping sur un site moderne a attiré plus de vacanciers."
+          </p>
+          <div class="camping-testimonial-author">
+            <div class="camping-testimonial-avatar">AL</div>
+            <div class="camping-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Gérant de camping, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="camping-testimonial-card">
+          <p class="camping-testimonial-quote">
+            "Le système de réservation en ligne est fluide et apprécié par nos clients."
+          </p>
+          <div class="camping-testimonial-author">
+            <div class="camping-testimonial-avatar">MD</div>
+            <div class="camping-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Gérant de camping, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="camping-final-cta">
+    <div class="camping-container">
+      <h2>Boostez votre camping</h2>
+      <p>
+        Obtenez un site professionnel pour présenter votre camping et attirer des vacanciers. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="camping-final-button" onclick="campingScrollToForm()">
+        Créer mon site de camping
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.camping-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.camping-hero-text, .camping-hero-form, .camping-benefit-card, .camping-testimonial-card, .camping-features-content, .camping-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.camping-hero-text');
+    const heroForm = root.querySelector('.camping-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#camping-contact-form');
+  const button = root.querySelector('.camping-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#camping-name').value;
+      const email = form.querySelector('#camping-email').value;
+      const project = form.querySelector('#camping-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Camping - web-starting.fr',
+        message: `Nouvelle demande pour un site de camping depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Camping - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.campingScrollToForm = function() {
+    const heroForm = root.querySelector('.camping-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#camping-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.camping-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>

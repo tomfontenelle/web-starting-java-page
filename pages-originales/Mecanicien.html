@@ -1,0 +1,801 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+
+/* RESET COMPLET ET ISOLATION WORDPRESS - Renforcé pour éviter les conflits */
+.mecanicien-wp-scope {
+  all: initial !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #082416 !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+}
+.mecanicien-wp-scope *, .mecanicien-wp-scope *::before, .mecanicien-wp-scope *::after {
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+/* HERO SECTION */
+.mecanicien-hero-section {
+  min-height: 80vh !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 50%, #082416 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2rem !important;
+}
+.mecanicien-hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 20% 30%, rgba(232, 255, 69, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232, 255, 69, 0.05) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+.mecanicien-hero-container {
+  max-width: 1400px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.mecanicien-hero-content {
+  display: grid !important;
+  grid-template-columns: 1fr 400px !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+.mecanicien-hero-text {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease !important;
+}
+.mecanicien-hero-text.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.mecanicien-hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1.5rem 0 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+.mecanicien-highlight-yellow {
+  color: #e8ff45 !important;
+}
+.mecanicien-hero-subtitle {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  color: #a0a0a0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  max-width: 500px !important;
+}
+.mecanicien-hero-form {
+  background: rgba(8, 36, 22, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: all 0.8s ease 0.3s !important;
+}
+.mecanicien-hero-form.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.mecanicien-form-group {
+  margin: 0 0 1.25rem 0 !important;
+}
+.mecanicien-form-label {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #e8ff45 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+.mecanicien-form-input {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  background: rgba(8, 36, 22, 0.6) !important;
+  border: 1px solid rgba(232, 255, 69, 0.3) !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: all 0.3s ease !important;
+  resize: vertical !important;
+  min-height: 2.5rem !important;
+}
+.mecanicien-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.mecanicien-form-input:focus {
+  outline: none !important;
+  border-color: #e8ff45 !important;
+  box-shadow: 0 0 0 2px rgba(232, 255, 69, 0.2) !important;
+  background: rgba(8, 36, 22, 0.8) !important;
+}
+.mecanicien-cta-button {
+  width: 100% !important;
+  padding: 1rem 1.5rem !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.mecanicien-cta-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(232, 255, 69, 0.4) !important;
+}
+.mecanicien-trust-badge {
+  text-align: center !important;
+  margin: 1rem 0 0 0 !important;
+  font-size: 0.7rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* SECTIONS GÉNÉRALES */
+.mecanicien-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+.mecanicien-section-header {
+  text-align: center !important;
+  margin: 0 0 3rem 0 !important;
+}
+.mecanicien-section-title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+.mecanicien-section-subtitle {
+  font-size: 1rem !important;
+  color: #a0a0a0 !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+.mecanicien-highlight {
+  color: #e8ff45 !important;
+}
+
+/* SECTION POURQUOI */
+.mecanicien-why-section {
+  padding: 2rem 0 4rem 0 !important;
+  background: #082416 !important;
+}
+.mecanicien-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.mecanicien-benefit-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  transition: all 0.3s ease !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+}
+.mecanicien-benefit-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.mecanicien-benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.mecanicien-benefit-icon {
+  width: 40px !important;
+  height: 40px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 18px !important;
+}
+.mecanicien-benefit-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.mecanicien-benefit-description {
+  font-size: 0.9rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION FONCTIONNALITÉS */
+.mecanicien-features-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+}
+.mecanicien-features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+}
+.mecanicien-features-content {
+  opacity: 0 !important;
+  transform: translateX(-20px) !important;
+  transition: all 0.8s ease !important;
+}
+.mecanicien-features-content.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.mecanicien-features-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 0 0 !important;
+}
+.mecanicien-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.25rem 0 !important;
+  padding: 1rem !important;
+  background: rgba(8, 36, 22, 0.3) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #e8ff45 !important;
+}
+.mecanicien-feature-item:hover {
+  background: rgba(8, 36, 22, 0.5) !important;
+  transform: translateX(5px) !important;
+}
+.mecanicien-feature-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-size: 14px !important;
+}
+.mecanicien-feature-content h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.mecanicien-feature-content p {
+  font-size: 0.85rem !important;
+  color: #a0a0a0 !important;
+}
+.mecanicien-features-visual {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  transition: all 0.8s ease 0.2s !important;
+}
+.mecanicien-features-visual.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.mecanicien-mockup {
+  background: linear-gradient(135deg, #082416 0%, #0a2d1a 100%) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+.mecanicien-mockup-header {
+  height: 25px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+.mecanicien-mockup-content {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 1.5rem !important;
+  min-height: 180px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.mecanicien-mockup-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.mecanicien-mockup-text {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+}
+.mecanicien-mockup-button {
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  color: #082416 !important;
+  padding: 0.5rem 1rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+/* SECTION TÉMOIGNAGES */
+.mecanicien-testimonials-section {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #0a2d1a 0%, #082416 100%) !important;
+}
+.mecanicien-testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+.mecanicien-testimonial-card {
+  background: rgba(8, 36, 22, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(232, 255, 69, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 1.5rem !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.8s ease !important;
+}
+.mecanicien-testimonial-card.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.mecanicien-testimonial-quote {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #e5e5e5 !important;
+}
+.mecanicien-testimonial-author {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+}
+.mecanicien-testimonial-avatar {
+  width: 35px !important;
+  height: 35px !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.75rem 0 0 !important;
+  font-weight: 700 !important;
+  color: #082416 !important;
+}
+.mecanicien-testimonial-info h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.mecanicien-testimonial-info p {
+  font-size: 0.75rem !important;
+  color: #a0a0a0 !important;
+}
+
+/* SECTION CTA FINALE */
+.mecanicien-final-cta {
+  padding: 4rem 0 !important;
+  background: linear-gradient(135deg, #e8ff45 0%, #d4f442 100%) !important;
+  text-align: center !important;
+  color: #082416 !important;
+}
+.mecanicien-final-cta h2 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+}
+.mecanicien-final-cta p {
+  font-size: 1rem !important;
+  max-width: 600px !important;
+  margin: 0 auto 1.5rem auto !important;
+  opacity: 0.8 !important;
+}
+.mecanicien-final-button {
+  background: #082416 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+}
+.mecanicien-final-button:hover {
+  transform: translateY(-3px) !important;
+  background: #0a2d1a !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .mecanicien-hero-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .mecanicien-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .mecanicien-hero-title {
+    font-size: 2.5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .mecanicien-hero-section {
+    padding: 1.5rem !important;
+    min-height: 60vh !important;
+  }
+  .mecanicien-hero-title {
+    font-size: 2rem !important;
+  }
+  .mecanicien-section-title {
+    font-size: 1.75rem !important;
+  }
+  .mecanicien-final-cta h2 {
+    font-size: 1.75rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .mecanicien-hero-section {
+    padding: 1rem !important;
+    min-height: 50vh !important;
+  }
+  .mecanicien-hero-title {
+    font-size: 1.75rem !important;
+  }
+  .mecanicien-hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  .mecanicien-hero-form {
+    padding: 1.25rem !important;
+  }
+  .mecanicien-section-title {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<div class="mecanicien-wp-scope">
+  <!-- HERO SECTION -->
+  <section class="mecanicien-hero-section">
+    <div class="mecanicien-hero-container">
+      <div class="mecanicien-hero-content">
+        <div class="mecanicien-hero-text">
+          <h1 class="mecanicien-hero-title">
+            Création de <span class="mecanicien-highlight-yellow">site internet</span> pour votre <span class="mecanicien-highlight-yellow">métier de mécanicien</span>
+          </h1>
+          <p class="mecanicien-hero-subtitle">
+            Attirez plus de clients avec un site web professionnel. Design moderne, présentation de vos services de réparation et d’entretien auto, demande de devis rapide. Mettez en valeur votre expertise en mécanique automobile.
+          </p>
+        </div>
+        <div class="mecanicien-hero-form">
+          <form id="mecanicien-contact-form">
+            <div class="mecanicien-form-group">
+              <label for="mecanicien-name" class="mecanicien-form-label">VOTRE NOM</label>
+              <input type="text" id="mecanicien-name" name="name" class="mecanicien-form-input" placeholder="Jean Dupont" required />
+            </div>
+            <div class="mecanicien-form-group">
+              <label for="mecanicien-email" class="mecanicien-form-label">VOTRE EMAIL</label>
+              <input type="email" id="mecanicien-email" name="email" class="mecanicien-form-input" placeholder="contact@mecanicien.fr" required />
+            </div>
+            <div class="mecanicien-form-group">
+              <label for="mecanicien-project" class="mecanicien-form-label">VOTRE PROJET</label>
+              <textarea id="mecanicien-project" name="project" class="mecanicien-form-input" placeholder="Ex: Je suis mécanicien et j'ai besoin d'un site pour présenter mes services de réparation et d’entretien auto..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="mecanicien-cta-button">DEMANDER VOTRE DEVIS GRATUIT</button>
+            <div class="mecanicien-trust-badge">✓ Sans engagement • Réponse sous 2h • 100% gratuit</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POURQUOI MÉCANICIEN -->
+  <section class="mecanicien-why-section">
+    <div class="mecanicien-container">
+      <div class="mecanicien-section-header">
+        <h2 class="mecanicien-section-title">
+          Pourquoi un site internet pour votre <span class="mecanicien-highlight">activité de mécanicien</span> ?
+        </h2>
+        <p class="mecanicien-section-subtitle">
+          Dans un secteur compétitif, un site professionnel vous rend visible et met en avant votre expertise en réparation et entretien automobile.
+        </p>
+      </div>
+      <div class="mecanicien-benefits-grid">
+        <div class="mecanicien-benefit-card">
+          <div class="mecanicien-benefit-icon">🔍</div>
+          <h3 class="mecanicien-benefit-title">Visibilité locale</h3>
+          <p class="mecanicien-benefit-description">
+            Soyez trouvé sur Google avec des recherches comme "mécanicien [ville]" ou "réparation auto près de moi".
+          </p>
+        </div>
+        <div class="mecanicien-benefit-card">
+          <div class="mecanicien-benefit-icon">📅</div>
+          <h3 class="mecanicien-benefit-title">Devis en ligne</h3>
+          <p class="mecanicien-benefit-description">
+            Simplifiez les demandes de devis pour vos services de réparation ou d’entretien auto.
+          </p>
+        </div>
+        <div class="mecanicien-benefit-card">
+          <div class="mecanicien-benefit-icon">🔧</div>
+          <h3 class="mecanicien-benefit-title">Portfolio de réalisations</h3>
+          <p class="mecanicien-benefit-description">
+            Présentez vos réparations et diagnostics auto avec une galerie visuelle.
+          </p>
+        </div>
+        <div class="mecanicien-benefit-card">
+          <div class="mecanicien-benefit-icon">🏅</div>
+          <h3 class="mecanicien-benefit-title">Confiance et fiabilité</h3>
+          <p class="mecanicien-benefit-description">
+            Renforcez la confiance avec un site moderne qui met en avant votre expertise en mécanique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION FONCTIONNALITÉS -->
+  <section class="mecanicien-features-section">
+    <div class="mecanicien-container">
+      <div class="mecanicien-features-grid">
+        <div class="mecanicien-features-content">
+          <h2 class="mecanicien-section-title">
+            Fonctionnalités pour <span class="mecanicien-highlight">mécaniciens</span>
+          </h2>
+          <p class="mecanicien-section-subtitle">
+            Un site conçu pour répondre aux besoins spécifiques de votre métier de mécanicien.
+          </p>
+          <ul class="mecanicien-features-list">
+            <li class="mecanicien-feature-item">
+              <div class="mecanicien-feature-icon">🔧</div>
+              <div class="mecanicien-feature-content">
+                <h4>Galerie de travaux</h4>
+                <p>Présentez vos réparations et entretiens auto avec des images interactives.</p>
+              </div>
+            </li>
+            <li class="mecanicien-feature-item">
+              <div class="mecanicien-feature-icon">🗺️</div>
+              <div class="mecanicien-feature-content">
+                <h4>Zone d’intervention</h4>
+                <p>Carte interactive pour montrer où vous proposez vos services de mécanique.</p>
+              </div>
+            </li>
+            <li class="mecanicien-feature-item">
+              <div class="mecanicien-feature-icon">📅</div>
+              <div class="mecanicien-feature-content">
+                <h4>Formulaire de devis</h4>
+                <p>Recevez des demandes de devis pour réparations ou entretien directement depuis votre site.</p>
+              </div>
+            </li>
+            <li class="mecanicien-feature-item">
+              <div class="mecanicien-feature-icon">🚗</div>
+              <div class="mecanicien-feature-content">
+                <h4>Services spécialisés</h4>
+                <p>Promouvez vos compétences en diagnostic, vidange, freins, et réparations auto.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mecanicien-features-visual">
+          <div class="mecanicien-mockup">
+            <div class="mecanicien-mockup-header"></div>
+            <div class="mecanicien-mockup-content">
+              <h3 class="mecanicien-mockup-title">Mécanique Artisan</h3>
+              <p class="mecanicien-mockup-text">Réparations, entretien auto<br />Portfolio • Demande de devis</p>
+              <button class="mecanicien-mockup-button">Voir nos services</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="mecanicien-testimonials-section">
+    <div class="mecanicien-container">
+      <div class="mecanicien-section-header">
+        <h2 class="mecanicien-section-title">
+          Ce que disent nos <span class="mecanicien-highlight">mécaniciens partenaires</span>
+        </h2>
+        <p class="mecanicien-section-subtitle">
+          Découvrez l’impact d’un site professionnel sur leur activité.
+        </p>
+      </div>
+      <div class="mecanicien-testimonials-grid">
+        <div class="mecanicien-testimonial-card">
+          <p class="mecanicien-testimonial-quote">
+            "Notre site a boosté les demandes pour des réparations auto. Le portfolio met nos travaux en valeur."
+          </p>
+          <div class="mecanicien-testimonial-author">
+            <div class="mecanicien-testimonial-avatar">JD</div>
+            <div class="mecanicien-testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>Mécanicien, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+        <div class="mecanicien-testimonial-card">
+          <p class="mecanicien-testimonial-quote">
+            "Présenter nos diagnostics auto sur le site a attiré de nouveaux clients. Très professionnel !"
+          </p>
+          <div class="mecanicien-testimonial-author">
+            <div class="mecanicien-testimonial-avatar">AL</div>
+            <div class="mecanicien-testimonial-info">
+              <h4>Antoine Leclerc</h4>
+              <p>Mécanicien, Lyon</p>
+            </div>
+          </div>
+        </div>
+        <div class="mecanicien-testimonial-card">
+          <p class="mecanicien-testimonial-quote">
+            "Le formulaire de devis en ligne a simplifié notre travail. Les clients adorent consulter nos services."
+          </p>
+          <div class="mecanicien-testimonial-author">
+            <div class="mecanicien-testimonial-avatar">MD</div>
+            <div class="mecanicien-testimonial-info">
+              <h4>Marie Durand</h4>
+              <p>Mécanicienne, Toulouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="mecanicien-final-cta">
+    <div class="mecanicien-container">
+      <h2>Boostez votre activité de mécanicien</h2>
+      <p>
+        Obtenez un site professionnel pour présenter vos services et attirer des clients. Demandez votre devis en 2 minutes.
+      </p>
+      <button class="mecanicien-final-button" onclick="mecanicienScrollToForm()">
+        Créer mon site de mécanicien
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(() => {
+  const root = document.querySelector('.mecanicien-wp-scope');
+  if (!root) return;
+
+  // Animation d'entrée progressive
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  // Initialisation des animations
+  const animatedElements = root.querySelectorAll('.mecanicien-hero-text, .mecanicien-hero-form, .mecanicien-benefit-card, .mecanicien-testimonial-card, .mecanicien-features-content, .mecanicien-features-visual');
+  animatedElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  // Animation immédiate pour le hero
+  setTimeout(() => {
+    const heroText = root.querySelector('.mecanicien-hero-text');
+    const heroForm = root.querySelector('.mecanicien-hero-form');
+    if (heroText) heroText.classList.add('animate');
+    if (heroForm) heroForm.classList.add('animate');
+  }, 500);
+
+  // Gestion du formulaire
+  const form = root.querySelector('#mecanicien-contact-form');
+  const button = root.querySelector('.mecanicien-cta-button');
+  if (form && button) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.querySelector('#mecanicien-name').value;
+      const email = form.querySelector('#mecanicien-email').value;
+      const project = form.querySelector('#mecanicien-project').value;
+
+      if (!name || !email || !project) {
+        alert('Veuillez remplir tous les champs.');
+        return;
+      }
+
+      button.innerHTML = '⏳ Envoi en cours...';
+      button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+      button.disabled = true;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        project_description: project,
+        to_email: 'contact.capitainepub@gmail.com',
+        subject: 'Nouvelle demande - Site Mécanicien - web-starting.fr',
+        message: `Nouvelle demande pour un site de mécanicien depuis web-starting.fr
+Nom: ${name}
+Email: ${email}
+Projet: ${project}
+Source: Page Mécanicien - web-starting.fr
+Date: ${new Date().toLocaleString('fr-FR')}
+Cordialement,
+Système automatique web-starting.fr`
+      };
+
+      // Remplacez ces identifiants par les vôtres depuis EmailJS
+      emailjs.send('service_btbtgzn', 'template_m06wtf1', templateParams, 'EbZUccJ9uKukb5WRE')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          button.innerHTML = '✅ Demande envoyée !';
+          button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+            form.reset();
+          }, 3000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          button.innerHTML = '❌ Erreur d\'envoi';
+          button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          setTimeout(() => {
+            button.innerHTML = 'DEMANDER VOTRE DEVIS GRATUIT';
+            button.style.background = 'linear-gradient(135deg, #e8ff45 0%, #d4f442 100%)';
+            button.disabled = false;
+          }, 3000);
+        });
+    });
+  }
+
+  // Fonction pour scroller vers le formulaire
+  window.mecanicienScrollToForm = function() {
+    const heroForm = root.querySelector('.mecanicien-hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const nameField = heroForm.querySelector('#mecanicien-name');
+        if (nameField) nameField.focus();
+      }, 1000);
+    }
+  };
+
+  // Effet de parallaxe subtil
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.2;
+    const heroSection = root.querySelector('.mecanicien-hero-section');
+    if (heroSection) {
+      heroSection.style.transform = `translateY(${rate}px)`;
+    }
+  });
+})();
+</script>
